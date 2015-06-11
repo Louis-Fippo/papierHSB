@@ -1,0 +1,9 @@
+éléments de finitions.
+
+pourquoi il faut introduire la sort de synchronization?
+
+parce que dans les cas des patterns avec deux composants influencant concurentiellement un autre composant,
+nous savons que chacun des deux peut activer le troisième composant (ou l'inhinber inversement). Mais si l'autre 
+
+
+

@@ -1,0 +1,91 @@
+
+\section{Introduction}
+
+%The study and comprehension of biological systems relies on our ability to build models of such systems and
+%study their properties. The way a molecular system behaves can be represented as large interaction graphs 
+%composed of genes, proteins and complexes which interact to produce different dynamics in the system. 
+%Thanks to the availability of gene time-series expression data, we can now observe and characterize the 
+%dynamics of such components in the context of biological regulatory networks.
+
+
+%These refinements were: \emph{(i)} modeling the expression of the E-cadherin signal as a discrete pulse,
+%\emph{(ii)} imposing a weak synchronization of multiple regulators of a molecule, and \emph{(iii)} modeling 
+%the decay of the strength of a transcription factor over the regulated gene.
+
+
+
+% no \IEEEPARstart
+The comprehension of the mechanisms involved in the regulation of a cell-based biological system is a fundamental 
+issue. These mechanisms can be modeled as biological regulatory networks, which analysis requires to preliminary build a 
+mathematical or computational model. 
+By just considering qualitative regulatory effects between components, biologic regulatory networks
+depict fairly well biological systems, and can be built upon public repositories such as the Pathways 
+Interaction Database \cite{schaefer2009pid}, and 
+hiPathDB \cite{yu2012hipathdb} for human regulatory knowledge.
+
+%the aims of the work (1first sentence & the background)
+
+This work aims to propose a dynamical model of large-scale systems based on the formal integration 
+(complete validation/invalidation) of high-throughput experimental time-series data.  So far this 
+idea has been addressed separately by approaches that either: (a) focus first on
+modeling at small-scale the system and then on refining or improving it through the fitting with
+some data points, such as methods based on differential equations \cite{tyson2003sniffers,batt2005validation,mobashir2012simulated}, 
+(b) integrate in an efficient and complete fashion large-scale models
+and high-throughput data regardless from the system dynamics \cite{guziolowski2013exhaustively,mitsos2009identifying}, or 
+(c) fit dynamical data to middle-scale networks using an sampling of the space of behaviors stochastic approaches, and
+therefore without guarantee on finding global optima \cite{macnamara2012state}. Therefore, with this
+work we intend to fill the gaps between the previously cited methodologies and converge to a more
+realistic model of biological behavior.
+
+
+%proposer une petite discussion sur les autres approches formelles de modélisation
+
+
+%le choix que nous avons fais. Il faudra  détailler les avantages. Dire pourquoi nous choisissons le PH et pas un aute formalisme
+%les grandes lignes de cette justification sont les suivantes: formalisme très expressif pour les BRN, simulation concurente 
+% provenant de l'algèbre des processus, abstraction permettant de faire de analyse statiques de certaines propriétés. 
+
+For modeling and analyzing stochastic and concurent biological systems many formalisms have been introduced such as 
+stochastic Petri Nets which is a suitable approach for the representation of parallel systems \cite{molloy1982performance}. 
+They have been successfully and systematically applied in many areas, and the specification Petri Nets
+allows an accurate modeling of a wide range of systems including biological systems \cite{heiner2008petri}. The major 
+problem of Stochastic Petri Nets is that they do not generally lead to compact models. In addition,
+they do not provide results to deal with the state space explosion and are thus generally computationally
+expensive. Another approach is Stochastic pi-calculus introduced by \cite{priami1995stochastic} and used in 
+\cite{maurin2009modeling} for the modeling of biological systems. Stochastic pi-calculus has a good
+expressivity and is well adapted for the use of compositionnal approach.
+
+%TODO
+For modeling and analyzing the biological system we rely on a Stochastic pi-calculus formalism which is the Process Hitting (PH) framework \cite{PMR10-TCSB}, 
+since it is especially useful for studying systems composed of biochemical interactions, and provides
+stochastic simulation as well as efficient static methods to model dynamical properties of the system.
+The PH framework uses qualitative and discrete information of the system, without requiring enormous parameter estimation tasks
+ for its stochastic simulation. 
+So far, this method has been successfully demonstrated only on very well-known systems and without exploiting 
+high-throughput measures. We believe, however, that the use of high-throughput data has become unavoidable with 
+the advent of massive, publicly available data sets in the form of well-standardized DNA microarray data and, 
+more recently, in the form of phospho-proteomics data.  
+
+
+
+
+% les contributions du travail que nous présentons: Génération automatique des modèles en PH(avec et 
+% sans synchronisation), Estiamtion des paramètres des times series data Et intégration des paramètres 
+% dans le modèle.
+%TODO revoir le temps et les liaisons
+The main  results of this work are: first, we built an interaction graph linking a signaling molecule, 
+E-cadherin (Calcium sensitive protein), to genes present in our time-series data and to key cellular processes for our case study, such as 
+keratinocyte-differentiation and cellular-proliferation.  This graph was automatically extracted from PID. Second, we propose an automatic                                     %ici il manque une reference.
+transformation of selected known biological patterns present in  PID in order to generate PH modules;
+ adding necessary constraints to the PH model to avoid oscillations.  
+Third, we propose a way of estimating temporal and stochastic parameters from time-series expression data to 
+model the measured genes.  These parameters are used for the stochastic simulation of the model.  Finally, 
+we discretized the experimental data to allow the comparison with simulation results for the above mentioned case 
+study analysis. 
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+
+%\hfill mds
+ 
+%\hfill March 20, 2015

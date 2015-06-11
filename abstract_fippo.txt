@@ -1,0 +1,24 @@
+In this work we propose an automatic way of generating and verifying formal models of signaling and transcriptional
+events, gathered in large-scale regulatory networks, by integrating temporal and stochastic aspects of 
+the expression of some biological components, measured during a real experiment.   To achieve this we rely 
+on the Process Hitting (PH) formalism  and an stochastic simulation of the built PH hybrid model.  
+This choice on one hand limits us to discrete data, but on the other, allows us to handle models built upon 
+large-scale interaction graphs, to express different levels of logic rules between a node and its direct 
+predecessors, and to reproduce dynamic behaviors of the components with minimal stochastic parameter estimation.  
+The model proposed is based on a real case study of keratinocyte differentiation, in which gene time-series data 
+was generated upon the calcium stimulation of the E-cadherin protein.
+
+This work has the following contributions. First, we built an interaction graph linking a signaling molecule, 
+E-cadherin, to genes present in our time-series data and to key cellular processes for our case study, such as 
+keratinocyte-differentiation and cellular-proliferation.  This graph was automatically extracted from the Pathway 
+Interaction Database (PID) using a method proposed in. Second, we proposed an automatic 
+transformation of selected known biological patterns present in  PID in order to generate PH modules. Additionally, 
+we added necessary constraints to the PH model to avoid biologically incoherent dynamical behaviors.  
+Third, we proposed a way of estimating temporal and stochastic parameters from time-series expression data to 
+model the measured genes.  These parameters were used for the stochastic simulation of the model.  Finally, 
+we discretized the experimental data to allow the comparison with simulation results. 
+
+We show that our approach allows us to reproduce different dynamic behaviors of the components in such a large network,
+by stochastically simulating this hybrid model.  We are able to generate, for some cases, a close match to the 
+experimental results with very few parameter calibration. Moreover, we generated dynamical predictions, 
+consquences of the time-series data, on key cellular processes for our case study.
