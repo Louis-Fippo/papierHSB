@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.14)  11 JUN 2015 12:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.14)  12 JUN 2015 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,21 +794,21 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
 ) (./full_paper_fippo.aux)
 \openout1 = `full_paper_fippo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -842,7 +842,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box88
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -852,9 +852,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./full_paper_fippo.out) (./full_paper_fippo.out)
 \@outlinefile=\write5
@@ -863,42 +863,42 @@ LaTeX Info: Redefining \nameref on input line 34.
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 74.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
- (./parts/intro.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
 
-[1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2.15303pt too wide) in paragraph at lines 59--68
-[]\OT1/ptm/m/n/10 For mod-el-ing and an-a-lyz-ing the bi-o-log-i-cal sys-tem we
- rely on a Stochas-tic pi-calculus
+Overfull \hbox (5.75233pt too wide) in paragraph at lines 102--103
+\OT1/ptm/b/n/9 Keywords:\OT1/ptm/m/n/9 time-series data, large-scale mod-els, c
+om-po-si-tional ap-proach, stochas-
  []
 
-) (./parts/methods.tex
-<images/workflow-2.png, id=138, 806.01125pt x 326.21875pt>
+(./parts/intro.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+ [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(./parts/methods.tex
+<images/workflow-2.png, id=137, 806.01125pt x 326.21875pt>
 File: images/workflow-2.png Graphic file (type png)
 
 <use images/workflow-2.png>
@@ -917,7 +917,7 @@ Overfull \hbox (8.23203pt too wide) in paragraph at lines 28--35
 or-signaling-transcription-
  []
 
-<images/net.jpg, id=156, 4227.795pt x 1529.715pt>
+<images/net.jpg, id=158, 4227.795pt x 1529.715pt>
 File: images/net.jpg Graphic file (type jpg)
  <use images/net.jpg>
 Package pdftex.def Info: images/net.jpg used on input line 54.
@@ -928,7 +928,7 @@ Overfull \hbox (122.63145pt too wide) in paragraph at lines 54--58
  []
 
 [3 <./images/workflow-2.png>]
-<images/12genes.png, id=173, 703.12688pt x 545.03625pt>
+<images/12genes.png, id=174, 703.12688pt x 545.03625pt>
 File: images/12genes.png Graphic file (type png)
 
 <use images/12genes.png>
@@ -1122,10 +1122,7 @@ Overfull \hbox (122.63846pt too wide) in paragraph at lines 715--717
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./images/ResultDiscretization.png>]
+[11]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1235,7 +1232,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (./parts/results.tex [12]
+) (./parts/results.tex [12 <./images/ResultDiscretization.png>]
 <images/resultWOS.pdf, id=325, 505.89pt x 505.89pt>
 File: images/resultWOS.pdf Graphic file (type pdf)
  <use images/resultWOS.pdf>
@@ -1256,32 +1253,38 @@ Overfull \hbox (122.63911pt too wide) in paragraph at lines 62--64
  [][] 
  []
 
-) (./parts/conclusion.tex) [13]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+) (./parts/conclusion.tex) (./parts/acknowledgements.tex [13]
+Underfull \vbox (badness 1259) has occurred while \output is active []
 
- [14 <./images/resultWOS.pdf>] [15 <./images/resultWS.pdf>]
+ [14 <./images/resultWOS.pdf>]) [15 <./images/resultWS.pdf>]
 \tf@thm=\write6
 \openout6 = `full_paper_fippo.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
  (./full_paper_fippo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
-Package rerunfilecheck Info: File `full_paper_fippo.out' has not changed.
-(rerunfilecheck)             Checksum: F70F7B3413DF72CB4D32519E5A56F1A1;1802.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
 
+
+Package rerunfilecheck Warning: File `full_paper_fippo.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `full_paper_fippo.out':
+(rerunfilecheck)             Before: F70F7B3413DF72CB4D32519E5A56F1A1;1802
+(rerunfilecheck)             After:  92824C19011BCB5AFF44013BCD31384A;1902.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
  ) 
 Here is how much of TeX's memory you used:
- 18631 strings out of 493304
- 342112 string characters out of 6139871
- 503252 words of memory out of 5000000
- 21547 multiletter control sequences out of 15000+600000
+ 18636 strings out of 493304
+ 342198 string characters out of 6139871
+ 493608 words of memory out of 5000000
+ 21548 multiletter control sequences out of 15000+600000
  37618 words of font info for 93 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  58i,18n,73p,622b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1307,10 +1310,10 @@ symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr
 e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on full_paper_fippo.pdf (16 pages, 2797519 bytes).
+Output written on full_paper_fippo.pdf (16 pages, 2796885 bytes).
 PDF statistics:
- 921 PDF objects out of 1000 (max. 8388607)
- 696 compressed objects within 7 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 922 PDF objects out of 1000 (max. 8388607)
+ 697 compressed objects within 7 object streams
+ 135 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
