@@ -56,7 +56,7 @@ expensive when modeling large-scale biological networks.
 %TODO
 The Stochastic pi-calculus formalism was introduced by \cite{priami1995stochastic} and used in 
 \cite{maurin2009modeling} for the modeling of biological systems. Stochastic pi-calculus has a rich
-expressivity and is well adapted for the use of \modCG{compositionnal approach}. \modCG{[What do you mean by compositionnal approach? Is it with ``nn'' ?]}
+expressivity and is well adapted for the use of \modCG{compositional approach} \modCG{[reformulate the link with compositionnal approach]}
 In this work we rely on this formalism through the Process Hitting (PH) framework \cite{PMR10-TCSB}, 
 since it is especially useful for studying systems composed of biochemical interactions, and provides
 stochastic simulation as well as efficient static methods to model dynamical properties of the system.
@@ -64,7 +64,7 @@ The PH framework uses qualitative and discrete information of the system without
  for its stochastic simulation. 
 This framework has been previously used to verify dynamical properties on biological systems without integrating high-throughput experimental data.
 In this work we provide a method to build a time-series data integrated PH model and we evaluate 
-the prediction power of this model concerning the simulatenously predicted traces of several components of the system upon system stimulation.
+the prediction power of this model concerning the simulatenously predicted traces of 12 gene components of the system upon system stimulation.
 %So far, this method has been successfully demonstrated only on very well-known systems and without exploiting 
 %high-throughput measures. We believe, however, that the use of high-throughput data has become unavoidable with 
 %the advent of massive, publicly available data sets in the form of well-standardized DNA microarray data and, 
@@ -73,11 +73,14 @@ the prediction power of this model concerning the simulatenously predicted trace
 % sans synchronisation), Estiamtion des paramètres des times series data Et intégration des paramètres 
 % dans le modèle.
 %TODO revoir le temps et les liaisons
-The main  results of this work are: (1) automatic generation of PH models, with and without synchronisation gates, from the Pathways Interaction Database, 
+The main  results of this work are: (1) automatic generation of PH models integrating gene transcription and signaling events, 
+with and without synchronisation of concurrent events, from the Pathways Interaction Database, 
 (2) parameter estimation from time-series data and parameter integration in the PH model, and
 (3) comparison of the PH model predictions and experimental results.
-To illustrate our approach, we used a time-series dataset of keratinocytes cells, which was built 
-to study the fluctuations of gene expression across time upon Calcium stimulation.
+To illustrate our approach, we used a time-series dataset of keratinocytes cells, which shows
+ the fluctuations of gene expression across time upon Calcium stimulation.
+This dataset was built to study keratinocytes differentiation, a time-dependent
+ process in which the sequence of activation of signaling proteins is not yet completely understood.
 The method proposed in this paper remains general and can be applied to other case-studies.
 
 %first, we built an interaction graph linking a signaling molecule, 
