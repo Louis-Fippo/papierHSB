@@ -24,22 +24,25 @@
 
 \input{epig-macros}
 
+\def\modCG#1{\textcolor{red}{#1}}
+
 \usepackage{url}
 \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
 \urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
-\urldef{\mailsc}\path|erika.siebert-cole, peter.strasser, lncs}@springer.com|    
+\urldef{\mailsc}\path|louis.fippo-fitime}@irccyn.ec-nantes.fr|
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
+
 
 \begin{document}
 
 \mainmatter  % start of an individual contribution
 
 % first the title is needed
-\title{Integrating time-series data on large-scale cell-based models}
+\title{Integrating time-series data in large-scale discrete \modCG{cell-based} models}
 
 % a short form should be given in case it is too long for the running head
-\titlerunning{Lecture Notes in Computer Science: Authors' Instructions}
+\titlerunning{Integrating time-series data in cell-based discrete models}
 
 % the name(s) of the author(s) follow(s) next
 %
@@ -47,19 +50,24 @@
 % their surnames. This ensures that the names appear correctly in
 % the running heads and the author index.
 %
-\author{Louis Fippo Fitime%
-\and Olivier Roux\and Carito Guziolowski}
+\author{Louis Fippo Fitime\inst{1}%
+\and Christian Schuster\inst{2} \and Peter Angel\inst{2}
+\and Olivier Roux\inst{1}\and Carito Guziolowski\inst{1}}
 %
-\authorrunning{Lecture Notes in Computer Science: Authors' Instructions}
+\authorrunning{Louis Fippo Fitime et al.}
 % (feature abused for this document to repeat the title also on left hand pages)
 
 % the affiliations are given next; don't give your e-mail address
 % unless you accept that it will be published
+
 \institute{LUNAM Universit\'e, \'Ecole Centrale de Nantes, IRCCyN UMR CNRS 6597\\
 (Institut de Recherche en Communications et Cybern\'etique de Nantes)\\
 1 rue de la No\"e -- B.P. 92101 -- 44321 Nantes Cedex 3, France.\\
 \mailsc\\
-\url{http://www.irccyn.ec-nantes.fr/en/}}
+\url{http://www.irccyn.ec-nantes.fr/en/}
+\and
+Division of Signal Transduction and Growth Control (A100), DKFZ-ZMBH Alliance, Deutsches Krebsforschungszentrum, Heidelberg, Germany
+}
 
 %
 % NB: a more complex sample for affiliations and the mapping to the
@@ -68,8 +76,8 @@
 % "llncs.dem" accompanies the document class "llncs.cls".
 %
 
-\toctitle{Lecture Notes in Computer Science}
-\tocauthor{Authors' Instructions}
+%\toctitle{Lecture Notes in Computer Science}
+%\tocauthor{Authors' Instructions}
 \maketitle
 
 
@@ -91,7 +99,7 @@ PID database to the PH formalism. Then, we propose a way of estimating
 temporal and stochastic parameters from time-series expression data of 
 action on the PH. Simulations emphasize the interest of synchronizing 
 concurrent events.
-\keywords{Model construction, data integration, parameters estimation, large-scale network.}
+\keywords{time-series data, large-scale models, compositional approach, stochastic simulation}
 \end{abstract}
 
 
@@ -99,7 +107,7 @@ concurrent events.
 \input{parts/methods}
 \input{parts/results}
 \input{parts/conclusion}
-
+\input{parts/acknowledgements}
 
 
 
@@ -178,6 +186,8 @@ L.~{P}aulev{\'e}, M.~{M}agnin, and O.~{R}oux, ``Refining dynamics of gene
 C.~Guziolowski, A.~Kittas, F.~Dittmann, and N.~Grabe, ``Automatic generation of
   causal networks linking growth factor stimuli to functional cell state
   changes,'' \emph{FEBS Journal}, vol. 279, no.~18, pp. 3462--3474, 2012.
+
+
 \end{thebibliography}
 
 

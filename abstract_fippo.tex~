@@ -34,7 +34,7 @@
 \mainmatter  % start of an individual contribution
 
 % first the title is needed
-\title{Integrating time-series data on large-scale cell-based models}
+\title{Integrating time-series data on large-scale discrete cell-based models}
 
 % a short form should be given in case it is too long for the running head
 \titlerunning{Lecture Notes in Computer Science: Authors' Instructions}
