@@ -72,12 +72,24 @@
 
 
 \begin{abstract}
-In this work we propose an automatic way of generating and verifying formal hybrid models of signaling and transcriptional
-events, gathered in large-scale regulatory networks.This is done  by integrating temporal and stochastic aspects of 
-the expression of some biological components. The hybrid approach lies in the fact that measurements take into account both times of lenthening phases and discrete switches between them. The model proposed is based on a real case study of keratinocyte differentiation, in which gene time-series data was generated upon Calcium stimulation.
+In this work we propose an automatic way of generating and verifying 
+formal hybrid models of signaling and transcriptional
+events, gathered in large-scale regulatory networks.This is done by 
+integrating temporal and stochastic aspects of
+the expression of some biological components. The hybrid approach lies 
+in the fact that measurements take into account both times of 
+lengthening phases and discrete switches between them. The model 
+proposed is based on a real case study of keratinocytes differentiation, 
+in which gene time-series data was generated upon Calcium stimulation.
 
-To achieve this we rely on the Process Hitting (PH) formalism that was design in order to take very large system analysis into account.  We first propose an automatic way of detecting and translate biological motifs from PID to the PH formalism. Then, we propose a way of estimating temporal and stochastic parameters from time-series expression data of action on the PH. Simulations emphase the interest of synchronizing concurrent events.
-\keywords{Model construction, data integration, parameters estimation, large-scale network.}
+To achieve this we rely on the Process Hitting (PH) formalism that was 
+designed to consider large-scale system analysis.  We first propose an 
+automatic way of detecting and translating biological motifs from a the 
+PID database to the PH formalism. Then, we propose a way of estimating 
+temporal and stochastic parameters from time-series expression data of 
+action on the PH. Simulations emphasize the interest of synchronizing 
+concurrent events.
+\keywords{time-series data, large-scale network, hybrid models, compositional approach, stochastic simulation.}
 \end{abstract}
 
 
