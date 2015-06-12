@@ -20,23 +20,23 @@ issue. These mechanisms can be modeled as biological regulatory networks, which 
 mathematical or computational model. 
 By just considering qualitative regulatory effects between components, biologic regulatory networks
 depict fairly well biological systems, and can be built upon public repositories such as the Pathways 
-Interaction Database \cite{schaefer2009pid}, and 
+Interaction Database \cite{schaefer2009pid} and  
 hiPathDB \cite{yu2012hipathdb} for human regulatory knowledge.
 
 %the aims of the work (1first sentence & the background)
 
-This work aims to propose a dynamical model of large-scale systems based on the formal integration 
-(complete validation/invalidation) of high-throughput experimental time-series data.  So far this 
-idea has been addressed separately by approaches that either: (a) focus first on
+In this work we built an hybrid model of signaling and transcriptional events, gathered in large-scale regulatory networks, 
+which stochastic simulation parameters were inferred from 
+gene expression time-series data.  
+The integration of time-series data in large-scale dynamical models have been
+addressed separately by approaches that either: (a) focus first on
 modeling at small-scale the system and then on refining or improving it through the fitting with
 some data points, such as methods based on differential equations \cite{tyson2003sniffers,batt2005validation,mobashir2012simulated}, 
 (b) integrate in an efficient and complete fashion large-scale models
 and high-throughput data regardless from the system dynamics \cite{guziolowski2013exhaustively,mitsos2009identifying}, or 
 (c) fit dynamical data to middle-scale networks using an stochastic sampling of the space of behaviors and
-therefore without guarantee on finding global optima \cite{macnamara2012state}. Therefore, with this
-work we intend to fill the gaps between the previously cited methodologies and converge to a more
-realistic model of biological behavior.
-
+therefore without guarantee on finding global optima \cite{macnamara2012state}. 
+With this work we aim to fill the gaps between the aforecited methodologies.
 
 %proposer une petite discussion sur les autres approches formelles de modélisation
 
@@ -45,43 +45,48 @@ realistic model of biological behavior.
 %les grandes lignes de cette justification sont les suivantes: formalisme très expressif pour les BRN, simulation concurente 
 % provenant de l'algèbre des processus, abstraction permettant de faire de analyse statiques de certaines propriétés. 
 
-For modeling and analyzing stochastic and concurent biological systems many formalisms have been introduced such as 
-stochastic Petri Nets which is a suitable approach for the representation of parallel systems \cite{molloy1982performance}. 
-They have been successfully and systematically applied in many areas, and the specification Petri Nets
+In the context of modeling and analyzing stochastic and concurent biological systems various formalisms have been introduced such as 
+Stochastic Petri Nets which is suitable for the representation of parallel systems \cite{molloy1982performance}. 
+They have been successfully applied in many areas; in particular, the specification of Petri Nets
 allows an accurate modeling of a wide range of systems including biological systems \cite{heiner2008petri}. The major 
-problem of Stochastic Petri Nets is that they do not generally lead to compact models. In addition,
-they do not provide results to deal with the state space explosion and are thus generally computationally
-expensive. Another approach is Stochastic pi-calculus introduced by \cite{priami1995stochastic} and used in 
-\cite{maurin2009modeling} for the modeling of biological systems. Stochastic pi-calculus has a good
-expressivity and is well adapted for the use of compositionnal approach.
+problem of Stochastic Petri Nets is that, generally, they do not lead to compact models. In addition,
+they do not provide results to deal with the state space explosion and are thus computationally
+expensive when modeling large-scale biological networks. 
 
 %TODO
-For modeling and analyzing the biological system we rely on a Stochastic pi-calculus formalism which is the Process Hitting (PH) framework \cite{PMR10-TCSB}, 
+The Stochastic pi-calculus formalism was introduced by \cite{priami1995stochastic} and used in 
+\cite{maurin2009modeling} for the modeling of biological systems. Stochastic pi-calculus has a rich
+expressivity and is well adapted for the use of \modCG{compositionnal approach}. \modCG{[What do you mean by compositionnal approach? Is it with ``nn'' ?]}
+In this work we rely on this formalism through the Process Hitting (PH) framework \cite{PMR10-TCSB}, 
 since it is especially useful for studying systems composed of biochemical interactions, and provides
 stochastic simulation as well as efficient static methods to model dynamical properties of the system.
-The PH framework uses qualitative and discrete information of the system, without requiring enormous parameter estimation tasks
+The PH framework uses qualitative and discrete information of the system without requiring enormous parameter estimation tasks
  for its stochastic simulation. 
-So far, this method has been successfully demonstrated only on very well-known systems and without exploiting 
-high-throughput measures. We believe, however, that the use of high-throughput data has become unavoidable with 
-the advent of massive, publicly available data sets in the form of well-standardized DNA microarray data and, 
-more recently, in the form of phospho-proteomics data.  
-
-
-
-
+This framework has been previously used to verify dynamical properties on biological systems without integrating high-throughput experimental data.
+In this work we provide a method to build a time-series data integrated PH model and we evaluate 
+the prediction power of this model concerning the simulatenously predicted traces of several components of the system upon system stimulation.
+More precisely,
+%So far, this method has been successfully demonstrated only on very well-known systems and without exploiting 
+%high-throughput measures. We believe, however, that the use of high-throughput data has become unavoidable with 
+%the advent of massive, publicly available data sets in the form of well-standardized DNA microarray data and, 
+%more recently, in the form of phospho-proteomics data.  
 % les contributions du travail que nous présentons: Génération automatique des modèles en PH(avec et 
 % sans synchronisation), Estiamtion des paramètres des times series data Et intégration des paramètres 
 % dans le modèle.
 %TODO revoir le temps et les liaisons
-The main  results of this work are: first, we built an interaction graph linking a signaling molecule, 
-E-cadherin (Calcium sensitive protein), to genes present in our time-series data and to key cellular processes for our case study, such as 
-keratinocyte-differentiation and cellular-proliferation.  This graph was automatically extracted from PID. Second, we propose an automatic                                     %ici il manque une reference.
-transformation of selected known biological patterns present in  PID in order to generate PH modules;
- adding necessary constraints to the PH model to avoid oscillations.  
-Third, we propose a way of estimating temporal and stochastic parameters from time-series expression data to 
-model the measured genes.  These parameters are used for the stochastic simulation of the model.  Finally, 
-we discretized the experimental data to allow the comparison with simulation results for the above mentioned case 
-study analysis. 
+the main  results of this work are: (1) automatic generation of PH models (with and without synchronisation gates) from the Pathways Interaction Database, 
+(2) parameter estimation from time-series data and integration in the PH model, and
+(3) comparison of the PH model predictions and experimental results.
+
+%first, we built an interaction graph linking a signaling molecule, 
+%E-cadherin (Calcium sensitive protein), to genes present in our time-series data and to key cellular processes for our case study, such as 
+%keratinocyte-differentiation and cellular-proliferation.  This graph was automatically extracted from PID. Second, we propose an automatic                                     %ici il manque une reference.
+%transformation of selected known biological patterns present in  PID in order to generate PH modules;
+% adding necessary constraints to the PH model to avoid oscillations.  
+%Third, we propose a way of estimating temporal and stochastic parameters from time-series expression data to 
+%model the measured genes.  These parameters are used for the stochastic simulation of the model.  Finally, 
+%we discretized the experimental data to allow the comparison with simulation results for the above mentioned case 
+%study analysis. 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
