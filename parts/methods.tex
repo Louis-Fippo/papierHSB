@@ -11,7 +11,7 @@ detail some of the workflow steps.
 
 \begin{figure}[!t]
  \centering
- \includegraphics[width=5.1in]{images/workflow-2.png}
+ \includegraphics[width=4.1in,height=2.5in]{images/workflow-2.png}
 \caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model.}} 
  \label{fig:workflow}
 \end{figure}
@@ -55,15 +55,15 @@ In this definition, terminal nodes can be genes, proteins, complexes, cellular s
 On the other side, transient nodes can be transcriptions, translocations, modifications and compounds. Edges are of different types:
 activation (agent), inhibition, output, input and protein-family-member.
 
-\begin{figure*}[!t]
+\begin{figure}[!t]
  \centering
- \includegraphics[width=6.5in]{images/net.jpg}
+ \includegraphics[width=7.5in, height=5in, angle=-90]{images/net.jpg}
 \caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} It is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, genes, cellular state, biological processes and positive conditions) and of transient
 nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
 input and protein-family-member.} 
  \label{fig:network}
-\end{figure*}
+\end{figure}
 
 %description des données
 \subsubsection{Time-series microarray dataset.}
@@ -79,7 +79,7 @@ PID-NCI database and therefore could be connected in the interaction graph.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{images/12genes.png}
+\includegraphics[width=3.5in]{images/12genes.png}
 \caption{\bf 12 gene expressions upon Calcium stimulation.} The $X$ axis represents time duration of the experiment measured in hours. 
 The $Y$ axis represents the $log_{2}$ expression level of genes with respect to control.}
 \label{fig:tsd}
@@ -175,7 +175,7 @@ In this BRN, $ab$ inhibits $c$ at level $2$ through the cooperative sort $ab$ (e
 through the cooperative sort $ab$ (e.g. $\PHfrappe{ab_{11}}{c_0}{c_1}$ $\PHfrappe{ab_{11}}{c_1}{c_2}$ ). Indeed, the reachability of $c_2$ and $c_0$ 
 is conditioned by a cooperation of $a$ and $b$ as explained above.
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 %\centering
 \begin{minipage}{0.1\linewidth}
 \centering
@@ -327,144 +327,7 @@ and its type to another procedure (Algorithm \ref{PHModelGeneration}) which  tra
 %\end{figure}
 
 
-%%%%%algorithm for detect the pattern of a given node
 
-%\begin{figure}[!t]
-\begin{algorithm}
-\begin{algorithmic}[1]
-%\Procedure{patternInPHModel}{$out,Pat$}\Comment{Write on the flux out the PH Model of a given pattern (Pat)}
-\REQUIRE $Net$, $n$ \COMMENT{$Net$ is the network and $n$ is the current node}
-\ENSURE Build a set of nodes associated to node $n$ that we call pattern.
-%\WHILE{$r\not=0$}  %\Comment{We have the answer if r is 0}
-\SWITCH {$n$}
- \CASE{TerminalNode} %\COMMENT{We compact many sub case of all terminal nodes}
-   \STATE add node n to the pattern $Pat$
-   \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
-   \SWITCH{numberPredecessor}
-   
-   \CASE{1}
-    \FORALL {$p$ in setOfPredecessor (n)}
-     \SWITCH {$p$}
-    \CASE {TerminalNode}
-      \STATE add node n to the pattern $Pat$
-    \ENDCASE
-    
-    \CASE {TransientNode}
-      \STATE detectPattern ($Net$, $p$);
-    \ENDCASE
-    
-    \ENDSWITCH
-   \ENDFOR
-      \STATE Set the code of pattern $Pat$;
-      \STATE return $Pat$;
-   \ENDCASE
-   
-     \CASE {2}
-     \STATE
-     \ENDCASE
-  % \DEFAULT
-  %  \STATE \RETURN ERROR CODE \COMMENT{We can't treat this case}
-  % \ENDDEFAULT
-   \ENDSWITCH
-\ENDCASE
-   
-   \CASE{TransientNode} %\COMMENT{We compact many sub case of all terminal nodes}
-   %\STATE added node to the pattern
-   \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
-   \SWITCH{numberPredecessor}
-   
-   \CASE{1}
-    \FORALL {$p$ in setOfPredecessor (n)}
-    \SWITCH {$p$}
-    \CASE {TerminalNode}
-      \STATE added node to the pattern $Pat$;
-    \ENDCASE
-    
-    \CASE {TransientNode}
-      \STATE detectPattern ($Net$, $p$);
-    \ENDCASE
-    
-    \ENDSWITCH
-   \ENDFOR
-      \STATE Set the code of pattern $Pat$;
-      \STATE return $Pat$;
-   \ENDCASE
-   
-   \CASE {2}
-   \STATE
-   \ENDCASE
-  % \DEFAULT
-  %  \STATE \RETURN ERROR CODE \COMMENT{We can't treat this case}
-  % \ENDDEFAULT
-   \ENDSWITCH
- \ENDCASE
-%\CASELINE {2}
-%  \STATE Good-bye
-%\DEFAULT
-%  \STATE Again ?
-%\ENDDEFAULT
-\ENDSWITCH
-%\ENDWHILE\label{euclidendwhile}
-\end{algorithmic}
-\caption{\bf: algorithm for pattern detection, function detectPattern ($Net$, $n$)} \label{PatternDetection}
-\end{algorithm}
-%\end{figure}
-
-
-
-%%%%%algorithm for write the pattern in PH model
-
-%\begin{figure}[!t]
-\begin{algorithm}
-\begin{algorithmic}[H]
-%\Procedure{patternInPHModel}{$out,Pat$}\Comment{Write on the flux out the PH Model of a given pattern (Pat)}
-\REQUIRE $out$, $Pat$ \COMMENT{Pat is The pattern to be translated into the PH Model, out is the output file}
-\ENSURE The correspondant PH Model of the given pattern Pat will write into the file $out$
-%\WHILE{$r\not=0$}  %\Comment{We have the answer if r is 0}
-\STATE $nocp$ = $Pat$.getNumberOfComponents() \COMMENT{Number of the components of the pattern $Pat$}
-\STATE $tabPat$ = $Pat$.getTableOfPattern() \COMMENT{return the components of the pattern in $tabPat$}
-\SWITCH {$nocp$}
- \CASE {2}
-  \SWITCH {$code$}
- \CASE {A}
-  \STATE out.write ($tabPat[1]$ 1 $\rightarrow$ $tabPat[0]$ $0$ $1$ $r_{a}$ $sa_{a}$);  \COMMENT{Component $tabPat[1]$ activates component $tabPat[0]$ with $r = r_{a}$ and $sa = sa_{a}$ }     
-\ENDCASE
-\CASELINE {I}
-  \STATE out.write ($tabPat[1]$ 0 $\rightarrow$ $tabPat[0]$ $1$ $0$ $r_{i}$ $sa_{i}$);  \COMMENT{Component $tabPat[1]$ inhibits component $tabPat[0]$ with $r = r_{i}$ and $sa = sa_{i}$ }  
-%\DEFAULT
-% \STATE out.write ((*unknow pattern*));
-% \ENDDEFAULT
-\ENDSWITCH
-   
-   
-\ENDCASE
-
-\CASE {3}
-  \SWITCH {$code$}
- \CASE {C}
-   \STATE out.write (coop ([$tabPat[2]$;$tabPat[1]$)] $\rightarrow$ $tabPat[0]$ $0$ $1$); \COMMENT{Cooperation between $tabPat[1]$ and $tabPat[2]$ to activate $tabPat[0]$}
-        
-\ENDCASE
-\CASELINE {S}
-  \STATE out.write (coop ([$tabPat[2]$;$tabPat[1]$)] $\rightarrow$ $tabPat[0]$ $0$ $1$); \COMMENT{Synchronization between $tabPat[1]$ and $tabPat[2]$ to activate $tabPat[0]$}
-\DEFAULT
- \STATE out.write ((*unknow pattern*));
- \ENDDEFAULT
-\ENDSWITCH
-   
-   
-\ENDCASE
-%\CASELINE {2}
-%  \STATE Good-bye
-%\DEFAULT
-%  \STATE Again ?
-%\ENDDEFAULT
-\ENDSWITCH
-%\ENDWHILE\label{euclidendwhile}
-\end{algorithmic}
-\caption{\bf: algorithm for writing a given pattern into a file, function patternInPHModel ($out$, $Pat$)} \label{PHModelGeneration}
-\end{algorithm}
-%\end{figure}
 
 
 % les détails sur comment les patterns sont choisis 
@@ -473,27 +336,31 @@ We model this pattern by four sorts (\pref{fig:runningPH}, right) $a$, $b$, $c$ 
 stand for components $a$, $b$ and $c$. The cooperative sort $ab$ is introduced in order to characterize constraints on the components $a$ and $b$.
 In the RSTC network, we find  $25$ regulatory patterns. We show some examples in Table \ref{table_patterns}.     %TODO
 
-\begin{table}[!h]
+\begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Examples of patterns}
 \label{table_patterns}
 \centering
-\begin{tabular}{c||c}
+\begin{tabular}{|c|c|c|}
 \hline
 \bfseries Biological Patterns
 
 &
 
-\bfseries PH Transformations\\ 
-\hline\hline
+\bfseries PH Transformations
+
+&
+
+\bfseries Descriptions\\ 
+\hline
 \begin{tikzpicture}
-\node[scale=0.5] (sa1) at (0,0){\begin{tikzpicture}[auto]
+\node[scale=0.65] (sa1) at (0,0){\begin{tikzpicture}[auto]
 \path[use as bounding box] (-0.7,-0.3) rectangle (2.5,2);
 
 \node[qgre] (a) at (0,1) {a};
 \node[mod] (i) at (1,1) {i};
 \node[qgre] (b) at (2,1) {b};
-\node[es] (d) at (1,2) {Simple activation};
+\node[es] (d) at (1,1.5) {Simple activation};
 
 \path
  (a) edge[act] (i)
@@ -523,17 +390,21 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 %\TBounce{a_0}{}{a_1}{.south}
 ;
 \end{tikzpicture}};
-\end{tikzpicture}\\ 
-\hline\hline
+\end{tikzpicture}
+
+&
+
+Description\\ 
+\hline
 
 \begin{tikzpicture}
-\node[scale=0.5] (si1) at (0,0){\begin{tikzpicture}[auto]
+\node[scale=0.65] (si1) at (0,0){\begin{tikzpicture}[auto]
 \path[use as bounding box] (-0.7,-0.3) rectangle (2.5,2);
 
 \node[qgre] (a) at (0,1) {a};
 \node[mod] (i) at (1,1) {i};
 \node[qgre] (b) at (2,1) {b};
-\node[es] (d) at (1,2) {Simple inhibition};
+\node[es] (d) at (1,1.5) {Simple inhibition};
 \path
  (a) edge[inh] (i)
  (i) edge[st]  (b);
@@ -561,11 +432,15 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 %\TBounce{a_0}{}{a_1}{.south}
 ;
 \end{tikzpicture}};
-\end{tikzpicture}\\ 
-\hline\hline
+\end{tikzpicture}
+
+&
+
+Description\\ 
+\hline
 
 \begin{tikzpicture}
-\node[scale=0.5] (sai1) at (0,0){\begin{tikzpicture}[auto]
+\node[scale=0.65] (sai1) at (0,0){\begin{tikzpicture}[auto]
 \path[use as bounding box] (-0.7,-0.3) rectangle (2.5,3);
 \node[qgre] (a) at (0,2) {a};
 \node[mod] (i) at (1,1) {i};
@@ -605,7 +480,11 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 %\TBounce{a_0}{}{a_1}{.south}
 ;
 \end{tikzpicture}};
-\end{tikzpicture} \\
+\end{tikzpicture} 
+
+&
+
+Description\\
 \hline
 \end{tabular}
 \end{table}
@@ -656,7 +535,7 @@ around the mean duration of playing an action}} \modCG{[comment] I suggest to re
 \begin{figure}[!t]
 \centering
 
-\begin{tikzpicture}[scale = 0.5]
+\begin{tikzpicture}[scale = 0.65]
        
     
 	      \draw[thick, ->] (-.2,0)--(11,0) node[below]{$t$};
@@ -726,13 +605,13 @@ of $9$ selected genes from the TSD with their respective discrete plots.
 %On the discrete plot, one can clearly differentiate when a molecule is active or not, which is of extreme importance 
 %swhen modeling these steps in the PH framework if we would like to have coherent simulation results.
 
-\begin{figure*}[!t]
+\begin{figure}[!t]
  \centering
- \includegraphics[width=6.5in,height=3.5in]{images/ResultDiscretization.png}
+ \includegraphics[width=5in,height=3.5in]{images/ResultDiscretization.png}
  % IllustrationDiscretisation.png: 831x574 pixel, 72dpi, 29.32x20.25 cm, bb=0 0 831 574
  \caption{\bf Illustration of discretization of experimental data. Dashed lines are continuous real TSD, while continous lines are discrete data}
  \label{fig:illustrationDiscretisation}
-\end{figure*}
+\end{figure}
 
   
 

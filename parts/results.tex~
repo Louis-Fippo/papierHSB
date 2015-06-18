@@ -29,7 +29,7 @@ the size of the concurrence, i.e. the number of predecessors that a node in the 
 Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
 the dynamic of components, the signal transduction and takes into account the stochastic and time aspect of the model.
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=5in,height=3.5in]{images/resultWOS.pdf}
 \caption{\bf Results of simulations without introducing the synchronization sort. In black line the expected behaviors

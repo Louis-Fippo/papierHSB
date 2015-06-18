@@ -2,37 +2,43 @@
 
 \section{Data and Methods}
 
+The general workflow for integrating time-series data in a PH model is depicted in \pref{fig:workflow}, in the following sections we 
+detail some of the workflow steps.
 
-The general workflow for integrating time-series data and model is depicted in \pref{fig:workflow} and comprises the following steps:
+% and comprises the following steps:
+
+\modCG{[comment] In Fig. 1 can we put ``RSTC Network'', ``PH Model'', ``PINT simulator'', and ``r and sa'' in parenthesis ?}
 
 \begin{figure}[!t]
  \centering
- \includegraphics[width=6.1in]{images/workflow-2.png}
-\caption{{\bf Workflow for integrating stochastic and temporal information in a large-scale model of a biological network.}} 
+ \includegraphics[width=4.1in,height=2.5in]{images/workflow-2.png}
+\caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model.}} 
  \label{fig:workflow}
 \end{figure}
 
-\begin{itemize}
- \item \textbf{Formalization of biological model.} Building a computational hybrid model  from biological network by automatic detection of known biological patterns.
- \item \textbf{Temporal parameters estimation.} Estimation of temporal parameters from times-series data to calibrate the model.
- \item \textbf{Integration of temporal parameters.} 
- \item \textbf{Discretization of times-series data.} Discretization of time series data to compare with discrete simulation results.
- \item \textbf{Simulation and validation.} Compare the results of simulation with the discretized times-series data.
-\end{itemize}
+%[CG: it is too much detail and redundant]
+%\begin{itemize}
+% \item \textbf{Formalization of biological model.} Building a computational hybrid model  from biological network by automatic detection of known biological patterns.
+% \item \textbf{Temporal parameters estimation.} Estimation of temporal parameters from times-series data to calibrate the model.
+% \item \textbf{Integration of temporal parameters.} 
+% \item \textbf{Discretization of times-series data.} Discretization of time series data to compare with discrete simulation results.
+% \item \textbf{Simulation and validation.} Compare the results of simulation with the discretized times-series data.
+%\end{itemize}
 
 \subsection{Data}
 
-\subsubsection{Interaction graph}
+\subsubsection{Interaction graph.}
 % \paragraph{The RSTC Network}
 \label{ssec:RSTC}
 The interactions of the biological system under study were represented in
- an RSTC network, which stands for  multi-layer receptor-signaling-transcription-cell state network, generated from the Pathway Interaction Database (PID).
-In order to build this network, we selected a set of seed nodes related to the biological process studied.
-The seed nodes for our case study are:  (1) \emph{E-cadherin}, which is a protein having $Ca$ binding domains and which plays an important role in cell adhesion;
+ an RSTC network, which stands for  multi-layer receptor-signaling-transcription-cell state network and that was generated from the Pathway Interaction Database (PID).
+In order to build this network one needs to select a set of seed nodes related to the biological process studied.
+For our case study, the seed nodes were:  (1) \emph{E-cadherin}, which is a protein having Calcium binding domains and which plays an important role in cell adhesion;
 (2) the $12$ significantly differentially expressed genes accross the $10$ time-points; and (3) the cell states of keratinocytes-differentiation and cell-cycle-arrest. 
 The network was extracted automatically from the whole content of the NCI-PID database by using a subgraph algorithm to link the seed nodes \cite{guziolowski2012automatic}. 
 In \pref{fig:network} we show the RSTC network obtained. 
 
+\modCG{[comment] I think definition 1 is not necessary}
 \begin{definition}[RSTC Network] \label{def:RSTCDef}
 A \emph{RSTC Network} $N$ is a couple $(V,E)$, where:
 \begin{itemize}
@@ -49,31 +55,33 @@ In this definition, terminal nodes can be genes, proteins, complexes, cellular s
 On the other side, transient nodes can be transcriptions, translocations, modifications and compounds. Edges are of different types:
 activation (agent), inhibition, output, input and protein-family-member.
 
-\begin{figure*}[!t]
+\begin{figure}[!t]
  \centering
- \includegraphics[width=6.5in]{images/net.jpg}
-\caption{{\bf RSTC network. Interaction graph that describe the biological case study. It is composed of $293$ nodes and $375$ edges (interactions).
+ \includegraphics[width=7.5in, height=5in, angle=-90]{images/net.jpg}
+\caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} It is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, genes, cellular state, biological processes and positive conditions) and of transient
-nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation (agent), inhibition, output, 
-input and protein-family-member.}} 
+nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
+input and protein-family-member.} 
  \label{fig:network}
-\end{figure*}
+\end{figure}
 
 %description des données
-\subsubsection{Time-series microarray data description}
+\subsubsection{Time-series microarray dataset.}
 \label{SECTSD}
-To illustrate our approach we use the time-series microarray data from Calcium stimulated keratinocyte cells 
+We use the time-series microarray data from Calcium stimulated keratinocyte cells 
  measured at $10$ time-points. $200$ transcripts were selected for their dynamic patterns,
 that is, their fold expression with respect to the non-stimulated cell was significant in at least one time point. 
-We included in our model a set of $12$ of the $200$ selected (see \pref{fig:tsd}), because we were able to retrieve the regulatory mechanisms upstream
-these $12$ genes from public repositories of biochemical reactions.
-The full dataset (data not shown) was produced by the German Cancer Research Center (DKFZ) and is currently in the process
-of being published.  
+We included in our model a subset of $12$ of the $200$ selected (see \pref{fig:tsd}).  
+These 12 genes had upstream regulatory mechanisms when querying the 
+PID-NCI database and therefore could be connected in the interaction graph.
+%The full dataset (data not shown) was produced by the German Cancer Research Center (DKFZ) and is currently in the process
+%of being published.  
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{images/12genes.png}
-\caption{\bf Plot of $12$ selected genes. $X$ axis represents time duration of the experiment measured in hours. $Y$ axis represents the $log_{2}$ expression level of genes with respect to control.}
+\includegraphics[width=3.5in]{images/12genes.png}
+\caption{\bf 12 gene expressions upon Calcium stimulation.} The $X$ axis represents time duration of the experiment measured in hours. 
+The $Y$ axis represents the $log_{2}$ expression level of genes with respect to control.}
 \label{fig:tsd}
 \end{figure}
 
@@ -114,16 +122,18 @@ Given a state $s\in \PHl$, the process of sort $a\in\PHs$ present in $s$ is deno
 An action $h=\PHfrappe{a_i}{b_j}{b_k} \in \PHa$ is \emph{playable} in $s \in L$ if and only if $\PHget{s}{a}=a_i$ and $\PHget{s}{b} = b_j$.
 In such a case, $(s\play h)$ stands for the state resulting from playing the action $h$ in $s$, with
 $\PHget{(s\play h)}{b} = b_k$ and $\forall c \in \PHs, c \neq b, \PHget{(s\play h)}{c} = \PHget{s}{c}$.
+\modCG{In order to model the fact that a molecule in the interaction graph is influenced by various molecules, two 
+types of modeling-scenarios can be proposed: cooperation and synchronization.}
 
 \subsubsection{Modeling cooperation}
 
-As described in \cite{PMR10-TCSB}, the cooperation between processes to make another process bounce can be
-expressed in PH by building a \emph{cooperative sort}.
+The cooperation between processes to make another process bounce can be
+expressed in PH by building a \emph{cooperative sort}~\cite{PMR10-TCSB}.
 \pref{fig:runningPH} shows an example of a cooperative sort $ab$ between sorts $a$ and $b$,
-defined with 4 processes (one for each sub-state of the presence of processes $a_1$ and $b_1$).
+which is composed of 4 processes (one for each sub-state of the presence of processes in $a$ and $b$).
 For the sake of clarity, processes of $ab$ are indexed using the sub-state they represent.
 Hence, $ab_{01}$ represents the sub-state $\PHstate{a_0,b_1}$, and so on.
-Each process of sort $a$ and $b$ hit $ab$, which makes it bounce to the process reflecting the status of the sorts $a$
+Each process of sort $a$ and $b$ hits $ab$, which makes it bounce to the process reflecting the status of the sorts $a$
 and $b$ (e.g., $\PHfrappe{a_1}{ab_{00}}{ab_{10}}$ and $\PHfrappe{a_1}{ab_{01}}{ab_{11}}$).
 Then, to represent the cooperation between processes $a_1$ and $b_1$,
 the process $ab_{11}$ hits $c_1$ to make it bounce to $c_2$ instead of
@@ -135,20 +145,22 @@ Cooperation sort allows to model the fact that two components cooperate to hit a
 %introdure la synchronization
 %Unlike cooperation sort which allows  to model the fact that two components cooperate to hit another component, we introduce
 %the notion of \emph{synchronization sort}, 
-The synchronization sort implement another type of cooperation. If we refer to the example of
-\pref{fig:runningPH}, and asume that $ab$ is the \emph{synchronization sort} between sorts $a$ and $b$, defined with also 
-4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$) if either  $a$ and $b$ are activated. Therefore, each one of 
-these processes $ab_1$, $ab_2$, $ab_3$ can activate $c_1$, in order to inhibit $c$, both $a$ and $b$ are needed.
-Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
-The interest of this rule is that it avoids oscillations between the processes of a sort regulated independantly by 
-two predecessors. Oscillations occur because each  predecessor can independantly activate the target component when it is active,
-but if one component is inhibited, it will inhibit the target component. This competition between the two predecessors
-generates the oscillations on the target component.  
+The synchronization sort implements another type of cooperation. If we refer to the example of
+\pref{fig:runningPH} left, we can similarly construct a \emph{synchronization sort} $ab$ between sorts $a$ and $b$, defined with also 
+4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$ or $c_0$ bounces to $c_1$) if either  $a$ \modCG{or} $b$ are activated. Therefore, each one of 
+these processes $ab_{01}$, $ab_{10}$, $ab_{11}$ can activate $c$.  In order to inhibit $c$, both sorts, $a$ and $b$, need to be 
+in the sub-state $0$, i.e. $ab_{00}$. Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
+Imposing the synchronization sort to model a target component regulated independently by multiple predecessors avoids oscillations in the behavior of the target component over time. 
+These oscillations appear because each predecessor can independantly activate the target component when it is active,
+but when one predecessor is inhibited, it will inhibit the target component. This competition between the predecessors
+generates oscillations on the target component.  
 
 
 %[Remember that PH was designed in order to take very large system analysis into account. Indeed, algorithm were developped on such a
 %process??? system so that it prevent for building the whole state graph which would be intractable when there are more than $10$ or    % a re voir 
 %$20$ components.]
+
+\modCG{[comment] I think the Example below can be removed.}
 
 \begin{example}
 \pref{fig:runningPH} represents a PH $(\PHs,\PHl,\PHa)$ with $\PHs = \{a,b,c,ab\}$, and:
@@ -163,11 +175,11 @@ In this BRN, $ab$ inhibits $c$ at level $2$ through the cooperative sort $ab$ (e
 through the cooperative sort $ab$ (e.g. $\PHfrappe{ab_{11}}{c_0}{c_1}$ $\PHfrappe{ab_{11}}{c_1}{c_2}$ ). Indeed, the reachability of $c_2$ and $c_0$ 
 is conditioned by a cooperation of $a$ and $b$ as explained above.
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 %\centering
-\begin{minipage}{0.3\linewidth}
+\begin{minipage}{0.1\linewidth}
 \centering
-\scalebox{0.7}{
+\scalebox{0.9}{
 \begin{tikzpicture}[grn]
 \path[use as bounding box] (-0.2,-0.7) rectangle (3.5,0.7);
 \node[inner sep=0] (a) at (1,2) {a};
@@ -180,6 +192,9 @@ is conditioned by a cooperation of $a$ and $b$ as explained above.
 \end{tikzpicture}
 }
 \end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{minipage}{0.7\linewidth}
 \centering
 \scalebox{0.7}{
@@ -237,19 +252,17 @@ is conditioned by a cooperation of $a$ and $b$ as explained above.
 \TBounce{c_0}{thick}{c_1}{.south west}
 \TBounce{c_2}{thick}{c_1}{.north east}
 ;
-
-
 \end{tikzpicture}
 }
 \end{minipage}
 
-\caption{\bf \label{fig:modelingBRN}
-(Left)~Biological pattern example.
-Nodes are components and edges are interactions
-For instance, components $a$ and $b$ cooperate to activate $c$.
-(Right)~equivalent PH model. \label{fig:runningPH}
-A PH example with four sorts: three components ($a$, $b$ and $c$) and a cooperative sort ($ab$).
-Actions targeting processes of $c$ are in thick lines.
+\caption{ \label{fig:modelingBRN}
+{\bf (Left)~biological pattern example.}
+Nodes represent molecules (components) and edges, interactions.
+In this pattern components $a$ and $b$ cooperate to activate $c$.
+{\bf (Right)~equivalent PH model} \label{fig:runningPH}
+with four sorts: three components ($a$, $b$ and $c$) and a cooperative sort ($ab$).
+Actions targeting processes of $c$ are drawn as thick lines.
 }
 \end{figure}
 
@@ -261,13 +274,13 @@ Actions targeting processes of $c$ are in thick lines.
 %la traduction automatique des patterns d'un réseau
 \subsection{Model construction (from RSTC to PH)}
 %In this part we will describe how to go from rstc to ph model
-In this work we aim to model a biological  system according to its dynamic. For that purpose we choose to build a PH model from the biological system reprensented as  an RSTC network.
+%In this work we aim to model a biological  system according to its dynamic. For that purpose we choose to build a PH model from the biological system reprensented as  an RSTC network.
 
 %why we made this choice?
-In the following we present our automatic approach to generate a PH model from an RSTC network.
+%In the following we present our automatic approach to generate a PH model from an RSTC network.
 
 
-\subsubsection{Modeling the RSTC network as a PH model}
+\subsubsection{Modeling the RSTC network as a PH model.}
 
 %In this section, we present the modelisation of biological network express with the biochemical reactions in PID. In the following, we will
 %present how to transform biological pattern to the PH model. After that, we propose a way of estimating temporal and stochastic
@@ -277,8 +290,9 @@ In the following we present our automatic approach to generate a PH model from a
 
 %Here is the first and the most important part of this work. 
 In order to model the RSTC network as a PH model we select known biological regulatory patterns (atomic set of biological components and their interacting roles), represented 
-as biochemical reactions in the RSTC network, and propose their PH representation as illustrated in Algorithm \ref{automaticGenerationOfPHModel}. 
+as biochemical reactions in the RSTC network and propose their PH representation as illustrated in Algorithm \ref{automaticGenerationOfPHModel}. 
 
+\modCG{[comment] this part needs to be rewritten, algorithms pseudo-code should be removed.}
 %les ajouts pour les patterns 
 Algorithm \ref{automaticGenerationOfPHModel} uses two procedures, detectPattern (see Algorithm \ref{PatternDetection}) that automatically browses the graph node by node and detects all patterns in the graph. For each node (output node of the pattern) we  call a recursive procedure,
 that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. This set of nodes plus the output node and the way  input and output are linked form a pattern. 
@@ -313,173 +327,40 @@ and its type to another procedure (Algorithm \ref{PHModelGeneration}) which  tra
 %\end{figure}
 
 
-%%%%%algorithm for detect the pattern of a given node
 
-%\begin{figure}[!t]
-\begin{algorithm}
-\begin{algorithmic}[1]
-%\Procedure{patternInPHModel}{$out,Pat$}\Comment{Write on the flux out the PH Model of a given pattern (Pat)}
-\REQUIRE $Net$, $n$ \COMMENT{$Net$ is the network and $n$ is the current node}
-\ENSURE Build a set of nodes associated to node $n$ that we call pattern.
-%\WHILE{$r\not=0$}  %\Comment{We have the answer if r is 0}
-\SWITCH {$n$}
- \CASE{TerminalNode} %\COMMENT{We compact many sub case of all terminal nodes}
-   \STATE add node n to the pattern $Pat$
-   \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
-   \SWITCH{numberPredecessor}
-   
-   \CASE{1}
-    \FORALL {$p$ in setOfPredecessor (n)}
-     \SWITCH {$p$}
-    \CASE {TerminalNode}
-      \STATE add node n to the pattern $Pat$
-    \ENDCASE
-    
-    \CASE {TransientNode}
-      \STATE detectPattern ($Net$, $p$);
-    \ENDCASE
-    
-    \ENDSWITCH
-   \ENDFOR
-      \STATE Set the code of pattern $Pat$;
-      \STATE return $Pat$;
-   \ENDCASE
-   
-     \CASE {2}
-     \STATE
-     \ENDCASE
-  % \DEFAULT
-  %  \STATE \RETURN ERROR CODE \COMMENT{We can't treat this case}
-  % \ENDDEFAULT
-   \ENDSWITCH
-\ENDCASE
-   
-   \CASE{TransientNode} %\COMMENT{We compact many sub case of all terminal nodes}
-   %\STATE added node to the pattern
-   \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
-   \SWITCH{numberPredecessor}
-   
-   \CASE{1}
-    \FORALL {$p$ in setOfPredecessor (n)}
-    \SWITCH {$p$}
-    \CASE {TerminalNode}
-      \STATE added node to the pattern $Pat$;
-    \ENDCASE
-    
-    \CASE {TransientNode}
-      \STATE detectPattern ($Net$, $p$);
-    \ENDCASE
-    
-    \ENDSWITCH
-   \ENDFOR
-      \STATE Set the code of pattern $Pat$;
-      \STATE return $Pat$;
-   \ENDCASE
-   
-   \CASE {2}
-   \STATE
-   \ENDCASE
-  % \DEFAULT
-  %  \STATE \RETURN ERROR CODE \COMMENT{We can't treat this case}
-  % \ENDDEFAULT
-   \ENDSWITCH
- \ENDCASE
-%\CASELINE {2}
-%  \STATE Good-bye
-%\DEFAULT
-%  \STATE Again ?
-%\ENDDEFAULT
-\ENDSWITCH
-%\ENDWHILE\label{euclidendwhile}
-\end{algorithmic}
-\caption{\bf: algorithm for pattern detection, function detectPattern ($Net$, $n$)} \label{PatternDetection}
-\end{algorithm}
-%\end{figure}
-
-
-
-%%%%%algorithm for write the pattern in PH model
-
-%\begin{figure}[!t]
-\begin{algorithm}
-\begin{algorithmic}[H]
-%\Procedure{patternInPHModel}{$out,Pat$}\Comment{Write on the flux out the PH Model of a given pattern (Pat)}
-\REQUIRE $out$, $Pat$ \COMMENT{Pat is The pattern to be translated into the PH Model, out is the output file}
-\ENSURE The correspondant PH Model of the given pattern Pat will write into the file $out$
-%\WHILE{$r\not=0$}  %\Comment{We have the answer if r is 0}
-\STATE $nocp$ = $Pat$.getNumberOfComponents() \COMMENT{Number of the components of the pattern $Pat$}
-\STATE $tabPat$ = $Pat$.getTableOfPattern() \COMMENT{return the components of the pattern in $tabPat$}
-\SWITCH {$nocp$}
- \CASE {2}
-  \SWITCH {$code$}
- \CASE {A}
-  \STATE out.write ($tabPat[1]$ 1 $\rightarrow$ $tabPat[0]$ $0$ $1$ $r_{a}$ $sa_{a}$);  \COMMENT{Component $tabPat[1]$ activates component $tabPat[0]$ with $r = r_{a}$ and $sa = sa_{a}$ }     
-\ENDCASE
-\CASELINE {I}
-  \STATE out.write ($tabPat[1]$ 0 $\rightarrow$ $tabPat[0]$ $1$ $0$ $r_{i}$ $sa_{i}$);  \COMMENT{Component $tabPat[1]$ inhibits component $tabPat[0]$ with $r = r_{i}$ and $sa = sa_{i}$ }  
-%\DEFAULT
-% \STATE out.write ((*unknow pattern*));
-% \ENDDEFAULT
-\ENDSWITCH
-   
-   
-\ENDCASE
-
-\CASE {3}
-  \SWITCH {$code$}
- \CASE {C}
-   \STATE out.write (coop ([$tabPat[2]$;$tabPat[1]$)] $\rightarrow$ $tabPat[0]$ $0$ $1$); \COMMENT{Cooperation between $tabPat[1]$ and $tabPat[2]$ to activate $tabPat[0]$}
-        
-\ENDCASE
-\CASELINE {S}
-  \STATE out.write (coop ([$tabPat[2]$;$tabPat[1]$)] $\rightarrow$ $tabPat[0]$ $0$ $1$); \COMMENT{Synchronization between $tabPat[1]$ and $tabPat[2]$ to activate $tabPat[0]$}
-\DEFAULT
- \STATE out.write ((*unknow pattern*));
- \ENDDEFAULT
-\ENDSWITCH
-   
-   
-\ENDCASE
-%\CASELINE {2}
-%  \STATE Good-bye
-%\DEFAULT
-%  \STATE Again ?
-%\ENDDEFAULT
-\ENDSWITCH
-%\ENDWHILE\label{euclidendwhile}
-\end{algorithmic}
-\caption{\bf: algorithm for writing a given pattern into a file, function patternInPHModel ($out$, $Pat$)} \label{PHModelGeneration}
-\end{algorithm}
-%\end{figure}
 
 
 % les détails sur comment les patterns sont choisis 
 For example a molecule $a$ cooperatting with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears recurrent times.  
 We model this pattern by four sorts (\pref{fig:runningPH}, right) $a$, $b$, $c$ and $ab$. Sorts $a$, $b$ and $c$
 stand for components $a$, $b$ and $c$. The cooperative sort $ab$ is introduced in order to characterize constraints on the components $a$ and $b$.
-In the RSTC network, we find  $25$ regulatory patterns. We show some examples in TABLE \ref{table_patterns}.     %TODO
+In the RSTC network, we find  $25$ regulatory patterns. We show some examples in Table \ref{table_patterns}.     %TODO
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Examples of patterns}
 \label{table_patterns}
 \centering
-\begin{tabular}{c||c}
+\begin{tabular}{|c|c|c|}
 \hline
 \bfseries Biological Patterns
 
 &
 
-\bfseries PH Transformations\\ 
-\hline\hline
+\bfseries PH Transformations
+
+&
+
+\bfseries Descriptions\\ 
+\hline
 \begin{tikzpicture}
-\node[scale=0.5] (sa1) at (0,0){\begin{tikzpicture}[auto]
+\node[scale=0.65] (sa1) at (0,0){\begin{tikzpicture}[auto]
 \path[use as bounding box] (-0.7,-0.3) rectangle (2.5,2);
 
 \node[qgre] (a) at (0,1) {a};
 \node[mod] (i) at (1,1) {i};
 \node[qgre] (b) at (2,1) {b};
-\node[es] (d) at (1,2) {Simple activation};
+\node[es] (d) at (1,1.5) {Simple activation};
 
 \path
  (a) edge[act] (i)
@@ -509,17 +390,21 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 %\TBounce{a_0}{}{a_1}{.south}
 ;
 \end{tikzpicture}};
-\end{tikzpicture}\\ 
-\hline\hline
+\end{tikzpicture}
+
+&
+
+Description\\ 
+\hline
 
 \begin{tikzpicture}
-\node[scale=0.5] (si1) at (0,0){\begin{tikzpicture}[auto]
+\node[scale=0.65] (si1) at (0,0){\begin{tikzpicture}[auto]
 \path[use as bounding box] (-0.7,-0.3) rectangle (2.5,2);
 
 \node[qgre] (a) at (0,1) {a};
 \node[mod] (i) at (1,1) {i};
 \node[qgre] (b) at (2,1) {b};
-\node[es] (d) at (1,2) {Simple inhibition};
+\node[es] (d) at (1,1.5) {Simple inhibition};
 \path
  (a) edge[inh] (i)
  (i) edge[st]  (b);
@@ -547,11 +432,15 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 %\TBounce{a_0}{}{a_1}{.south}
 ;
 \end{tikzpicture}};
-\end{tikzpicture}\\ 
-\hline\hline
+\end{tikzpicture}
+
+&
+
+Description\\ 
+\hline
 
 \begin{tikzpicture}
-\node[scale=0.5] (sai1) at (0,0){\begin{tikzpicture}[auto]
+\node[scale=0.65] (sai1) at (0,0){\begin{tikzpicture}[auto]
 \path[use as bounding box] (-0.7,-0.3) rectangle (2.5,3);
 \node[qgre] (a) at (0,2) {a};
 \node[mod] (i) at (1,1) {i};
@@ -591,7 +480,11 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 %\TBounce{a_0}{}{a_1}{.south}
 ;
 \end{tikzpicture}};
-\end{tikzpicture} \\
+\end{tikzpicture} 
+
+&
+
+Description\\
 \hline
 \end{tabular}
 \end{table}
@@ -607,23 +500,23 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\subsubsection{Estimating the parameters for the PH-simulation from time-series gene expression data}
+\subsubsection{Estimating the parameters for the PH-simulation from time-series gene expression data.}
 
 %peut etre penser à faire un schéma
 
-The simulation of the execution of the PH actions is done stochastically.  Therefore, we need to relate each action with temporal 
+Since the simulation of the execution of the PH actions is done stochastically, we need to relate each action with temporal 
 and stochastic parameters introduced into the PH framework to achieve dynamic refinement \cite{PMR10-TCSB}. 
-This is an important aspect of the modeling when taking into account the temporal and stochastic dimensions of 
-biological reactions by performing simulations. 
-On the one hand, we consider the probability of a reaction to occur, and on the other hand, we 
-consider stochastic parameters in the aim at observing an expected behavior. 
-In the PH framework to play an action we need two essential parameters: the rate $r$ or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action
-and the stochasticity absorption factor $sa$. The stochasticity absorption factor is introduced to control the higher variance 
-around the mean duration of playing an action. These two parameters are estimated according to the expression profile of time-series data of the experiment
-described in Section \ref{SECTSD}. 
-
+%This is an important aspect of the modeling when taking into account the temporal and stochastic dimensions of 
+%biological reactions by performing simulations. 
+%To simulate an expected behavior we consider the probability of a reaction to occur and 
+%stochastic parameters.
+% in the aim at observing an expected behavior. 
+To fire an action in the PH framework we need to provide two parameters: (1) the rate $r=t^{-1}$, where $t$ is the mean time of firing an action,
+% or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action,
+and (2) the stochasticity absorption factor $sa$, which is introduced to control the \modCG{\underline{higher variance 
+around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
 
 %To avoid over fitting in the estimation of these parameters, we propose that each component of the PH, representing a measured gene in the network,  will take the estimated values of the parameters of its respective cluster in the experimental data.
 
@@ -642,7 +535,7 @@ described in Section \ref{SECTSD}.
 \begin{figure}[!t]
 \centering
 
-\begin{tikzpicture}[scale = 0.5]
+\begin{tikzpicture}[scale = 0.65]
        
     
 	      \draw[thick, ->] (-.2,0)--(11,0) node[below]{$t$};
@@ -675,20 +568,22 @@ described in Section \ref{SECTSD}.
            \end{tikzpicture}
 	    
 
-\caption{\bf Illustration of the estimation of temporal parameters from time series data: $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression. $MinLevel$ represents the minimum 
+\caption{\bf Estimation of temporal parameters from time series data:} $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression. $MinLevel$ represents the minimum 
 expression. In this example  $0$ is the minimum level. $th1$ and $th2$ represent respectively the first and the second threshold.}
 \label{fig:estimationParameter}
 \end{figure}
 
-\subsubsection{From data to action parameters}
+%\subsubsection{From data to action parameters}
 
 %l'Introduction des données temporelles n'était pas automatique, de plus on ne savait pas le faire des données des séries temporelles.
 %Before this work, it were not possible to infer temporal parameters from TSD and integrate them automatically into a model build in to the process hitting formalism.
 %It's now possible. For components that we have measured, we know how to estimate and integrate parameters. For others that we don't have measured, we can give default parameters.
-For the model components which have a measurement in the Time Series Data we estimate and integrate $r$ and $sa$ parameters in the PH model. For others, we assign default 
-parameters. In other to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
+%These two parameters are estimated from the expression profiles of the time-series data (see Section \ref{SECTSD}). 
+For the model components which have a measurement in the time-series data we estimate and integrate $r$ and $sa$ parameters in the PH model. 
+The rest of the components will be 
+assigned default parameters. In order to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
 in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time in which we assume that a component moves from one process to another. Therefore the action that leads this 
-change must be played with the rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
+change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
 
 
 %discretisation des données
@@ -710,13 +605,13 @@ of $9$ selected genes from the TSD with their respective discrete plots.
 %On the discrete plot, one can clearly differentiate when a molecule is active or not, which is of extreme importance 
 %swhen modeling these steps in the PH framework if we would like to have coherent simulation results.
 
-\begin{figure*}[!t]
+\begin{figure}[!t]
  \centering
- \includegraphics[width=6.5in,height=3.5in]{images/ResultDiscretization.png}
+ \includegraphics[width=5in,height=3.5in]{images/ResultDiscretization.png}
  % IllustrationDiscretisation.png: 831x574 pixel, 72dpi, 29.32x20.25 cm, bb=0 0 831 574
  \caption{\bf Illustration of discretization of experimental data. Dashed lines are continuous real TSD, while continous lines are discrete data}
  \label{fig:illustrationDiscretisation}
-\end{figure*}
+\end{figure}
 
   
 
@@ -863,7 +758,6 @@ The initial conditions of the simulation are summarized in \pref{fig:initialCond
      
 \end{tikzpicture}
 }
-
  
  \caption{\bf RSTC network structure and initial conditions assigned to each node in the layer}
  \label{fig:initialCondition}
