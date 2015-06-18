@@ -11,7 +11,7 @@ detail some of the workflow steps.
 
 \begin{figure}[!t]
  \centering
- \includegraphics[width=4.1in,height=2.5in]{images/workflow-2.png}
+ \includegraphics[width=4.1in,height=2in]{images/workflow-2.png}
 \caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model.}} 
  \label{fig:workflow}
 \end{figure}
@@ -304,31 +304,6 @@ and its type to another procedure (Algorithm \ref{PHModelGeneration}) which  tra
 %nous avons des noeuds qui sont des composants du réseau, pour notre alogorithme(récursif) ils seront considérés comme noeuds initiaux et terminaux.
 %nous avons des noeuds transitoires qui relient deux arrêtes entre elles afin d'indicquer la nature de l'interaction entre deux composants terminaux
 %nous avons enfin les arrêtes qui relient les noeuds terminaux aux noeuds transitoires
-
-
-%%%%algorithm of patterns detection in all the network
-
-%\begin{figure}[!t]
-\begin{algorithm}
-\begin{algorithmic}[1]
-%\Procedure{patternDetection}{$Net,n$}\Comment{Given a node n, detect a set of minimal nodes that has a direct regulatory effect on n}
-\REQUIRE $Net$ \COMMENT{The RSTC network}
-\ENSURE generate the PH Model associated to $Net$
-\FORALL{ Node $n$ in $Net$.getSetOfNodes() } 
-\STATE $Pat$ = detectPattern ($Net$, $n$)
-\STATE patternInPHModel ($out$, $Pat$)
-
-\ENDFOR
-%\STATE \textbf{return} $b$%\Comment{The gcd is b}
-\end{algorithmic}
-\caption{\bf: algorithm for Pattern detection in an RSTC Network in order to generate the equivalent model in the PH formalism}
-\label{automaticGenerationOfPHModel}
-\end{algorithm}
-%\end{figure}
-
-
-
-
 
 % les détails sur comment les patterns sont choisis 
 For example a molecule $a$ cooperatting with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears recurrent times.  
