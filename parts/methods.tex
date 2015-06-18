@@ -127,10 +127,10 @@ types of modeling-scenarios can be proposed: cooperation and synchronization.}
 
 \subsubsection{Modeling cooperation}
 
-As described in \cite{PMR10-TCSB}, the cooperation between processes to make another process bounce can be
-expressed in PH by building a \emph{cooperative sort}.
+The cooperation between processes to make another process bounce can be
+expressed in PH by building a \emph{cooperative sort}~\cite{PMR10-TCSB}.
 \pref{fig:runningPH} shows an example of a cooperative sort $ab$ between sorts $a$ and $b$,
-defined with 4 processes (one for each sub-state of the presence of processes $a_1$ and $b_1$).
+which is composed of 4 processes (one for each sub-state of the presence of processes in $a$ and $b$).
 For the sake of clarity, processes of $ab$ are indexed using the sub-state they represent.
 Hence, $ab_{01}$ represents the sub-state $\PHstate{a_0,b_1}$, and so on.
 Each process of sort $a$ and $b$ hits $ab$, which makes it bounce to the process reflecting the status of the sorts $a$
@@ -146,19 +146,21 @@ Cooperation sort allows to model the fact that two components cooperate to hit a
 %Unlike cooperation sort which allows  to model the fact that two components cooperate to hit another component, we introduce
 %the notion of \emph{synchronization sort}, 
 The synchronization sort implements another type of cooperation. If we refer to the example of
-\pref{fig:runningPH}, and asume that $ab$ is the \emph{synchronization sort} between sorts $a$ and $b$, defined with also 
-4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$) if either  $a$ and $b$ are activated. Therefore, each one of 
-these processes $ab_1$, $ab_2$, $ab_3$ can activate $c_1$, in order to inhibit $c$, both $a$ and $b$ are needed.
-Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
-The interest of this rule is that it avoids oscillations between the processes of a sort regulated independantly by 
-two predecessors. Oscillations occur because each  predecessor can independantly activate the target component when it is active,
-but if one component is inhibited, it will inhibit the target component. This competition between the two predecessors
-generates the oscillations on the target component.  
+\pref{fig:runningPH} left, we can similarly construct a \emph{synchronization sort} $ab$ between sorts $a$ and $b$, defined with also 
+4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$ or $c_0$ bounces to $c_1$) if either  $a$ \modCG{or} $b$ are activated. Therefore, each one of 
+these processes $ab_{01}$, $ab_{10}$, $ab_{11}$ can activate $c$.  In order to inhibit $c$, both sorts, $a$ and $b$, need to be 
+in the sub-state $0$, i.e. $ab_{00}$. Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
+Imposing the synchronization sort to model a target component regulated independently by multiple predecessors avoids oscillations in the behavior of the target component over time. 
+These oscillations appear because each predecessor can independantly activate the target component when it is active,
+but when one predecessor is inhibited, it will inhibit the target component. This competition between the predecessors
+generates oscillations on the target component.  
 
 
 %[Remember that PH was designed in order to take very large system analysis into account. Indeed, algorithm were developped on such a
 %process??? system so that it prevent for building the whole state graph which would be intractable when there are more than $10$ or    % a re voir 
 %$20$ components.]
+
+\modCG{[comment] I think the Example below can be removed.}
 
 \begin{example}
 \pref{fig:runningPH} represents a PH $(\PHs,\PHl,\PHa)$ with $\PHs = \{a,b,c,ab\}$, and:
@@ -175,9 +177,9 @@ is conditioned by a cooperation of $a$ and $b$ as explained above.
 
 \begin{figure}[!t]
 %\centering
-\begin{minipage}{0.3\linewidth}
+\begin{minipage}{0.1\linewidth}
 \centering
-\scalebox{0.7}{
+\scalebox{0.9}{
 \begin{tikzpicture}[grn]
 \path[use as bounding box] (-0.2,-0.7) rectangle (3.5,0.7);
 \node[inner sep=0] (a) at (1,2) {a};
@@ -190,6 +192,9 @@ is conditioned by a cooperation of $a$ and $b$ as explained above.
 \end{tikzpicture}
 }
 \end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{minipage}{0.7\linewidth}
 \centering
 \scalebox{0.7}{
@@ -247,19 +252,17 @@ is conditioned by a cooperation of $a$ and $b$ as explained above.
 \TBounce{c_0}{thick}{c_1}{.south west}
 \TBounce{c_2}{thick}{c_1}{.north east}
 ;
-
-
 \end{tikzpicture}
 }
 \end{minipage}
 
-\caption{\bf \label{fig:modelingBRN}
-(Left)~ biological pattern example.
-Nodes are components and edges are interactions
-For instance, components $a$ and $b$ cooperate to activate $c$.
-(Right)~equivalent PH model. \label{fig:runningPH}
-A PH example with four sorts: three components ($a$, $b$ and $c$) and a cooperative sort ($ab$).
-Actions targeting processes of $c$ are in thick lines.
+\caption{ \label{fig:modelingBRN}
+{\bf (Left)~biological pattern example.}
+Nodes represent molecules (components) and edges, interactions.
+In this pattern components $a$ and $b$ cooperate to activate $c$.
+{\bf (Right)~equivalent PH model} \label{fig:runningPH}
+with four sorts: three components ($a$, $b$ and $c$) and a cooperative sort ($ab$).
+Actions targeting processes of $c$ are drawn as thick lines.
 }
 \end{figure}
 
@@ -271,13 +274,13 @@ Actions targeting processes of $c$ are in thick lines.
 %la traduction automatique des patterns d'un réseau
 \subsection{Model construction (from RSTC to PH)}
 %In this part we will describe how to go from rstc to ph model
-In this work we aim to model a biological  system according to its dynamic. For that purpose we choose to build a PH model from the biological system reprensented as  an RSTC network.
+%In this work we aim to model a biological  system according to its dynamic. For that purpose we choose to build a PH model from the biological system reprensented as  an RSTC network.
 
 %why we made this choice?
-In the following we present our automatic approach to generate a PH model from an RSTC network.
+%In the following we present our automatic approach to generate a PH model from an RSTC network.
 
 
-\subsubsection{Modeling the RSTC network as a PH model}
+\subsubsection{Modeling the RSTC network as a PH model.}
 
 %In this section, we present the modelisation of biological network express with the biochemical reactions in PID. In the following, we will
 %present how to transform biological pattern to the PH model. After that, we propose a way of estimating temporal and stochastic
@@ -287,8 +290,9 @@ In the following we present our automatic approach to generate a PH model from a
 
 %Here is the first and the most important part of this work. 
 In order to model the RSTC network as a PH model we select known biological regulatory patterns (atomic set of biological components and their interacting roles), represented 
-as biochemical reactions in the RSTC network, and propose their PH representation as illustrated in Algorithm \ref{automaticGenerationOfPHModel}. 
+as biochemical reactions in the RSTC network and propose their PH representation as illustrated in Algorithm \ref{automaticGenerationOfPHModel}. 
 
+\modCG{[comment] this part needs to be rewritten, algorithms pseudo-code should be removed.}
 %les ajouts pour les patterns 
 Algorithm \ref{automaticGenerationOfPHModel} uses two procedures, detectPattern (see Algorithm \ref{PatternDetection}) that automatically browses the graph node by node and detects all patterns in the graph. For each node (output node of the pattern) we  call a recursive procedure,
 that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. This set of nodes plus the output node and the way  input and output are linked form a pattern. 
@@ -467,9 +471,9 @@ and its type to another procedure (Algorithm \ref{PHModelGeneration}) which  tra
 For example a molecule $a$ cooperatting with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears recurrent times.  
 We model this pattern by four sorts (\pref{fig:runningPH}, right) $a$, $b$, $c$ and $ab$. Sorts $a$, $b$ and $c$
 stand for components $a$, $b$ and $c$. The cooperative sort $ab$ is introduced in order to characterize constraints on the components $a$ and $b$.
-In the RSTC network, we find  $25$ regulatory patterns. We show some examples in TABLE \ref{table_patterns}.     %TODO
+In the RSTC network, we find  $25$ regulatory patterns. We show some examples in Table \ref{table_patterns}.     %TODO
 
-\begin{table}[!t]
+\begin{table}[!h]
 \renewcommand{\arraystretch}{1.3}
 \caption{Examples of patterns}
 \label{table_patterns}
@@ -617,23 +621,23 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\subsubsection{Estimating the parameters for the PH-simulation from time-series gene expression data}
+\subsubsection{Estimating the parameters for the PH-simulation from time-series gene expression data.}
 
 %peut etre penser à faire un schéma
 
-The simulation of the execution of the PH actions is done stochastically.  Therefore, we need to relate each action with temporal 
+Since the simulation of the execution of the PH actions is done stochastically, we need to relate each action with temporal 
 and stochastic parameters introduced into the PH framework to achieve dynamic refinement \cite{PMR10-TCSB}. 
-This is an important aspect of the modeling when taking into account the temporal and stochastic dimensions of 
-biological reactions by performing simulations. 
-On the one hand, we consider the probability of a reaction to occur, and on the other hand, we 
-consider stochastic parameters in the aim at observing an expected behavior. 
-In the PH framework to play an action we need two essential parameters: the rate $r$ or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action
-and the stochasticity absorption factor $sa$. The stochasticity absorption factor is introduced to control the higher variance 
-around the mean duration of playing an action. These two parameters are estimated according to the expression profile of time-series data of the experiment
-described in Section \ref{SECTSD}. 
-
+%This is an important aspect of the modeling when taking into account the temporal and stochastic dimensions of 
+%biological reactions by performing simulations. 
+%To simulate an expected behavior we consider the probability of a reaction to occur and 
+%stochastic parameters.
+% in the aim at observing an expected behavior. 
+To fire an action in the PH framework we need to provide two parameters: (1) the rate $r=t^{-1}$, where $t$ is the mean time of firing an action,
+% or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action,
+and (2) the stochasticity absorption factor $sa$, which is introduced to control the \modCG{\underline{higher variance 
+around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
 
 %To avoid over fitting in the estimation of these parameters, we propose that each component of the PH, representing a measured gene in the network,  will take the estimated values of the parameters of its respective cluster in the experimental data.
 
@@ -685,20 +689,22 @@ described in Section \ref{SECTSD}.
            \end{tikzpicture}
 	    
 
-\caption{\bf Illustration of the estimation of temporal parameters from time series data: $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression. $MinLevel$ represents the minimum 
+\caption{\bf Estimation of temporal parameters from time series data:} $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression. $MinLevel$ represents the minimum 
 expression. In this example  $0$ is the minimum level. $th1$ and $th2$ represent respectively the first and the second threshold.}
 \label{fig:estimationParameter}
 \end{figure}
 
-\subsubsection{From data to action parameters}
+%\subsubsection{From data to action parameters}
 
 %l'Introduction des données temporelles n'était pas automatique, de plus on ne savait pas le faire des données des séries temporelles.
 %Before this work, it were not possible to infer temporal parameters from TSD and integrate them automatically into a model build in to the process hitting formalism.
 %It's now possible. For components that we have measured, we know how to estimate and integrate parameters. For others that we don't have measured, we can give default parameters.
-For the model components which have a measurement in the Time Series Data we estimate and integrate $r$ and $sa$ parameters in the PH model. For others, we assign default 
-parameters. In other to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
+%These two parameters are estimated from the expression profiles of the time-series data (see Section \ref{SECTSD}). 
+For the model components which have a measurement in the time-series data we estimate and integrate $r$ and $sa$ parameters in the PH model. 
+The rest of the components will be 
+assigned default parameters. In order to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
 in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time in which we assume that a component moves from one process to another. Therefore the action that leads this 
-change must be played with the rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
+change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
 
 
 %discretisation des données
