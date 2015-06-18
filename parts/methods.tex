@@ -55,7 +55,7 @@ In this definition, terminal nodes can be genes, proteins, complexes, cellular s
 On the other side, transient nodes can be transcriptions, translocations, modifications and compounds. Edges are of different types:
 activation (agent), inhibition, output, input and protein-family-member.
 
-\begin{figure}[!t]
+\begin{figure}[!p]
  \centering
  \includegraphics[width=7.5in, height=5in, angle=-90]{images/net.jpg}
 \caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} It is composed of $293$ nodes and $375$ edges (interactions).
@@ -77,7 +77,7 @@ PID-NCI database and therefore could be connected in the interaction graph.
 %The full dataset (data not shown) was produced by the German Cancer Research Center (DKFZ) and is currently in the process
 %of being published.  
 
-\begin{figure}[!t]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=3.5in]{images/12genes.png}
 \caption{\bf 12 gene expressions upon Calcium stimulation.} The $X$ axis represents time duration of the experiment measured in hours. 
@@ -580,9 +580,9 @@ of $9$ selected genes from the TSD with their respective discrete plots.
 %On the discrete plot, one can clearly differentiate when a molecule is active or not, which is of extreme importance 
 %swhen modeling these steps in the PH framework if we would like to have coherent simulation results.
 
-\begin{figure}[!t]
+\begin{figure}[!ht]
  \centering
- \includegraphics[width=5in,height=3.5in]{images/ResultDiscretization.png}
+ \includegraphics[width=5in,height=3in]{images/ResultDiscretization.png}
  % IllustrationDiscretisation.png: 831x574 pixel, 72dpi, 29.32x20.25 cm, bb=0 0 831 574
  \caption{\bf Illustration of discretization of experimental data. Dashed lines are continuous real TSD, while continous lines are discrete data}
  \label{fig:illustrationDiscretisation}
@@ -613,7 +613,7 @@ components.
 
 The initial conditions of the simulation are summarized in \pref{fig:initialCondition} where we can clearly see the initial values chosen at each layer for our model.
 
-\begin{figure}[!t]
+\begin{figure}[!ht]
  \centering
  \scalebox{0.45}{
   \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.14)  18 JUN 2015 20:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.14)  18 JUN 2015 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -920,8 +920,8 @@ Overfull \hbox (14.22687pt too wide) in paragraph at lines 60--64
 
 LaTeX Warning: Float too large for page by 67.03148pt on input line 66.
 
-[3 <./images/workflow-2.png>]
-<images/12genes.png, id=170, 703.12688pt x 545.03625pt>
+[3 <./images/workflow-2.png>] [4 <./images/net.jpg>]
+<images/12genes.png, id=175, 703.12688pt x 545.03625pt>
 File: images/12genes.png Graphic file (type png)
 
 <use images/12genes.png>
@@ -939,35 +939,35 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[4]
+[5 <./images/12genes.png>]
+Underfull \vbox (badness 4872) has occurred while \output is active []
+
+ [6]
 Overfull \hbox (64.08241pt too wide) in paragraph at lines 193--194
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `automaticGenerationOfPHModel' on page 5 undefined on 
+LaTeX Warning: Reference `automaticGenerationOfPHModel' on page 7 undefined on 
 input line 293.
 
 
-LaTeX Warning: Reference `automaticGenerationOfPHModel' on page 5 undefined on 
+LaTeX Warning: Reference `automaticGenerationOfPHModel' on page 7 undefined on 
 input line 297.
 
 
-LaTeX Warning: Reference `PatternDetection' on page 5 undefined on input line 2
+LaTeX Warning: Reference `PatternDetection' on page 7 undefined on input line 2
 97.
 
 
-LaTeX Warning: Reference `PatternDetection' on page 5 undefined on input line 2
+LaTeX Warning: Reference `PatternDetection' on page 7 undefined on input line 2
 99.
 
 
-LaTeX Warning: Reference `PHModelGeneration' on page 5 undefined on input line 
+LaTeX Warning: Reference `PHModelGeneration' on page 7 undefined on input line 
 300.
 
-[5]
+[7]
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size' and I am going to i
 gnore it. Perhaps you misspelled it.
@@ -1138,19 +1138,19 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[6] <images/ResultDiscretization.png, id=207, 834.11626pt x 576.1525pt>
+[8] <images/ResultDiscretization.png, id=218, 834.11626pt x 576.1525pt>
 File: images/ResultDiscretization.png Graphic file (type png)
 
 <use images/ResultDiscretization.png>
 Package pdftex.def Info: images/ResultDiscretization.png used on input line 585
 .
-(pdftex.def)             Requested size: 361.34853pt x 252.94522pt.
+(pdftex.def)             Requested size: 361.34853pt x 216.8127pt.
 
 Overfull \hbox (14.22499pt too wide) in paragraph at lines 585--587
  [][] 
  []
 
-[7]
+[9]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1260,37 +1260,44 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (./parts/results.tex <images/resultWOS.pdf, id=222, 505.89pt x 505.89pt>
-File: images/resultWOS.pdf Graphic file (type pdf)
 
-<use images/resultWOS.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./images/ResultDiscretization.png>]) (./parts/results.tex [11]
+<images/resultWOS.pdf, id=247, 505.89pt x 505.89pt>
+File: images/resultWOS.pdf Graphic file (type pdf)
+ <use images/resultWOS.pdf>
 Package pdftex.def Info: images/resultWOS.pdf used on input line 34.
-(pdftex.def)             Requested size: 361.35352pt x 252.94437pt.
+(pdftex.def)             Requested size: 361.35352pt x 216.81056pt.
 
 Overfull \hbox (14.22998pt too wide) in paragraph at lines 34--36
  [][] 
  []
 
-<images/resultWS.pdf, id=225, 505.89pt x 505.89pt>
+<images/resultWS.pdf, id=250, 505.89pt x 505.89pt>
 File: images/resultWS.pdf Graphic file (type pdf)
  <use images/resultWS.pdf>
 Package pdftex.def Info: images/resultWS.pdf used on input line 50.
-(pdftex.def)             Requested size: 361.35352pt x 252.94437pt.
+(pdftex.def)             Requested size: 361.35352pt x 216.81056pt.
 
 Overfull \hbox (14.22998pt too wide) in paragraph at lines 50--52
  [][] 
  []
 
-[8]) (./parts/conclusion.tex) (./parts/acknowledgements.tex) [9]
+) (./parts/conclusion.tex) (./parts/acknowledgements.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./images/resultWOS.pdf>])
+Underfull \vbox (badness 6691) has occurred while \output is active []
+
+ [13 <./images/resultWS.pdf>]
 \tf@thm=\write6
 \openout6 = `full_paper_fippo.thm'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
- [10] [11 <./images/net.jpg>] [12 <./images/12genes.png>] [13 <./images/ResultD
-iscretization.png>] [14 <./images/resultWOS.pdf>] [15 <./images/resultWS.pdf>]
+ [14]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
-
-(./full_paper_fippo.aux)
+ (./full_paper_fippo.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `full_paper_fippo.out' has not changed.
@@ -1302,13 +1309,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 18506 strings out of 493304
- 340599 string characters out of 6139871
- 532929 words of memory out of 5000000
+ 18505 strings out of 493304
+ 340592 string characters out of 6139871
+ 487144 words of memory out of 5000000
  21490 multiletter control sequences out of 15000+600000
  35354 words of font info for 84 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 58i,18n,73p,621b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,18n,73p,620b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1330,10 +1337,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippo.pdf (15 pages, 2777705 bytes).
+Output written on full_paper_fippo.pdf (14 pages, 2777733 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 601 compressed objects within 7 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 818 PDF objects out of 1000 (max. 8388607)
+ 597 compressed objects within 6 object streams
+ 66 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
