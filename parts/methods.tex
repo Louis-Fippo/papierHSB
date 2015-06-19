@@ -589,27 +589,40 @@ level $2$.
 %swhen modeling these steps in the PH framework if we would like to have coherent simulation results.
 
 
-\subsection{Simulation: Initials conditions}
+\subsection{Simulation}
 %we give the initial condition for the simulation
-To run the simulation we need to set initial conditions for the components of our network. Because the components of the network are grouped into 
-layers, the initial conditions will be the same in the different layers. In the following we will present the initial conditions that we have chosen for the different 
-components.
+
+We set the same initial conditions to PH components belonging to the same network layer, chosen from the RSTC structure.
+These initial conditions are detailed below and summarized in \pref{fig:initialCondition}.
+% where we can clearly see the initial values chosen at each layer for our model.
+%To run the simulation we need to set initial conditions for the components of our network. Because the components of the network are grouped into 
+%layers, the initial conditions will be the same in the different layers. In the following we will present the initial conditions that we have chosen for the different 
+%components.
 
 \begin{itemize}
- \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin, that is active for a duration of $5$ units times in average. We made this 
+ \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin to be active for a duration of $5$ units times in average. We made this 
  choice to take into account the average time of the Calcium stimuli effect.
- \item \textbf{Signaling layer: signaling proteins.} At this layer, the components are activated and inhibited with the same rate and the same stochasticity absorption factor. 
- Nevertheless, the choice of inhibition parameters must ensure that the time interval in which the inhibition action 
- is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
- can be seen as reachability constraints from the entry  node (E-cadherin) to the output node genes. The values of these parameters are selected by considering the delay of signal transduction from the entry
- node (E-cadherin) to the output node (genes).
- \item \textbf{Transcription layer: transcription factors.} At this stage to model activation over a transcription factor, the signal comes from signaling proteins; however, for inhibition, it additionally 
- come from an auto-inhibition which represents the degration of the transcription factor. The signal comes from signaling proteins for activation. But for the inhibition, in addition 
- to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
+ \item \textbf{Signaling layer: signaling proteins.} The components in this layer are activated and inhibited with the same rate and the same stochasticity absorption factor. 
+% Nevertheless, 
+The actions between a controller component $A$ and a controlled component $B$ are constrained so that 
+$B$ is first activated by $A$ and then inhibited.  That is, 
+the time interval in which an inhibition action from $A$ to $B$ fires is greater than 
+the time interval in which an activation action from $A$ to $B$ fires.
+Additionally, these two time intervals must not overlap.
+These constraints can be seen as 
+%The choice of inhibition parameters must ensure that the time interval in which the inhibition action 
+% is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
+% can be seen as 
+reachability constraints from the entry  node (E-cadherin) to the output nodes (genes). The values of these parameters are selected by considering the delay of signal transduction from the entry
+ node to the output nodes.
+ \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
+for all TFs we introduced an auto-inhibition action that represents their degration over time. 
+%The signal comes from signaling proteins for activation. But for the inhibition, in addition 
+% to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
  \item \textbf{Genes.} The genes are activited or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
-The initial conditions of the simulation are summarized in \pref{fig:initialCondition} where we can clearly see the initial values chosen at each layer for our model.
+\modCG{[comment] Column ``parameters'' in Figure 6 should be shifted down}
 
 \begin{figure}[!ht]
  \centering
