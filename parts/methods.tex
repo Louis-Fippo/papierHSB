@@ -508,6 +508,8 @@ and (2) the stochasticity absorption factor $sa$, which is the variance of firin
 
 %In our time-series data the components of the PH which need to be associated specific parameters (step 3) are the $12$ genes present in our RSTC network.
 
+\modCG{[comment] It will be good if in Fig 5 we have 0, 1, 2 instead of 1,2, 3}
+
 \begin{figure}[!t]
 \centering
 
@@ -567,16 +569,19 @@ change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa
 %discretisation des données
 \subsubsection{Discretization of times-series data}
 
-Because PH simulation is discrete, we need to discretize continuous experimental data so we can compare the simulation outputs.
-The goal of this method is to better determine, according to the gene expression level, when  a given molecule is activated or inhibited.
-To do this we introduce the new analog concept of Significant Increase or Decrease to characterize the fact that a level of a molecule 
-increases or decreases when crossing a threshold of significance; we limite the possible expression levels for a molecule to
-$\{0, 1, 2\}$. This choice was made because when we look at time-series data (see \pref{fig:tsd}), one can clearly observe a high level of
-activity between $0h$ and $5h$ and a slow level of activity between $5h$ and $10h$ on the other hand. The goal of the discretization method is to capture these
-two activation times. For each time-series, we introduce two thresholds \emph{th1} and \emph{th2} as in \pref{fig:estimationParameter}. The value of this two
-thresholds is computed as follows $\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. Therefore, 
-expression level in the range $[0-th1]$ is at level $0$, while expression level in the range $[th1-th2]$  has level $1$ and the last range is at
-level $2$. Thus we can automatically determine the different levels of expression of the TSD. 
+Because the output of a PH simulation are discrete traces of PH components, we discretized continuous experimental data to facilitate 
+the comparison with simulation outputs.
+%The goal of this method is to determine, according to the gene expression level, when a PH component is activated or inhibited.
+%To do this we introduce the new analog concept of Significant Increase or Decrease to characterize the fact that a level of a molecule 
+%increases or decreases when crossing a threshold of significance; we limite the possible expression levels for a molecule to
+%$\{0, 1, 2\}$. This choice was made because 
+When looking at the time-series data (see \pref{fig:tsd}) one can distinguish a high level of
+activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. We implemented a discretization method to capture these
+two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}): 
+$\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. 
+In this way, the expression level in the range $[0-th1]$ is at level $0$, the one in the range $[th1-th2]$ is at level $1$, and the one in the last range is at
+level $2$. 
+%Thus we can automatically determine the different levels of expression of the TSD. 
 %illustration des résultats de la méthode de discrétisation
 %To illustrate the result of the discretization algorithm we plot in \pref{fig:illustrationDiscretisation} the expression 
 %of $9$ selected genes from the TSD with their respective discrete plots. 
