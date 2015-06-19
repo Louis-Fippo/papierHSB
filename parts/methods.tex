@@ -290,11 +290,15 @@ In order to model the RSTC network as a PH model we select known biological regu
 as biochemical reactions in the RSTC network and propose their PH representation. Table \ref{table_patterns} shows some examples of this transformation. 
 
 %les ajouts pour les patterns 
-Automatic pattern selection and PH model generation algorithm uses two procedures. The first that take in parameter argument the graph and  automatically browses it node by node and detects all patterns in the graph. For each node (output node of the pattern) we  call a recursive procedure,
-that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. This set of nodes plus the output node and the way  input and output are linked form a pattern. 
-The type of a pattern is determined by the type of the output node, the type of regulations that arrive to that node and the type of input nodes of the pattern. Consequently, Algorithm of patterns detection returns the pattern 
+The automatic pattern selection and PH model generation algorithms use two procedures. 
+%
+The first takes as parameter argument the graph and automatically browses it node by node and detects all patterns in the graph. 
+For each node (output node of the pattern) we  call a recursive procedure,
+that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. 
+This set of nodes plus the output node and the way  input and output are linked form a pattern. 
+The type of a pattern is determined by the type of the output node, the type of regulations that arrive to that node and the type of input nodes of the pattern. 
+Consequently, the algorithm of patterns detection returns the pattern 
 and its type to another procedure  which  translates the pattern into the PH formalism. This transformation  takes care of different cases (cooperation, synchronization, simple activation, simple inhibition, etc.)
-
 
 
 %nous avons des noeuds qui sont des composants du réseau, pour notre alogorithme(récursif) ils seront considérés comme noeuds initiaux et terminaux.
