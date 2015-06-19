@@ -487,7 +487,7 @@ and stochastic parameters introduced into the PH framework to achieve dynamic re
 % in the aim at observing an expected behavior. 
 To fire an action in the PH framework we need to provide two parameters: (1) the rate $r=t^{-1}$, where $t$ is the mean time of firing an action,
 % or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action,
-and (2) the stochasticity absorption factor $sa$, which is the variance of firing an action.
+and (2) the stochasticity absorption factor $sa$, which is introduce to control the variance of firing an action.
 % introduced to control the \modCG{\underline{higher variance 
 %around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
 
@@ -518,9 +518,9 @@ and (2) the stochasticity absorption factor $sa$, which is the variance of firin
 	      \draw[very thick] (\t,2pt)--(\t,-2pt) node[below,black]{\small\t};
 
 	      \draw[thick, ->] (0,-.2)--(0,4) node[left]{Expression Level};
-	      \foreach \y in {1,2,3}
-	      \draw[very thick] (2pt,\y)--(-2pt,\y) node[left,black]{\small\y};
-      
+	      \foreach \y in {0,1,2}
+               \draw[very thick] (2pt, \y+0.8 )--(-2pt, \y+0.8 ) node[left,black]{\small\y};
+           
 	      \draw[thick] plot[mark=ball,mark size=1pt] file {illustration.txt};
     
 	      %\pause

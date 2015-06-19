@@ -13,8 +13,8 @@
 \BOOKMARK [3][-]{section*.8}{Discretization of times-series data}{subsection.1.2.3}% 13
 \BOOKMARK [2][-]{subsection.1.2.4}{Simulation}{section.1.2}% 14
 \BOOKMARK [1][-]{section.1.3}{Results}{chapter.1}% 15
-\BOOKMARK [2][-]{subsection.1.3.1}{From PID to PH: An automatic generation of PH code of the network}{section.1.3}% 16
-\BOOKMARK [2][-]{subsection.1.3.2}{Simulation}{section.1.3}% 17
+\BOOKMARK [2][-]{subsection.1.3.1}{Automatic generation of PH model from the PID network}{section.1.3}% 16
+\BOOKMARK [2][-]{subsection.1.3.2}{Simulation of Calcium stimulated biological system}{section.1.3}% 17
 \BOOKMARK [3][-]{section*.9}{Without the introduction of synchronization sort}{subsection.1.3.2}% 18
 \BOOKMARK [3][-]{section*.10}{With the introduction of synchronization sort}{subsection.1.3.2}% 19
 \BOOKMARK [1][-]{section.1.4}{Conclusion}{chapter.1}% 20
