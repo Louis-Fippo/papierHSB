@@ -1,13 +1,27 @@
 \section{Conclusion}
 This work describes the steps towards the integration of time-series data in large-scale cell-based models. 
-We proposed an automatic method to build a timed/stochastic PH model from a biological system composed of biochemical reactions, extracted automatically from public databases, 
-relevant to keratinocyte differentiation induced by Calcium. 
-We then proposed a method to discretize time-series gene expression data, so they can be integrated to the PH simulations and logically explained by the PH stochastic analyses. 
-Finally we described a method to automatically estimate the temporal and stochastic
-parameters for the PH simulation, so this estimation process will not be biased by over fitting. Ours results show that: (1) we reproduce accuretely  
-$9$ out of $12$ of the genes, (2) we can model large-scale networks in which signal goes from an input node to the output nodes, (3) we can reproduce tendences of the dynamic of components
-and take into accout the stochastic and time aspect of the behaviors of the biological system.
-As concrete perspectives of this work we intend to \emph{(i)} validate the RSTC network topology by confronting its \emph{in-silico} simulation with real measurements of its components;
-\emph{(ii)} compare the stochastic simulation results with reachability static analyses over the same PH components mapped to the $12$ measured genes; and 
-finally \emph{(iii)} search for key-regulators up-stream the $12$ genes which will control the dynamics of the system, to  provide  concrete 
-hypotheses to test experimentally.
+We proposed an automatic method to build a timed and stochastic PH model from pathways of biochemical reactions present in 
+the Pathway Interaction Database (PID). 
+%
+As a case-study we built a model combining signaling and transcription events relevant to keratinocyte differentiation induced by Calcium, which linked E-cadherin nodes and 12 genes, which 
+expression profiles was measured upon Calcium stimulation over time. The interaction graph represented by the model had 293 and 375 edges.
+%
+We proposed a method to discretize time-series gene expression data, so they can be integrated to the PH simulations and logically explained by the PH stochastic analyses. 
+%
+Additionally, we implemented a method to automatically estimate the temporal and stochastic
+parameters for the PH simulation, so this estimation process will not be biased by over fitting. 
+%
+
+Our results show that  we can observe dynamic effects on $11$ out of $12$ genes, for which $5$ of them represent accurate predictions, and $6$ missed few dynamic levels.
+This error may be also a result from the incompleteness of the regulatory information in PID.
+Moreover, when observing the predicted behavior of biological processes linked to Calcium stimulation, our predictions agreed with experimental and litterature-based evidences.
+%this reproduce accuretely $9$ out of $12$ of the genes, 
+Overall, with this work we show the feasability of modeling and simulating large-scale networks with very few parameter estimation 
+and having good quality predictions.
+%, (3) we can reproduce tendences of the dynamic of components
+%and take into accout the stochastic and time aspect of the behaviors of the biological system.
+
+As perspectives of this work we intend to study the effects of computing automatically the concurrent rules on this system.
+Also, we intend to improve the model prediction quality by empirically obtaining the dynamics of the system components by performing large stochastic simulations, as well 
+as by implementing quantitative analyses by adding probabilistic features to the PH static solver.
+
