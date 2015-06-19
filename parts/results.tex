@@ -18,26 +18,26 @@ as is the case for the system under study.  It is implemented in Java and availa
 
 
 
-\subsection{Simulation}
+\subsection{Simulation of Calcium stimulated biological system}
 
 We simulated the model with and without the inclusion of the synchronization sort. In the following, we present the results of 
 the simulation.
 
 \subsubsection{Without the introduction of synchronization sort}
-One can easily notice in \pref{fig:rwos} the occurence of oscillations. This is not the expected behavior from the biological system
-but it is coherent with the choice of the modeling and the way the simulator works as explained in \ref{sssec:synchronization}: cooperation
-sorts are used to model multiple regulators of a common target
-where this is clearly identifiable. In other cases we left the components act independently.
+One can notice in \pref{fig:rwos} the occurence of oscillations. This is not the expected behavior from the biological system
+but it is coherent with the choice of the modeling and the way the simulator works as explained in Section \ref{sssec:synchronization}.
+In this simulation cooperation sorts were used to model multiple controllers having a common controlled (target) component.
+%In other cases we left the components act independently.
 It is important to notice that the intensity of the oscillation is linked with 
-the size of the concurrence, i.e. the number of predecessors that a node in the network has.
+the size of the concurrence, i.e. the number of controllers a controlled component has.
 Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
 the dynamic of components, the signal transduction and takes into account the stochastic and time aspect of the model.
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=5in,height=3in]{images/resultWOS.pdf}
-\caption{\bf Results of simulations without introducing the synchronization sort. In black line the expected behaviors
-come from the discretization of time-series data. In Blue line the simulation behavior.}
+\caption{{\bf Results of system simulations without introducing the synchronization sort for 9 genes.} In black line we draw the 
+traces representing the discretized time-series data. In blue lines we show  the simulated traces.}
 \label{fig:rwos}
 \end{figure}
 \subsubsection{With the introduction of synchronization sort}
