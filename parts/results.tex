@@ -23,46 +23,88 @@ as is the case for the system under study.  It is implemented in Java and availa
 We simulated the model with and without the inclusion of the synchronization sort. In the following, we present the results of 
 the simulation.
 
-\subsubsection{Without the introduction of synchronization sort}
-One can notice in \pref{fig:rwos} the occurence of oscillations. This is not the expected behavior from the biological system
-but it is coherent with the choice of the modeling and the way the simulator works as explained in Section \ref{sssec:synchronization}.
-In this simulation cooperation sorts were used to model multiple controllers having a common controlled (target) component.
+\subsubsection{Without the introduction of the synchronization sort.}
+One can notice in \pref{fig:rwos} the occurence of oscillations. Whereas it is not the expected behavior from the biological system,
+ it is coherent with the choice of the modeling and the way the simulator works as explained in Section \ref{sssec:synchronization}.
+In this simulation cooperation sorts were used to model multiple controllers of a common controlled (target) component.
 %In other cases we left the components act independently.
 It is important to notice that the intensity of the oscillation is linked with 
 the size of the concurrence, i.e. the number of controllers a controlled component has.
 Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
 the dynamic of components, the signal transduction and takes into account the stochastic and time aspect of the model.
 
-\begin{figure}[!t]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=5in,height=3in]{images/resultWOS.pdf}
-\caption{{\bf Results of system simulations without introducing the synchronization sort for 9 genes.} In black line we draw the 
-traces representing the discretized time-series data. In blue lines we show  the simulated traces.}
+\caption{{\bf Results of system simulations without introducing the synchronization sort for 9 genes.} The 
+traces representing the discretized time-series data are shown as black lines.  The traces representing the simulated traces are shown as blue lines.}
 \label{fig:rwos}
 \end{figure}
-\subsubsection{With the introduction of synchronization sort}
 
-From \pref{fig:rws} we can see that the introduction of the synchronization sort significatively reduces the 
-impact of concurrence by the introduction of the synchronization. The result shows  a 
-clear elimination of the previously observed oscillation in \pref{fig:rwos}. One can see that the expression levels of genes \emph{uPAR}, \emph{IL8}, \emph{TFR} are well reproduced. Those of \emph{IL1 beta}, \emph{MKP3}, \emph{MKP1}, \emph{Hes5}, \emph{SM22}, \emph{ET1}, \emph{DKK1} are also well reproduced except that they do not go down at the end while \emph{A20} are not activated. This result can be observed when the activation
-signal has not been able to propagate through the network due to the non determinism  and concurrency.
+\subsubsection{With the introduction of the synchronization sort.}
+
+In \pref{fig:rws} we can see that the introduction of the synchronization sort significatively reduces the 
+impact of concurrency. The result shows  a 
+clear elimination of the previously observed oscillation (\pref{fig:rwos}). 
+Comparing the simulated results with the ones observed experimentally we found four different cases.
+We found one simulation trace (IL8) that matches the sequence of all the component expression levels perfectly.  In this case delays exist among simulation and experiment but 
+these delays are not comparable since experimental time-points are measured in hours and simulation-units for the simulated PH model.
+We found 4 simulation traces (uPAR, ET1, TfR, SM22) that matched the sequence of experimental discrete expression levels missing one expression-level.
+We found 6 components (MKP3, MKP1, Hes5, IL1-beta, TNF-alpha, DKK1) in which at least 2 expression levels are missed.
+Finally we found 1 component (A20) for which we did not reproduce its experimentally observed dynamics.
 
 
-\begin{figure}[!t]
+%The expression levels of genes \emph{uPAR}, \emph{MKP1},
+%\emph{IL1-beta} are well reproduced, while \emph{Hes5} and \emph{IL8} are not activated. This result can be observed when the activation
+%signal has not been able to propagate through the network due to the non determinism  and concurrency.
+
+
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=5in,height=7in]{images/12genes_sim.png}
-\caption{\bf Results of simulations by introducing the synchronization sort. In gray line the expected behaviors
-come from the discretization of time-series data. In Blue line the simulation behavior.}
+\caption{{\bf Results of simulations by introducing the synchronization sort.} The gray traces represent the experimental expected behaviors
+from the discretization of the time-series data. The blue traces show the simulated behavior.}
 \label{fig:rws}
 \end{figure}
 
 
 %%%%%images des noeuds clés
 
-\begin{figure}[!t]
+\subsubsection{Simulating biological processes.}
+
+To validate our model we studied the prediction of non-observed components of such a system and we focused on biological processes linked 
+to Calcium stimulation, such as keratinocyte-differentiation, cell-adhesion and cell-cycle arrest.
+Our results are shown in \pref{fig:knodes} and confirmed litterature experimental evidence on these processes.
+In the case of keratinocyte-differentiation, this was a functional behavior measured on the cultured cells upon Calcium stimulation,
+ so there was experimental evidence of this effect before measuring the gene expression.  
+In the case of cell-cycle arrest, the switch-on of this component represents the fact that the E-cadherin stimulated model predicts the stop 
+of growth, as confirmed by litterature in human and mouse keratinocytes~\cite{Kolly2005}.
+%@Article{Kolly2005,
+%   Author="Kolly, C.  and Suter, M. M.  and Muller, E. J. ",
+%   Title="{{P}roliferation, cell cycle exit, and onset of terminal differentiation in cultured keratinocytes: pre-programmed pathways in control of {C}-{M}yc and {N}otch1 prevail over extracellular calcium signals}",
+%   Journal="J. Invest. Dermatol.",
+%   Year="2005",
+%   Volume="124",
+%   Number="5",
+%   Pages="1014--1025",
+%   Month="May"
+%}
+Finally, the cell-adhesion component is predicted to switch-on, also in according to published evidence~\cite{Tu2011} in human and mouse keratinocytes.
+%@Article{Tu2011,
+%   Author="Tu, C. L.  and Chang, W.  and Bikle, D. D. ",
+%   Title="{{T}he calcium-sensing receptor-dependent regulation of cell-cell adhesion and keratinocyte differentiation requires {R}ho and filamin {A}}",
+%   Journal="J. Invest. Dermatol.",
+%   Year="2011",
+%   Volume="131",
+%   Number="5",
+%   Pages="1119--1128",
+%   Month="May"
+%}
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=4in,height=3.5in]{images/key_nodes1.png}
-\caption{\bf Particular nodes of the biological model. In Blue line the simulation behavior}
+\caption{{\bf Results of the prediction of biological processes.} The gray traces represent the experimental and litterature-based evidence.
+The blue traces show the simulated behavior of E-cadherin and three biological processes.}
 \label{fig:knodes}
 \end{figure}
 
