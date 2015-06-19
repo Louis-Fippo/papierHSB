@@ -1,15 +1,19 @@
 
 \section{Results}
 
-\subsection{From PID to PH: An automatic generation of PH code of the network}
+\subsection{Automatic generation of PH model from the PID network}
 %give statistics
 
-To simulate of the model we generated a PINT code to be simulated by the PINT simulator \footnote{Available at \url{http://process.hitting.free.fr}}. 
-PINT implements static analyses for computing dynamical properties on very large-scale Automata Networks.
-For the PINT code generation we use two procedures as described in the method section. The first procedure that detects the patterns and its code; the second 
-procedure that generates the PINT code by taking in consideration the type of the pattern to better refine the dynamic of the system from a structural point of view.
-This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
-in the dynamics of the components of the system.
+PH models are written using the PINT\footnote{\url{http://process.hitting.free.fr}} format.  
+PINT implements stochastic simulations and static analyses for computing dynamical properties on very large-scale PH models.
+For the PINT code generation we used two procedures.
+The first procedure detects motifs (controller and controlled components) in graphs from the Pathway Interaction Database; the second, 
+generates the PINT code by choosing an adequate concurrency rule, based on synchronization sorts, to represent the motif dynamic in PH.
+With this method it is possible to convert the whole content of the PID-NCI database into a PH model, as well as individual pre-selected pathways, 
+as is the case for the system under study.  It is implemented in Java and available upon request.
+%taking in consideration the type of the pattern to better refine the dynamic of the system from a structural point of view.
+%This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
+%in the dynamics of the components of the system.
 
 
 
