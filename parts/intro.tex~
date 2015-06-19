@@ -63,7 +63,6 @@ stochastic simulation as well as efficient static methods to analyse dynamical p
 The PH framework uses qualitative and discrete information of the system without requiring enormous parameter estimation tasks
  for its stochastic simulation. 
 This framework has been previously used to verify dynamical properties on biological systems without integrating high-throughput experimental data.
-
 In this work we provide a method to build a time-series data integrated PH model and we evaluate 
 the prediction power of this model concerning the simulatenously predicted traces of 12 gene components of the system upon system stimulation.
 %So far, this method has been successfully demonstrated only on very well-known systems and without exploiting 

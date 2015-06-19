@@ -122,8 +122,8 @@ Given a state $s\in \PHl$, the process of sort $a\in\PHs$ present in $s$ is deno
 An action $h=\PHfrappe{a_i}{b_j}{b_k} \in \PHa$ is \emph{playable} in $s \in L$ if and only if $\PHget{s}{a}=a_i$ and $\PHget{s}{b} = b_j$.
 In such a case, $(s\play h)$ stands for the state resulting from playing the action $h$ in $s$, with
 $\PHget{(s\play h)}{b} = b_k$ and $\forall c \in \PHs, c \neq b, \PHget{(s\play h)}{c} = \PHget{s}{c}$.
-\modCG{In order to model the fact that a molecule in the interaction graph is influenced by various molecules, two 
-types of modeling-scenarios can be proposed: cooperation and synchronization.}
+In order to model the fact that a molecule in the interaction graph is influenced by various molecules, two 
+types of modeling-scenarios can be proposed: cooperation and synchronization.
 
 \subsubsection{Modeling cooperation}
 
@@ -290,14 +290,13 @@ Actions targeting processes of $c$ are drawn as thick lines.
 
 %Here is the first and the most important part of this work. 
 In order to model the RSTC network as a PH model we select known biological regulatory patterns (atomic set of biological components and their interacting roles), represented 
-as biochemical reactions in the RSTC network and propose their PH representation as illustrated in Algorithm \ref{automaticGenerationOfPHModel}. 
+as biochemical reactions in the RSTC network and propose their PH representation. Table \ref{table_patterns} shows some examples of this transformation. 
 
-\modCG{[comment] this part needs to be rewritten, algorithms pseudo-code should be removed.}
 %les ajouts pour les patterns 
-Algorithm \ref{automaticGenerationOfPHModel} uses two procedures, detectPattern (see Algorithm \ref{PatternDetection}) that automatically browses the graph node by node and detects all patterns in the graph. For each node (output node of the pattern) we  call a recursive procedure,
+Automatic pattern selection and PH model generation algorithm uses two procedures. The first that take in parameter argument the graph and  automatically browses it node by node and detects all patterns in the graph. For each node (output node of the pattern) we  call a recursive procedure,
 that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. This set of nodes plus the output node and the way  input and output are linked form a pattern. 
-The type of a pattern is determined by the type of the output node, the type of regulations that arrive to that node and the type of input nodes of the pattern. Consequently, Algorithm \ref{PatternDetection} returns the pattern 
-and its type to another procedure (Algorithm \ref{PHModelGeneration}) which  translates the pattern into the PH formalism. This transformation  takes care of different cases (cooperation, synchronization, simple activation, simple inhibition, etc.)
+The type of a pattern is determined by the type of the output node, the type of regulations that arrive to that node and the type of input nodes of the pattern. Consequently, Algorithm of patterns detection returns the pattern 
+and its type to another procedure  which  translates the pattern into the PH formalism. This transformation  takes care of different cases (cooperation, synchronization, simple activation, simple inhibition, etc.)
 
 
 
@@ -338,7 +337,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 \node[es] (d) at (1,1.5) {Simple activation};
 
 \path
- (a) edge[act] (i)
+ (a) edge[act,green] (i)
  (i) edge[st]  (b);
 \end{tikzpicture}};
 \end{tikzpicture}
@@ -381,7 +380,7 @@ Description\\
 \node[qgre] (b) at (2,1) {b};
 \node[es] (d) at (1,1.5) {Simple inhibition};
 \path
- (a) edge[inh] (i)
+ (a) edge[inh,red] (i)
  (i) edge[st]  (b);
  \end{tikzpicture}};
 \end{tikzpicture}
@@ -424,8 +423,8 @@ Description\\
 \node[es] (d) at (1,3) {activation or inhibition};
 
 \path
- (a) edge[act] (i)
- (b) edge[inh] (i)
+ (a) edge[act,green] (i)
+ (b) edge[inh,red] (i)
  (i) edge[st]  (c);
 \end{tikzpicture}};
 \end{tikzpicture}
@@ -510,35 +509,35 @@ around the mean duration of playing an action}} \modCG{[comment] I suggest to re
 \begin{figure}[!t]
 \centering
 
-\begin{tikzpicture}[scale = 0.65]
+\begin{tikzpicture}[scale = 0.7]
        
     
 	      \draw[thick, ->] (-.2,0)--(11,0) node[below]{$t$};
-	      \foreach \t in {0,1,2,3,4,...,10}
-	      \draw[very thick] (\t,2pt)--(\t,-2pt) node[below,blue]{\small\t};
+	      \foreach \t in {0,1,5,7,10}
+	      \draw[very thick] (\t,2pt)--(\t,-2pt) node[below,black]{\small\t};
 
-	      \draw[thick, ->] (0,-.2)--(0,4) node[left]{$b$};
+	      \draw[thick, ->] (0,-.2)--(0,4) node[left]{Expression Level};
 	      \foreach \y in {1,2,3}
-	      \draw[very thick] (2pt,\y)--(-2pt,\y) node[left,blue]{\small\y};
+	      \draw[very thick] (2pt,\y)--(-2pt,\y) node[left,black]{\small\y};
       
 	      \draw[thick] plot[mark=ball,mark size=1pt] file {illustration.txt};
     
 	      %\pause
-	      \draw[thick,|<->|] (2.8,3.5) -- (3.2,3.5) node[above,blue]{$MaxLevel$};
-	      \draw[thick,|<->|] (-.2,-.2) -- (.2,-.2) node[below,blue]{};
+	      \draw[thick] (2.8,3.5) -- (3.2,3.5) node[above,blue]{\small $MaxLevel$};
+	      %\draw[thick,|<->|] (-.2,-.2) -- (.2,-.2) node[below,blue]{};
 	      %\pause
-	      \draw[thick,|<->|] (3,0)node[above,blue]{$MinLevel$} -- (3,3.5);
+	      \draw[thick,|<->|] (3,0)node[below,blue]{\small $MinLevel$} -- (3,3.5);
 	      %\pause
 	      \draw[thick,dotted,blue] (0,1.16) -- (10,1.16) node[right]{$th1$}; 
 	      \draw[thick,dotted,blue] (0,2.33) -- (10,2.33) node[right]{$th2$}; 
 	      %\pause
 	      \draw[thick,dotted,purple] (0.7,1.16) -- (0.7,-.5) node[below]{$t_{1}$};
 	      %\pause
-	      \draw[thick,dotted,purple] (1.5,2.33) -- (1.5,-.3) node[below]{$t_{2}$};
+	      \draw[thick,dotted,purple] (1.5,2.33) -- (1.5,-.5) node[below]{$t_{2}$};
 	      %\pause
-	      \draw[thick,dotted,purple] (4.2,2.33) -- (4.2,-.3) node[below]{$t_{3}$};
+	      \draw[thick,dotted,purple] (4.2,2.33) -- (4.2,-.5) node[below]{$t_{3}$};
 	      %\pause
-	      \draw[thick,dotted,purple] (9.4,1.16) -- (9.4,-.3) node[below]{$t_{4}$};
+	      \draw[thick,dotted,purple] (9.4,1.16) -- (9.4,-.5) node[below]{$t_{4}$};
 
            \end{tikzpicture}
 	    
