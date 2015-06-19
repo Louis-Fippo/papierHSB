@@ -29,7 +29,7 @@ the size of the concurrence, i.e. the number of predecessors that a node in the 
 Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
 the dynamic of components, the signal transduction and takes into account the stochastic and time aspect of the model.
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=5in,height=3in]{images/resultWOS.pdf}
 \caption{\bf Results of simulations without introducing the synchronization sort. In black line the expected behaviors
@@ -40,15 +40,14 @@ come from the discretization of time-series data. In Blue line the simulation be
 
 From \pref{fig:rws} we can see that the introduction of the synchronization sort significatively reduces the 
 impact of concurrence by the introduction of the synchronization. The result shows  a 
-clear elimination of the previously observed oscillation in \pref{fig:rwos}. One can see that the expression levels of genes \emph{uPAR}, \emph{MKP1},
-\emph{IL1 beta} are well reproduced, while \emph{Hes5} and \emph{IL8} are not activated. This result can be observed when the activation
+clear elimination of the previously observed oscillation in \pref{fig:rwos}. One can see that the expression levels of genes \emph{uPAR}, \emph{IL8}, \emph{TFR} are well reproduced. Those of \emph{IL1 beta}, \emph{MKP3}, \emph{MKP1}, \emph{Hes5}, \emph{SM22}, \emph{ET1}, \emph{DKK1} are also well reproduced except that they do not go down at the end while \emph{A20} are not activated. This result can be observed when the activation
 signal has not been able to propagate through the network due to the non determinism  and concurrency.
 
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=5in,height=7in]{images/12genes_sim.png}
-\caption{\bf Results of simulations by introducing the synchronization sort. In black line the expected behaviors
+\caption{\bf Results of simulations by introducing the synchronization sort. In gray line the expected behaviors
 come from the discretization of time-series data. In Blue line the simulation behavior.}
 \label{fig:rws}
 \end{figure}
@@ -56,10 +55,10 @@ come from the discretization of time-series data. In Blue line the simulation be
 
 %%%%%images des noeuds clés
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=4in,height=3.5in]{images/key_nodes1.png}
-\caption{\bf Particular nodes}
+\caption{\bf Particular nodes of the biological model. In Blue line the simulation behavior}
 \label{fig:knodes}
 \end{figure}
 
