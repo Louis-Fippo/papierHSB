@@ -58,8 +58,8 @@ activation (agent), inhibition, output, input and protein-family-member.
 \begin{figure}[!p]
  \centering
  \includegraphics[width=7.5in, height=5in, angle=-90]{images/net.jpg}
-\caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Nodes in blue correspond to E-cadherin entities, in red or green, to time-series genes, 
-and nodes in It is composed of $293$ nodes and $375$ edges (interactions).
+\caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Blue nodes correspond to E-cadherin entities, red or green, to time-series genes, 
+and cyan nodes to cellular processes. The graph is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, genes, cellular state, biological processes and positive conditions) and of transient
 nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
 input and protein-family-member.} 
@@ -490,8 +490,9 @@ and stochastic parameters introduced into the PH framework to achieve dynamic re
 % in the aim at observing an expected behavior. 
 To fire an action in the PH framework we need to provide two parameters: (1) the rate $r=t^{-1}$, where $t$ is the mean time of firing an action,
 % or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action,
-and (2) the stochasticity absorption factor $sa$, which is introduced to control the \modCG{\underline{higher variance 
-around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
+and (2) the stochasticity absorption factor $sa$, which is the variance of firing an action.
+% introduced to control the \modCG{\underline{higher variance 
+%around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
 
 %To avoid over fitting in the estimation of these parameters, we propose that each component of the PH, representing a measured gene in the network,  will take the estimated values of the parameters of its respective cluster in the experimental data.
 
@@ -543,8 +544,10 @@ around the mean duration of playing an action}} \modCG{[comment] I suggest to re
            \end{tikzpicture}
 	    
 
-\caption{\bf Estimation of temporal parameters from time series data:} $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression. $MinLevel$ represents the minimum 
-expression. In this example  $0$ is the minimum level. $th1$ and $th2$ represent respectively the first and the second threshold.}
+\caption{\bf Estimation of temporal parameters from time series data:} The mean firing time of an action that makes a
+component (gene) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a gene, while 
+ $MinLevel$, its minimum expression.
+The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 1,2,3) of a component according to its gene expression data.}
 \label{fig:estimationParameter}
 \end{figure}
 
