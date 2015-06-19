@@ -7,8 +7,6 @@ detail some of the workflow steps.
 
 % and comprises the following steps:
 
-\modCG{[comment] In Fig. 1 can we put ``RSTC Network'', ``PH Model'', ``PINT simulator'', and ``r and sa'' in parenthesis ?}
-
 \begin{figure}[!t]
  \centering
  \includegraphics[width=4.1in,height=2in]{images/workflow-2.png}
@@ -148,7 +146,7 @@ Cooperation sort allows to model the fact that two components cooperate to hit a
 %the notion of \emph{synchronization sort}, 
 The synchronization sort implements another type of cooperation. If we refer to the example of
 \pref{fig:runningPH} left, we can similarly construct a \emph{synchronization sort} $ab$ between sorts $a$ and $b$, defined with also 
-4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$ or $c_0$ bounces to $c_1$) if either  $a$ \modCG{or} $b$ are activated. Therefore, each one of 
+4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$ or $c_0$ bounces to $c_1$) if either  $a$ or $b$ are activated. Therefore, each one of 
 these processes $ab_{01}$, $ab_{10}$, $ab_{11}$ can activate $c$.  In order to inhibit $c$, both sorts, $a$ and $b$, need to be 
 in the sub-state $0$, i.e. $ab_{00}$. Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
 Imposing the synchronization sort to model a target component regulated independently by multiple predecessors avoids oscillations in the behavior of the target component over time. 
@@ -160,8 +158,6 @@ generates oscillations on the target component.
 %[Remember that PH was designed in order to take very large system analysis into account. Indeed, algorithm were developped on such a
 %process??? system so that it prevent for building the whole state graph which would be intractable when there are more than $10$ or    % a re voir 
 %$20$ components.]
-
-\modCG{[comment] I think the Example below can be removed.}
 
 \begin{example}
 \pref{fig:runningPH} represents a PH $(\PHs,\PHl,\PHa)$ with $\PHs = \{a,b,c,ab\}$, and:
@@ -316,7 +312,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 \caption{Examples of patterns}
 \label{table_patterns}
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|M{4cm}|}
 \hline
 \bfseries Biological Patterns
 
@@ -326,7 +322,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 &
 
-\bfseries Descriptions\\ 
+\bfseries Descriptions \tabularnewline 
 \hline
 \begin{tikzpicture}
 \node[scale=0.65] (sa1) at (0,0){\begin{tikzpicture}[auto]
@@ -369,7 +365,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 &
 
-Description\\ 
+This pattern model the activation of the component b by the component a.\tabularnewline
 \hline
 
 \begin{tikzpicture}
@@ -411,7 +407,7 @@ Description\\
 
 &
 
-Description\\ 
+This pattern model the inhibition of the component b by the component a\tabularnewline
 \hline
 
 \begin{tikzpicture}
@@ -459,7 +455,8 @@ Description\\
 
 &
 
-Description\\
+This pattern model either the activation of the component c by the component a or the inhibition of the 
+component c by the component b \tabularnewline
 \hline
 \end{tabular}
 \end{table}
@@ -622,9 +619,8 @@ for all TFs we introduced an auto-inhibition action that represents their degrat
  \item \textbf{Genes.} The genes are activited or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
-\modCG{[comment] Column ``parameters'' in Figure 6 should be shifted down}
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
  \centering
  \scalebox{0.45}{
   \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
@@ -727,8 +723,8 @@ for all TFs we introduced an auto-inhibition action that represents their degrat
     %noeuds pour les hypothèses de modélisation 
     \node[annot] (parameterTitle) at (3,7) {\textcolor{blue}{\textbf{\large Parameters}}};   %text width=3cm
     \node[annot] (RH) at (3,5) {\textcolor{black}{\textbf{\LARGE -}}};
-    \node[annot] (SH) at (3,2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
-    \node[annot] (TH) at (3,-1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
+    \node[annot] (SH) at (3,1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
+    \node[annot] (TH) at (3,-2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
     \node[annot] (CH) at (3,-4) {\textcolor{black}{\small \textbf{\large learned from TSD}}};
     %\node[annot] (test) at (5,-4) {\textcolor{black}{\huge \textbf{}}};
     

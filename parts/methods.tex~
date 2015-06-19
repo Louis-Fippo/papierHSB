@@ -7,8 +7,6 @@ detail some of the workflow steps.
 
 % and comprises the following steps:
 
-\modCG{[comment] In Fig. 1 can we put ``RSTC Network'', ``PH Model'', ``PINT simulator'', and ``r and sa'' in parenthesis ?}
-
 \begin{figure}[!t]
  \centering
  \includegraphics[width=4.1in,height=2in]{images/workflow-2.png}
@@ -58,7 +56,8 @@ activation (agent), inhibition, output, input and protein-family-member.
 \begin{figure}[!p]
  \centering
  \includegraphics[width=7.5in, height=5in, angle=-90]{images/net.jpg}
-\caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} It is composed of $293$ nodes and $375$ edges (interactions).
+\caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Blue nodes correspond to E-cadherin entities, red or green, to time-series genes, 
+and cyan nodes to cellular processes. The graph is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, genes, cellular state, biological processes and positive conditions) and of transient
 nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
 input and protein-family-member.} 
@@ -147,7 +146,7 @@ Cooperation sort allows to model the fact that two components cooperate to hit a
 %the notion of \emph{synchronization sort}, 
 The synchronization sort implements another type of cooperation. If we refer to the example of
 \pref{fig:runningPH} left, we can similarly construct a \emph{synchronization sort} $ab$ between sorts $a$ and $b$, defined with also 
-4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$ or $c_0$ bounces to $c_1$) if either  $a$ \modCG{or} $b$ are activated. Therefore, each one of 
+4 processes. Then, component $c$ is activated ($c_1$ bounces to $c_2$ or $c_0$ bounces to $c_1$) if either  $a$ or $b$ are activated. Therefore, each one of 
 these processes $ab_{01}$, $ab_{10}$, $ab_{11}$ can activate $c$.  In order to inhibit $c$, both sorts, $a$ and $b$, need to be 
 in the sub-state $0$, i.e. $ab_{00}$. Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
 Imposing the synchronization sort to model a target component regulated independently by multiple predecessors avoids oscillations in the behavior of the target component over time. 
@@ -159,8 +158,6 @@ generates oscillations on the target component.
 %[Remember that PH was designed in order to take very large system analysis into account. Indeed, algorithm were developped on such a
 %process??? system so that it prevent for building the whole state graph which would be intractable when there are more than $10$ or    % a re voir 
 %$20$ components.]
-
-\modCG{[comment] I think the Example below can be removed.}
 
 \begin{example}
 \pref{fig:runningPH} represents a PH $(\PHs,\PHl,\PHa)$ with $\PHs = \{a,b,c,ab\}$, and:
@@ -315,7 +312,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 \caption{Examples of patterns}
 \label{table_patterns}
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|M{4cm}|}
 \hline
 \bfseries Biological Patterns
 
@@ -325,7 +322,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 &
 
-\bfseries Descriptions\\ 
+\bfseries Descriptions \tabularnewline 
 \hline
 \begin{tikzpicture}
 \node[scale=0.65] (sa1) at (0,0){\begin{tikzpicture}[auto]
@@ -368,7 +365,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 &
 
-Description\\ 
+This pattern model the activation of the component b by the component a.\tabularnewline
 \hline
 
 \begin{tikzpicture}
@@ -410,7 +407,7 @@ Description\\
 
 &
 
-Description\\ 
+This pattern model the inhibition of the component b by the component a\tabularnewline
 \hline
 
 \begin{tikzpicture}
@@ -423,7 +420,7 @@ Description\\
 \node[es] (d) at (1,3) {activation or inhibition};
 
 \path
- (a) edge[act] (i)
+ (a) edge[act,green] (i)
  (b) edge[inh,red] (i)
  (i) edge[st]  (c);
 \end{tikzpicture}};
@@ -458,7 +455,8 @@ Description\\
 
 &
 
-Description\\
+This pattern model either the activation of the component c by the component a or the inhibition of the 
+component c by the component b \tabularnewline
 \hline
 \end{tabular}
 \end{table}
@@ -489,8 +487,9 @@ and stochastic parameters introduced into the PH framework to achieve dynamic re
 % in the aim at observing an expected behavior. 
 To fire an action in the PH framework we need to provide two parameters: (1) the rate $r=t^{-1}$, where $t$ is the mean time of firing an action,
 % or the temporal parameter because $t=r^{-1}$ if we assume that $t$ is the average time of playing an action,
-and (2) the stochasticity absorption factor $sa$, which is introduced to control the \modCG{\underline{higher variance 
-around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
+and (2) the stochasticity absorption factor $sa$, which is the variance of firing an action.
+% introduced to control the \modCG{\underline{higher variance 
+%around the mean duration of playing an action}} \modCG{[comment] I suggest to replace the underlinde last sentence by: ``the variance of firing an action''}. 
 
 %To avoid over fitting in the estimation of these parameters, we propose that each component of the PH, representing a measured gene in the network,  will take the estimated values of the parameters of its respective cluster in the experimental data.
 
@@ -505,6 +504,8 @@ around the mean duration of playing an action}} \modCG{[comment] I suggest to re
 %\end{enumerate}
 
 %In our time-series data the components of the PH which need to be associated specific parameters (step 3) are the $12$ genes present in our RSTC network.
+
+\modCG{[comment] It will be good if in Fig 5 we have 0, 1, 2 instead of 1,2, 3}
 
 \begin{figure}[!t]
 \centering
@@ -542,8 +543,10 @@ around the mean duration of playing an action}} \modCG{[comment] I suggest to re
            \end{tikzpicture}
 	    
 
-\caption{\bf Estimation of temporal parameters from time series data:} $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression. $MinLevel$ represents the minimum 
-expression. In this example  $0$ is the minimum level. $th1$ and $th2$ represent respectively the first and the second threshold.}
+\caption{\bf Estimation of temporal parameters from time series data:} The mean firing time of an action that makes a
+component (gene) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a gene, while 
+ $MinLevel$, its minimum expression.
+The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 1,2,3) of a component according to its gene expression data.}
 \label{fig:estimationParameter}
 \end{figure}
 
@@ -563,16 +566,19 @@ change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa
 %discretisation des données
 \subsubsection{Discretization of times-series data}
 
-Because PH simulation is discrete, we need to discretize continuous experimental data so we can compare the simulation outputs.
-The goal of this method is to better determine, according to the gene expression level, when  a given molecule is activated or inhibited.
-To do this we introduce the new analog concept of Significant Increase or Decrease to characterize the fact that a level of a molecule 
-increases or decreases when crossing a threshold of significance; we limite the possible expression levels for a molecule to
-$\{0, 1, 2\}$. This choice was made because when we look at time-series data (see \pref{fig:tsd}), one can clearly observe a high level of
-activity between $0h$ and $5h$ and a slow level of activity between $5h$ and $10h$ on the other hand. The goal of the discretization method is to capture these
-two activation times. For each time-series, we introduce two thresholds \emph{th1} and \emph{th2} as in \pref{fig:estimationParameter}. The value of this two
-thresholds is computed as follows $\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. Therefore, 
-expression level in the range $[0-th1]$ is at level $0$, while expression level in the range $[th1-th2]$  has level $1$ and the last range is at
-level $2$. Thus we can automatically determine the different levels of expression of the TSD. 
+Because the output of a PH simulation are discrete traces of PH components, we discretized continuous experimental data to facilitate 
+the comparison with simulation outputs.
+%The goal of this method is to determine, according to the gene expression level, when a PH component is activated or inhibited.
+%To do this we introduce the new analog concept of Significant Increase or Decrease to characterize the fact that a level of a molecule 
+%increases or decreases when crossing a threshold of significance; we limite the possible expression levels for a molecule to
+%$\{0, 1, 2\}$. This choice was made because 
+When looking at the time-series data (see \pref{fig:tsd}) one can distinguish a high level of
+activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. We implemented a discretization method to capture these
+two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}): 
+$\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. 
+In this way, the expression level in the range $[0-th1]$ is at level $0$, the one in the range $[th1-th2]$ is at level $1$, and the one in the last range is at
+level $2$. 
+%Thus we can automatically determine the different levels of expression of the TSD. 
 %illustration des résultats de la méthode de discrétisation
 %To illustrate the result of the discretization algorithm we plot in \pref{fig:illustrationDiscretisation} the expression 
 %of $9$ selected genes from the TSD with their respective discrete plots. 
@@ -580,29 +586,42 @@ level $2$. Thus we can automatically determine the different levels of expressio
 %swhen modeling these steps in the PH framework if we would like to have coherent simulation results.
 
 
-\subsection{Simulation: Initials conditions}
+\subsection{Simulation}
 %we give the initial condition for the simulation
-To run the simulation we need to set initial conditions for the components of our network. Because the components of the network are grouped into 
-layers, the initial conditions will be the same in the different layers. In the following we will present the initial conditions that we have chosen for the different 
-components.
+
+We set the same initial conditions to PH components belonging to the same network layer, chosen from the RSTC structure.
+These initial conditions are detailed below and summarized in \pref{fig:initialCondition}.
+% where we can clearly see the initial values chosen at each layer for our model.
+%To run the simulation we need to set initial conditions for the components of our network. Because the components of the network are grouped into 
+%layers, the initial conditions will be the same in the different layers. In the following we will present the initial conditions that we have chosen for the different 
+%components.
 
 \begin{itemize}
- \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin, that is active for a duration of $5$ units times in average. We made this 
+ \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin to be active for a duration of $5$ units times in average. We made this 
  choice to take into account the average time of the Calcium stimuli effect.
- \item \textbf{Signaling layer: signaling proteins.} At this layer, the components are activated and inhibited with the same rate and the same stochasticity absorption factor. 
- Nevertheless, the choice of inhibition parameters must ensure that the time interval in which the inhibition action 
- is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
- can be seen as reachability constraints from the entry  node (E-cadherin) to the output node genes. The values of these parameters are selected by considering the delay of signal transduction from the entry
- node (E-cadherin) to the output node (genes).
- \item \textbf{Transcription layer: transcription factors.} At this stage to model activation over a transcription factor, the signal comes from signaling proteins; however, for inhibition, it additionally 
- come from an auto-inhibition which represents the degration of the transcription factor. The signal comes from signaling proteins for activation. But for the inhibition, in addition 
- to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
+ \item \textbf{Signaling layer: signaling proteins.} The components in this layer are activated and inhibited with the same rate and the same stochasticity absorption factor. 
+% Nevertheless, 
+The actions between a controller component $A$ and a controlled component $B$ are constrained so that 
+$B$ is first activated by $A$ and then inhibited.  That is, 
+the time interval in which an inhibition action from $A$ to $B$ fires is greater than 
+the time interval in which an activation action from $A$ to $B$ fires.
+Additionally, these two time intervals must not overlap.
+These constraints can be seen as 
+%The choice of inhibition parameters must ensure that the time interval in which the inhibition action 
+% is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
+% can be seen as 
+reachability constraints from the entry  node (E-cadherin) to the output nodes (genes). The values of these parameters are selected by considering the delay of signal transduction from the entry
+ node to the output nodes.
+ \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
+for all TFs we introduced an auto-inhibition action that represents their degration over time. 
+%The signal comes from signaling proteins for activation. But for the inhibition, in addition 
+% to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
  \item \textbf{Genes.} The genes are activited or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
-The initial conditions of the simulation are summarized in \pref{fig:initialCondition} where we can clearly see the initial values chosen at each layer for our model.
+\modCG{[comment] Column ``parameters'' in Figure 6 should be shifted down}
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
  \centering
  \scalebox{0.45}{
   \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
@@ -705,8 +724,8 @@ The initial conditions of the simulation are summarized in \pref{fig:initialCond
     %noeuds pour les hypothèses de modélisation 
     \node[annot] (parameterTitle) at (3,7) {\textcolor{blue}{\textbf{\large Parameters}}};   %text width=3cm
     \node[annot] (RH) at (3,5) {\textcolor{black}{\textbf{\LARGE -}}};
-    \node[annot] (SH) at (3,2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
-    \node[annot] (TH) at (3,-1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
+    \node[annot] (SH) at (3,1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
+    \node[annot] (TH) at (3,-2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
     \node[annot] (CH) at (3,-4) {\textcolor{black}{\small \textbf{\large learned from TSD}}};
     %\node[annot] (test) at (5,-4) {\textcolor{black}{\huge \textbf{}}};
     
