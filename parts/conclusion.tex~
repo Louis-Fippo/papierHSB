@@ -1,6 +1,6 @@
 \section{Conclusion}
 This work describes the steps towards the integration of time-series data in large-scale cell-based models. 
-We proposed an automatic method to build a timed/stochastic PH model from a biological system composed of biochemical reactions, extracted automatically from public databases, 
+We proposed an automatic method to build a stochastic pi-calculus PH model from a biological system composed of biochemical reactions, extracted automatically from public databases, 
 relevant to keratinocyte differentiation induced by Calcium. 
 We then proposed a method to discretize time-series gene expression data, so they can be integrated to the PH simulations and logically explained by the PH stochastic analyses. 
 Finally we described a method to automatically estimate the temporal and stochastic
