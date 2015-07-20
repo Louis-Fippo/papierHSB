@@ -1,0 +1,150 @@
+
+\section{Results}
+
+\subsection{From PID to PH: An automatic generation of PH code of the network}
+%give statistics
+
+To simulate of the model we generated a PINT code to be simulated by the PINT simulator \footnote{Available at \url{http://process.hitting.free.fr}}. 
+PINT implements static analyses for computing dynamical properties on very large-scale Automata Networks.
+For the PINT code generation we use two procedures as described in the method section. The first procedure that detects the patterns and its code; the second 
+procedure that generates the PINT code by taking in consideration the type of the pattern to better refine the dynamic of the system from a structural point of view.
+This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
+in the dynamics of the components of the system.
+
+
+%procedure take a in parameter a pattern with its code from the procedure of detection of patterns. Afater taking 
+%the pattern, the procedure will write the correct code associate to the current pattern. 
+%list all the selected patterns in the biological reaction into a file. In this file, each line contains the 
+%name of the nodes belonging to the current reaction and the reaction type number. The list was then parsed, line by line and, 
+%after renaming the nodes using numbers (for readability and in conformity with the PINT language syntax) the corresponding PINT code
+%for the PH process equivalent to each reaction was generated. This was implemented in a Java code.
+
+
+\subsection{Simulation}
+%present the simulation results
+%In this section we will present the results of the simulations of the model. It will be present in two 
+%main sub sections. In the first, we will present the result of simulation of model without the inclusion 
+%of the synchronization gate and in the second we will present result with synchronization gate. Both results
+%present common characteristics and show us the coherence of our approach of modelization. The common characteristics
+%are the following:
+
+We simulated the model with and without the inclusion of the synchronization sort. In the following, we present the results of 
+the simulation.
+
+\subsubsection{Without the introduction of synchronization sort}
+One can easily notice in \pref{fig:rwos} the occurence of oscillations. This is not the expected behavior from the biological system
+but it is coherent with the choice of the modelling and the way the simulator works as explained in \ref{sssec:synchronization}: cooperation
+sorts are used to model multiple regulators of a common target
+where this is clearly identifiable. In other cases we left the components act independently.
+It is important to notice that the intensity of the oscillation is linked with 
+the size of the concurrence, i.e. the number of predecessors that a node in the network has.
+Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
+the dynamic of components, the signal transduction and takes into account the stochastic and time aspect of the model.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=6.5in,height=3.5in]{images/resultWOS.pdf}
+\caption{\bf Results of simulations without introducing the synchronization sort. In black line the expect behaviours
+come from the discretization of time-series data. In Blue line the simulation behavior.}
+\label{fig:rwos}
+\end{figure*}
+\subsubsection{With the introduction of synchronization sort}
+
+From \pref{fig:rws} we can see that the introduction of the synchronization sort significatively reduces the 
+impact of concurrence by the introduction of the synchronization. The result shows  a 
+clear elimination of the previously observed oscillation in \pref{fig:rwos}. One can see that \emph{uPAR}, \emph{MKP1},
+\emph{IL1 beta} are weel reproduced. \emph{Hes5} and \emph{IL8} are not activated. This result can be observed when the activation
+signal has not been able to propagate through the network due to the random and concurrency.
+
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=6.5in,height=3.5in]{images/resultWS.pdf}
+\caption{\bf Results of simulations by introducing the synchronization sort. In black line the expect behaviours
+come from the discretization of time-series data. In Blue line the simulation behavior.}
+\label{fig:rws}
+\end{figure*}
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.

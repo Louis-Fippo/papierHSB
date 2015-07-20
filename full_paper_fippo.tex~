@@ -26,6 +26,11 @@
 
 \def\modCG#1{\textcolor{red}{#1}}
 
+
+%pour le texte dans le tableau
+
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+
 \usepackage{url}
 \urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
 \urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
@@ -110,84 +115,112 @@ concurrent events.
 \input{parts/acknowledgements}
 
 
+%\bibliographystyle{plain}
+%\bibliography{biblio.bib}
 
 \begin{thebibliography}{4}
 
-\bibitem{schaefer2009pid}
-C.~F. Schaefer, K.~Anthony, S.~Krupa, J.~Buchoff, M.~Day, T.~Hannay, and K.~H.
-  Buetow, ``Pid: the pathway interaction database,'' \emph{Nucleic acids
-  research}, vol.~37, no. suppl 1, pp. D674--D679, 2009.
-
-\bibitem{yu2012hipathdb}
-N.~Yu, J.~Seo, K.~Rho, Y.~Jang, J.~Park, W.~K. Kim, and S.~Lee, ``hipathdb: a
-  human-integrated pathway database with facile visualization,'' \emph{Nucleic
-  acids research}, vol.~40, no.~D1, pp. D797--D802, 2012.
-
-\bibitem{tyson2003sniffers}
-J.~J. Tyson, K.~C. Chen, and B.~Novak, ``Sniffers, buzzers, toggles and
-  blinkers: dynamics of regulatory and signaling pathways in the cell,''
-  \emph{Current opinion in cell biology}, vol.~15, no.~2, pp. 221--231, 2003.
-
 \bibitem{batt2005validation}
-G.~Batt, D.~Ropers, H.~De~Jong, J.~Geiselmann, R.~Mateescu, M.~Page, and
-  D.~Schneider, ``Validation of qualitative models of genetic regulatory
-  networks by model checking: Analysis of the nutritional stress response in
-  escherichia coli,'' \emph{Bioinformatics}, vol.~21, no. suppl 1, pp.
-  i19--i28, 2005.
-
-\bibitem{mobashir2012simulated}
-M.~Mobashir, B.~Schraven, and T.~Beyer, ``Simulated evolution of signal
-  transduction networks,'' \emph{PloS one}, vol.~7, no.~12, p. e50905, 2012.
-
-\bibitem{guziolowski2013exhaustively}
-C.~Guziolowski, S.~Videla, F.~Eduati, S.~Thiele, T.~Cokelaer, A.~Siegel, and
-  J.~Saez-Rodriguez, ``Exhaustively characterizing feasible logic models of a
-  signaling network using answer set programming,'' \emph{Bioinformatics},
-  vol.~29, no.~18, pp. 2320--2326, 2013.
-
-\bibitem{mitsos2009identifying}
-A.~Mitsos, I.~N. Melas, P.~Siminelakis, A.~D. Chairakaki, J.~Saez-Rodriguez,
-  and L.~G. Alexopoulos, ``Identifying drug effects via pathway alterations
-  using an integer linear programming optimization formulation on
-  phosphoproteomic data,'' \emph{PLoS computational biology}, vol.~5, no.~12,
-  p. e1000591, 2009.
-
-\bibitem{macnamara2012state}
-A.~MacNamara, C.~Terfve, D.~Henriques, B.~P. Bernab{\'e}, and
-  J.~Saez-Rodriguez, ``State--time spectrum of signal transduction logic
-  models,'' \emph{Physical Biology}, vol.~9, no.~4, p. 045003, 2012.
-
-\bibitem{molloy1982performance}
-M.~K. Molloy, ``Performance analysis using stochastic petri nets,''
-  \emph{Computers, IEEE Transactions on}, vol. 100, no.~9, pp. 913--917, 1982.
-
-\bibitem{heiner2008petri}
-M.~Heiner, D.~Gilbert, and R.~Donaldson, ``Petri nets for systems and synthetic
-  biology,'' in \emph{Formal methods for computational systems biology}.\hskip
-  1em plus 0.5em minus 0.4em\relax Springer, 2008, pp. 215--264.
-
-\bibitem{priami1995stochastic}
-C.~Priami, ``Stochastic $\pi$-calculus,'' \emph{The Computer Journal}, vol.~38,
-  no.~7, pp. 578--589, 1995.
-
-\bibitem{maurin2009modeling}
-M.~Maurin, M.~Magnin, and O.~Roux, ``Modeling of genetic regulatory network in
-  stochastic $\pi$-calculus,'' in \emph{Bioinformatics and Computational
-  Biology}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2009, pp.
-  282--294.
-
-\bibitem{PMR10-TCSB}
-L.~{P}aulev{\'e}, M.~{M}agnin, and O.~{R}oux, ``Refining dynamics of gene
-  regulatory networks in a stochastic $\pi$-calculus framework,'' in
-  \emph{Transactions on Computational Systems Biology XIII}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer, 2011, pp. 171--191.
+Gr{\'e}gory Batt, Delphine Ropers, Hidde De~Jong, Johannes Geiselmann, Radu
+  Mateescu, Michel Page, and Dominique Schneider.
+\newblock Validation of qualitative models of genetic regulatory networks by
+  model checking: Analysis of the nutritional stress response in escherichia
+  coli.
+\newblock {\em Bioinformatics}, 21(suppl 1):i19--i28, 2005.
 
 \bibitem{guziolowski2012automatic}
-C.~Guziolowski, A.~Kittas, F.~Dittmann, and N.~Grabe, ``Automatic generation of
-  causal networks linking growth factor stimuli to functional cell state
-  changes,'' \emph{FEBS Journal}, vol. 279, no.~18, pp. 3462--3474, 2012.
+Carito Guziolowski, Aristotelis Kittas, Florian Dittmann, and Niels Grabe.
+\newblock Automatic generation of causal networks linking growth factor stimuli
+  to functional cell state changes.
+\newblock {\em FEBS Journal}, 279(18):3462--3474, 2012.
 
+\bibitem{guziolowski2013exhaustively}
+Carito Guziolowski, Santiago Videla, Federica Eduati, Sven Thiele, Thomas
+  Cokelaer, Anne Siegel, and Julio Saez-Rodriguez.
+\newblock Exhaustively characterizing feasible logic models of a signaling
+  network using answer set programming.
+\newblock {\em Bioinformatics}, 29(18):2320--2326, 2013.
+
+\bibitem{heiner2008petri}
+Monika Heiner, David Gilbert, and Robin Donaldson.
+\newblock Petri nets for systems and synthetic biology.
+\newblock In {\em Formal methods for computational systems biology}, pages
+  215--264. Springer, 2008.
+
+\bibitem{Kolly2005}
+C.~Kolly, M.~M. Suter, and E.~J. Muller.
+\newblock {{P}roliferation, cell cycle exit, and onset of terminal
+  differentiation in cultured keratinocytes: pre-programmed pathways in control
+  of {C}-{M}yc and {N}otch1 prevail over extracellular calcium signals}.
+\newblock {\em J. Invest. Dermatol.}, 124(5):1014--1025, May 2005.
+
+\bibitem{macnamara2012state}
+Aidan MacNamara, Camille Terfve, David Henriques, Beatriz~Pe{\~n}alver
+  Bernab{\'e}, and Julio Saez-Rodriguez.
+\newblock State--time spectrum of signal transduction logic models.
+\newblock {\em Physical Biology}, 9(4):045003, 2012.
+
+\bibitem{maurin2009modeling}
+Myl{\`e}ne Maurin, Morgan Magnin, and Olivier Roux.
+\newblock Modeling of genetic regulatory network in stochastic $\pi$-calculus.
+\newblock In {\em Bioinformatics and Computational Biology}, pages 282--294.
+  Springer, 2009.
+
+\bibitem{mitsos2009identifying}
+Alexander Mitsos, Ioannis~N Melas, Paraskeuas Siminelakis, Aikaterini~D
+  Chairakaki, Julio Saez-Rodriguez, and Leonidas~G Alexopoulos.
+\newblock Identifying drug effects via pathway alterations using an integer
+  linear programming optimization formulation on phosphoproteomic data.
+\newblock {\em PLoS computational biology}, 5(12):e1000591, 2009.
+
+\bibitem{mobashir2012simulated}
+Mohammad Mobashir, Burkhart Schraven, and Tilo Beyer.
+\newblock Simulated evolution of signal transduction networks.
+\newblock {\em PloS one}, 7(12):e50905, 2012.
+
+\bibitem{molloy1982performance}
+Michael~K. Molloy.
+\newblock Performance analysis using stochastic petri nets.
+\newblock {\em Computers, IEEE Transactions on}, 100(9):913--917, 1982.
+
+\bibitem{PMR10-TCSB}
+{L}o{\"i}c {P}aulev{\'e}, {M}organ {M}agnin, and {O}livier {R}oux.
+\newblock Refining dynamics of gene regulatory networks in a stochastic
+  $\pi$-calculus framework.
+\newblock In {\em Transactions on Computational Systems Biology XIII}, pages
+  171--191. Springer, 2011.
+
+\bibitem{priami1995stochastic}
+Corrado Priami.
+\newblock Stochastic $\pi$-calculus.
+\newblock {\em The Computer Journal}, 38(7):578--589, 1995.
+
+\bibitem{schaefer2009pid}
+Carl~F Schaefer, Kira Anthony, Shiva Krupa, Jeffrey Buchoff, Matthew Day, Timo
+  Hannay, and Kenneth~H Buetow.
+\newblock Pid: the pathway interaction database.
+\newblock {\em Nucleic acids research}, 37(suppl 1):D674--D679, 2009.
+
+\bibitem{Tu2011}
+C.~L. Tu, W.~Chang, and D.~D. Bikle.
+\newblock {{T}he calcium-sensing receptor-dependent regulation of cell-cell
+  adhesion and keratinocyte differentiation requires {R}ho and filamin {A}}.
+\newblock {\em J. Invest. Dermatol.}, 131(5):1119--1128, May 2011.
+
+\bibitem{tyson2003sniffers}
+John~J Tyson, Katherine~C Chen, and Bela Novak.
+\newblock Sniffers, buzzers, toggles and blinkers: dynamics of regulatory and
+  signaling pathways in the cell.
+\newblock {\em Current opinion in cell biology}, 15(2):221--231, 2003.
+
+\bibitem{yu2012hipathdb}
+Namhee Yu, Jihae Seo, Kyoohyoung Rho, Yeongjun Jang, Jinah Park, Wan~Kyu Kim,
+  and Sanghyuk Lee.
+\newblock hipathdb: a human-integrated pathway database with facile
+  visualization.
+\newblock {\em Nucleic acids research}, 40(D1):D797--D802, 2012.
 
 \end{thebibliography}
+
 
 \end{document}

@@ -1,0 +1,13 @@
+\section{Conclusion}
+This work describes the steps towards the integration of time-series data in large-scale cell-based models. 
+We proposed an automatic method to build a stochastic pi-calculus PH model from a biological system composed of biochemical reactions, extracted automatically from public databases, 
+relevant to keratinocyte stimulation induced by Calcium. 
+We then proposed a method to discretize time-series gene expression data, so they can be integrated to the PH simulations and logically explained by the PH static analyses. 
+Finally we described a method to automatically estimate the temporal and stochastic
+parameters for the PH simulation, so this estimation process will not be biased by over fitting. Ours results show that: (1) we reproduce accuretely in mean 
+$7$ out of $12$ of the genes, (2) we can modele large scale networks in which signal goes from an input node to the output nodes, (3) we can reproduce tendences of the dynamic of components
+and take in to accout the stochastic and time aspect of the bihaviours of the biological system.
+As concrete perspectives of this work, we intend to \emph{(i)} validate the RSTC network topology by confronting its \emph{in-silico} simulation with real measurements of its components;
+\emph{(ii)} compare the stochastic simulation results with reachability static analysis over the same PH components mapped to the $12$ measured genes; and 
+finally \emph{(iii)} search for key-regulators up-stream the $12$ genes which will control the dynamics of the system, to  provide our biological partners concrete 
+hypotheses to test experimentally.
