@@ -22,21 +22,48 @@ By just considering qualitative regulatory effects between components, biologic 
 depict fairly well biological systems, and can be built upon public repositories such as the Pathways 
 Interaction Database \cite{schaefer2009pid} and  
 hiPathDB \cite{yu2012hipathdb} for human regulatory knowledge.
-
 %the aims of the work (1first sentence & the background)
-
 In this work we built an hybrid model of signaling and transcriptional events, gathered in large-scale regulatory networks, 
 which stochastic simulation parameters were inferred from 
 gene expression time-series data.  
-The integration of time-series data in dynamical models have been
-addressed separately by approaches that either: (a) focus first on
-modeling at small-scale the system and then on refining or improving it through the fitting with
-some data points, such as methods based on differential equations \cite{tyson2003sniffers,batt2005validation,mobashir2012simulated}, 
-(b) integrate in an efficient and complete fashion large-scale models
-and high-throughput data regardless from the system dynamics \cite{guziolowski2013exhaustively,mitsos2009identifying}, or 
-(c) fit dynamical data to middle-scale networks using an stochastic sampling of the space of behaviors and
-therefore without guarantee on finding global optima \cite{macnamara2012state}. 
-With this work we aim to fill the gaps between the aforecited methodologies.
+
+
+%NEW TEXT ============================
+High-throughput experimental data has been used since more than one decade ago by methods that infer 
+biological regulatory models. 
+Methods infer dynamic or static models of protein signaling or gene regulations
+depending on the nature of the experimental data.
+We can cite methods that infer static gene regulatory models from steady-state gene expression datasets of over-expression or knock-down perturbations  
+using statistical models generating small-scale (ten species) models \cite{Gardner2003} or middle-scale (maximum 100 species) 
+models \cite{Pinna2010}.
+Additionally, we can cite methods that 
+recovered gene regulatory dynamic models from time-series data using kinetic modeling \cite{Busch2008,Porreca2010} 
+generating small-scale models.
+Recently, static boolean models for middle and large-scale (over 100 species) 
+signaling protein networks have been derived from a \emph{prior} network and 
+fitted to steady-state multiple perturbation 
+phosphoproteomics data \cite{guziolowski2013exhaustively,mitsos2009identifying} using combinatorial optimization through  
+logic and integer linear programing to explore the vast search space of candidate boolean models.
+When using time-series multi-perturbation phosphoproteomics data, results can be extended to reconstruct middle-scale dynamic signaling models  
+via the use of stochastic search approaches \cite{macnamara2012state} that do not guarantee an exhaustive exploration of 
+the search space of candidate models.
+The approach presented in this work confronts a prior signaling and gene regulatory large-scale network, obtained from publicly curated databases, to 
+time-series gene expression data, by using discrete automata models and stochastic simulations.
+Our built model verifies the agreement of expression traces over time given
+a signed (activations/inhibitions), directed and cyclic prior graph. 
+The advantages of our method with respect to the aforecited approaches are that 
+it allows us to define a logic that integrates signaling and transcription events (imposing different regulatory rules on these events), 
+it also integrates multi-valued states of the system components, and importantly it deals with the complexity of large-scale dynamic models.
+
+%The integration of time-series data in dynamical models have been
+%addressed separately by approaches that either: (a) focus first on
+%modeling at small-scale the system and then on refining or improving it through the fitting with
+%some data points, such as methods based on differential equations \cite{tyson2003sniffers,batt2005validation,mobashir2012simulated}, 
+%(b) integrate in an efficient and complete fashion large-scale models
+%and high-throughput data regardless from the system dynamics \cite{guziolowski2013exhaustively,mitsos2009identifying}, or 
+%(c) fit dynamical data to middle-scale networks using an stochastic sampling of the space of behaviors and
+%therefore without guarantee on finding global optima \cite{macnamara2012state}. 
+%With this work we aim to fill the gaps between the aforecited methodologies.
 
 %proposer une petite discussion sur les autres approches formelles de modélisation
 
