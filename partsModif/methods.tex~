@@ -47,7 +47,7 @@ activation (agent), inhibition, output, input and protein-family-member.
 
 \begin{figure}[!p]
  \centering
- \includegraphics[width=7.5in, height=5in, angle=-90]{images/net.jpg}
+ \includegraphics[width=15cm, height=10cm]{images/net_cg_v3.png}
 \caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Blue nodes correspond to E-cadherin entities, red or green, to time-series genes, 
 and cyan nodes to cellular processes. The graph is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, genes, cellular state, biological processes and positive conditions) and of transient
@@ -59,18 +59,22 @@ input and protein-family-member.}
 %description des données
 \subsubsection{Time-series microarray dataset.}
 \label{SECTSD}
-We use the time-series microarray data from Calcium stimulated human keratinocyte cells 
- measured at $10$ time-points. $200$ transcripts were selected for their dynamic patterns,
-that is, their fold expression with respect to the non-stimulated cell was significant in at least one time point. 
-We included in our model a subset of $12$ of the $200$ selected (see \pref{fig:tsd}).  
-These 12 genes had upstream regulatory mechanisms when querying the 
-PID-NCI database and therefore could be connected in the interaction graph.
+\modCG{We use the time-series microarray data from Calcium stimulated human keratinocyte cells 
+ measured at $10$ time-points (1h, 2h, 3h, 4h, 5h, 6h, 8h, 12h, 18h, 24h). 
+The expression levels were measured in $log_2$; the expression of a gene at an 
+specific time point is compared with respect to a control condition (gene expression in a kerationocyte cell without Calcium stimulation).
+We selected genes, which mRNA expression $e$ was significantly ($log_2(e) \ge 1$) up-regulated  or 
+significantly ($log_2(e) \le -1.0$) down-regulated in at least one time point compared to control.
+From this procedure $200$ gene transcripts were selected. 
+We included in our model a subset of $12$ of the $200$ selected (see \pref{fig:tsd})
+because these 12 genes had upstream regulatory mechanisms when querying the 
+PID-NCI database and therefore were connected in the interaction graph to the E-cadherin node}.
 %The full dataset (data not shown) was produced by the German Cancer Research Center (DKFZ) and is currently in the process
 %of being published.  
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=3.5in, height=2in]{images/12genes.png}
+\includegraphics[width=3.5in, height=2.5in]{images/12genes.png}
 \caption{\bf 12 gene expressions upon Calcium stimulation.} The $X$ axis represents time duration of the experiment measured in hours. 
 The $Y$ axis represents the $log_{2}$ expression level of genes with respect to control.
 \label{fig:tsd}}
@@ -140,7 +144,7 @@ The synchronization sort implements another type of cooperation. If we refer to 
 these processes $ab_{01}$, $ab_{10}$, $ab_{11}$ can activate $c$.  In order to inhibit $c$, both sorts, $a$ and $b$, need to be 
 in the sub-state $0$, i.e. $ab_{00}$. Notice that this rule is a combination of OR logical gates for activation and AND logical gates for inhibition.
 Imposing the synchronization sort to model a target component regulated independently by multiple predecessors avoids oscillations in the behavior of the target component over time. 
-These oscillations appear because each predecessor can independantly activate the target component when it is active,
+These oscillations appear because each predecessor can independently activate the target component when it is active,
 but when one predecessor is inhibited, it will inhibit the target component. This competition between the predecessors
 generates oscillations on the target component.  
 
@@ -279,7 +283,7 @@ and its type to another procedure  which  translates the pattern into the PH for
 
 
 % les détails sur comment les patterns sont choisis 
-For example a molecule $a$ cooperatting with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears recurrent times.  
+For example a molecule $a$ cooperating with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears recurrent times.  
 We model this pattern by four sorts (\pref{fig:runningPH}, right) $a$, $b$, $c$ and $ab$. Sorts $a$, $b$ and $c$
 stand for components $a$, $b$ and $c$. The cooperative sort $ab$ is introduced in order to characterize constraints on the components $a$ and $b$.
 In the RSTC network, we find  $25$ regulatory patterns. We show some examples in Table \ref{table_patterns}.     %TODO
@@ -448,7 +452,7 @@ component c by the component b \tabularnewline
 Since the simulation of the execution of the PH actions is done stochastically, we need to relate each action with temporal 
 and stochastic parameters introduced into the PH framework to achieve dynamic refinement \cite{PMR10-TCSB}. 
 To fire an action in the PH framework we need to provide two parameters: (1) the rate $r=t^{-1}$, where $t$ is the mean time of firing an action,
-and (2) the stochasticity absorption factor $sa$, which is introduce to control the variance of firing an action.
+and (2) the stochasticity absorption factor $sa$, which is introduced to control the variance of firing an action.
 
 
 \begin{figure}[!t]
@@ -503,7 +507,7 @@ change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa
 
 
 %discretisation des données
-\subsubsection{Discretization of times-series data}
+\subsubsection{Discretization of time-series data}
 
 Because the output of a PH simulation are discrete traces of PH components, we discretized continuous experimental data to facilitate 
 the comparison with simulation outputs.
@@ -542,7 +546,7 @@ These constraints can be seen as
 reachability constraints from the entry  node (E-cadherin) to the output nodes (genes). The values of these parameters are selected by considering the delay of signal transduction from the entry
  node to the output nodes.
  \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
-for all TFs we introduced an auto-inhibition action that represents their degration over time. 
+for all TFs we introduced an auto-inhibition action that represents their degradation over time. 
 %The signal comes from signaling proteins for activation. But for the inhibition, in addition 
 % to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
  \item \textbf{Genes.} The genes are activited or inhibited according to the estimated values from time-series data.
@@ -623,6 +627,12 @@ for all TFs we introduced an auto-inhibition action that represents their degrat
     
     \foreach \source in {1,...,5}
      \path (TF-\source) edge (I-\source);
+
+   %add some feedbacks 
+    
+    \path (I-5) edge[inh, red, bend right] (H-5);
+    \path (I-1) edge[inh, red, bend left] (H3-1);
+    \path (I-3) edge[inh, red] (H3-2)
      
       %titre du graphe
     \node[annot] (graphTitle) at (2.5-7,7) {\textcolor{blue}{\large \textbf{Graph Structure}}};

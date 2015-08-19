@@ -627,6 +627,12 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
     
     \foreach \source in {1,...,5}
      \path (TF-\source) edge (I-\source);
+
+   %add some feedbacks 
+    
+    \path (I-5) edge[inh, red, bend right] (H-5);
+    \path (I-1) edge[inh, red, bend left] (H3-1);
+    \path (I-3) edge[inh, red] (H3-2);
      
       %titre du graphe
     \node[annot] (graphTitle) at (2.5-7,7) {\textcolor{blue}{\large \textbf{Graph Structure}}};
