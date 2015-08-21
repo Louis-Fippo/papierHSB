@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  19 AUG 2015 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  21 AUG 2015 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**full_paper_fippoModif.tex
+**full_paper_fippoModif
 (./full_paper_fippoModif.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
@@ -172,10 +172,18 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-(./epig-macros.tex (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen127
+\extrarowheight=\dimen128
+\NC@list=\toks20
+\extratabsurround=\skip45
+\backup@length=\skip46
+) (./epig-macros.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
-\inpenc@prehook=\toks20
-\inpenc@posthook=\toks21
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2014/04/30 v1.2b Input encoding file
@@ -193,15 +201,15 @@ nment
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count117
-\float@exts=\toks22
+\float@exts=\toks23
 \float@box=\box54
-\@float@everytoks=\toks23
+\@float@everytoks=\toks24
 \@floatcapt=\box55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks24
+\@float@every@algorithm=\toks25
 \c@algorithm=\count118
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
@@ -210,8 +218,8 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@line=\count120
 \c@ALC@rem=\count121
 \c@ALC@depth=\count122
-\ALC@tlm=\skip45
-\algorithmicindent=\skip46
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
 )
 (/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
@@ -274,7 +282,7 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen127
+\@linkdim=\dimen129
 \Hy@linkcounter=\count123
 \Hy@pagecounter=\count124
 
@@ -300,10 +308,10 @@ Package hyperref Info: Bookmarks ON on input line 4688.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen128
+\XeTeXLinkMargin=\dimen130
 \Fld@menulength=\count127
-\Field@Width=\dimen129
-\Fld@charsize=\dimen130
+\Field@Width=\dimen131
+\Fld@charsize=\dimen132
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -330,11 +338,11 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip47
+\Hy@SectionHShift=\skip49
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip48
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -342,12 +350,12 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks25
-\ex@=\dimen131
+\@emptytoks=\toks26
+\ex@=\dimen133
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen132
+\pmbraise@=\dimen134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -364,7 +372,7 @@ LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box56
 \strutbox@=\box57
-\big@size=\dimen133
+\big@size=\dimen135
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 
@@ -376,21 +384,21 @@ Package amsmath Warning: Unable to redefine math accent \vec.
 \dotsspace@=\muskip11
 \c@parentequation=\count140
 \dspbrk@lvl=\count141
-\tag@help=\toks26
+\tag@help=\toks27
 \row@=\count142
 \column@=\count143
 \maxfields@=\count144
-\andhelp@=\toks27
-\eqnshift@=\dimen134
-\alignsep@=\dimen135
-\tagshift@=\dimen136
-\tagwidth@=\dimen137
-\totwidth@=\dimen138
-\lineht@=\dimen139
-\@envbody=\toks28
-\multlinegap=\skip49
-\multlinetaggap=\skip50
-\mathdisplay@stack=\toks29
+\andhelp@=\toks28
+\eqnshift@=\dimen136
+\alignsep@=\dimen137
+\tagshift@=\dimen138
+\tagwidth@=\dimen139
+\totwidth@=\dimen140
+\lineht@=\dimen141
+\@envbody=\toks29
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks30
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 ) (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
@@ -398,14 +406,6 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen140
-\extrarowheight=\dimen141
-\NC@list=\toks30
-\extratabsurround=\skip51
-\backup@length=\skip52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/prettyref/prettyref.sty
 Package: prettyref 1998/07/09 v3.0
@@ -443,30 +443,7 @@ Package: ntheorem 2011/08/15 1.33
 \qedsymbol=\toks48
 \thm@topsep=\skip59
 \thm@topsepadd=\skip60
-)
-
-! LaTeX Error: Command \example already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69 \newtheorem{example}
-                         {Example}{\itshape}{}
-? 
-
-! LaTeX Error: Command \definition already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.70 \newtheorem{definition}
-                            {Definition}{\itshape}{}
-? 
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -827,31 +804,24 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
 )))
 \c@la=\count164
 ) (./full_paper_fippoModif.aux)
-Runaway argument?
-{\contents 
-! File ended while scanning use of \@writefile.
-<inserted text> 
-                \par 
-l.45 \begin{document}
-                     
-? 
 \openout1 = `full_paper_fippoModif.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 47.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -884,7 +854,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 45.
+Package hyperref Info: Link coloring OFF on input line 47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -894,9 +864,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
-LaTeX Info: Redefining \nameref on input line 45.
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
+LaTeX Info: Redefining \nameref on input line 47.
 
 (./full_paper_fippoModif.out) (./full_paper_fippoModif.out)
 \@outlinefile=\write5
@@ -905,112 +875,54 @@ LaTeX Info: Redefining \nameref on input line 45.
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
-LaTeX Font Info:    Try loading font information for U+msa on input line 90.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+LaTeX Font Info:    Try loading font information for U+msa on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 90.
+LaTeX Font Info:    Try loading font information for U+msb on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 90.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 90.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
 
 (./partsModif/intro.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
-
-
-LaTeX Warning: Citation `schaefer2009pid' on page 1 undefined on input line 23.
-
-
-
-LaTeX Warning: Citation `yu2012hipathdb' on page 1 undefined on input line 24.
-
-
-LaTeX Warning: Citation `Gardner2003' on page 1 undefined on input line 58.
-
-
-LaTeX Warning: Citation `Pinna2010' on page 1 undefined on input line 58.
-
-
-LaTeX Warning: Citation `Busch2008' on page 1 undefined on input line 58.
-
-
-LaTeX Warning: Citation `Porreca2010' on page 1 undefined on input line 58.
-
-
-LaTeX Warning: Citation `guziolowski2013exhaustively' on page 1 undefined on in
-put line 58.
-
-
-LaTeX Warning: Citation `mitsos2009identifying' on page 1 undefined on input li
-ne 58.
-
-
-LaTeX Warning: Citation `macnamara2012state' on page 1 undefined on input line 
-58.
-
-[1
+ [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `molloy1982performance' on page 2 undefined on input li
-ne 78.
-
-
-LaTeX Warning: Citation `heiner2008petri' on page 2 undefined on input line 80.
-
-
-
-LaTeX Warning: Citation `priami1995stochastic' on page 2 undefined on input lin
-e 85.
-
-
-LaTeX Warning: Citation `maurin2009modeling' on page 2 undefined on input line 
-86.
-
-
-LaTeX Warning: Citation `PMR10-TCSB' on page 2 undefined on input line 88.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5105) has occurred while \output is active []
 
  [2])
 (./partsModif/methods.tex
-<images/workflow-2.png, id=28, 806.01125pt x 326.21875pt>
+<images/workflow-2.png, id=186, 806.01125pt x 326.21875pt>
 File: images/workflow-2.png Graphic file (type png)
 
 <use images/workflow-2.png>
 Package pdftex.def Info: images/workflow-2.png used on input line 12.
 (pdftex.def)             Requested size: 296.30089pt x 144.54218pt.
-
-
-LaTeX Warning: Citation `guziolowski2012automatic' on page 3 undefined on input
- line 28.
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 
 Overfull \hbox (8.23203pt too wide) in paragraph at lines 23--30
 \OT1/ptm/m/n/10 sented in an RSTC net-work, which stands for multi-layer recept
 or-signaling-transcription-
  []
 
-[3 <./images/workflow-2.png>]
-<images/net_cg_v3.png, id=41, 8551.95pt x 5018.75pt>
+[3] <images/net_cg_v3.png, id=201, 8551.95pt x 5018.75pt>
 File: images/net_cg_v3.png Graphic file (type png)
 
 <use images/net_cg_v3.png>
@@ -1021,64 +933,22 @@ Overfull \hbox (79.58557pt too wide) in paragraph at lines 50--55
  [][] 
  []
 
-
-LaTeX Warning: Reference `fig:tsd' on page 4 undefined on input line 71.
-
-<images/12genes.png, id=42, 703.12688pt x 545.03625pt>
+<images/12genes.png, id=203, 703.12688pt x 545.03625pt>
 File: images/12genes.png Graphic file (type png)
 
 <use images/12genes.png>
 Package pdftex.def Info: images/12genes.png used on input line 77.
 (pdftex.def)             Requested size: 252.94308pt x 180.66922pt.
-
-! Extra }, or forgotten \endgroup.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.81 \end{figure}
-                 
-? 
-[4] [5 <./images/net_cg_v3.png>]
-
-LaTeX Warning: Citation `PMR10-TCSB' on page 6 undefined on input line 126.
-
-
-LaTeX Warning: Reference `fig:runningPH' on page 6 undefined on input line 127.
-
-
-
-LaTeX Warning: Reference `fig:runningPH' on page 6 undefined on input line 142.
-
-
-[6 <./images/12genes.png>]
-
-LaTeX Warning: Reference `fig:runningPH' on page 7 undefined on input line 153.
-
-
-
+ [4 <./images/workflow-2.png>] [5 <./images/net_cg_v3.png>] [6 <./images/12gene
+s.png>]
 Overfull \hbox (64.08241pt too wide) in paragraph at lines 180--181
  [][] 
  []
 
 
-LaTeX Warning: Reference `table_patterns' on page 7 undefined on input line 271
-.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 1852) has occurred while \output is active []
-
- [7]
-
-LaTeX Warning: Reference `fig:runningPH' on page 8 undefined on input line 286.
-
-
-
-LaTeX Warning: Reference `fig:runningPH' on page 8 undefined on input line 287.
-
-
-
-LaTeX Warning: Reference `table_patterns' on page 8 undefined on input line 289
-.
-
+[7]
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -1280,7 +1150,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.401 \node[es]
-                (d) at (1,3) {activation or inhibition};
+                (d) at (1,3) {Activation or inhibition};
 ? 
 ! Undefined control sequence.
 <argument> pgf@sh@ns@\tikzlastnode 
@@ -1342,38 +1212,18 @@ Type  H <return>  for immediate help.
 l.405  (b) edge[inh,red] (i)
                             
 ? 
-
-LaTeX Warning: Citation `PMR10-TCSB' on page 8 undefined on input line 453.
-
 ! Extra }, or forgotten \endgroup.
 \@endfloatbox ...pagefalse \outer@nobreak \egroup 
                                                   \color@endbox 
 l.499 \end{figure}
                   
 ? 
-
-LaTeX Warning: Reference `fig:estimationParameter' on page 8 undefined on input
- line 505.
-
-
-LaTeX Warning: Reference `fig:tsd' on page 8 undefined on input line 514.
-
-
-LaTeX Warning: Reference `fig:estimationParameter' on page 8 undefined on input
- line 516.
-
-[8]
-Underfull \vbox (badness 4686) has occurred while \output is active []
-
- [9]
-
-LaTeX Warning: Reference `fig:initialCondition' on page 10 undefined on input l
-ine 526.
-
+[8] [9]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+
 ! Undefined control sequence.
 <argument> \x -7 , \layersep 
                              
@@ -1624,14 +1474,7 @@ l.681 }
        
 ? 
 ) (./partsModif/results.tex [10]
-
-LaTeX Warning: Reference `fig:rwos' on page 11 undefined on input line 27.
-
-
-LaTeX Warning: Reference `sssec:synchronization' on page 11 undefined on input 
-line 28.
-
-<images/resultWOS.pdf, id=108, 505.89pt x 505.89pt>
+<images/resultWOS.pdf, id=280, 505.89pt x 505.89pt>
 File: images/resultWOS.pdf Graphic file (type pdf)
  <use images/resultWOS.pdf>
 Package pdftex.def Info: images/resultWOS.pdf used on input line 38.
@@ -1641,13 +1484,7 @@ Overfull \hbox (14.22998pt too wide) in paragraph at lines 38--40
  [][] 
  []
 
-
-LaTeX Warning: Reference `fig:rws' on page 11 undefined on input line 46.
-
-
-LaTeX Warning: Reference `fig:rwos' on page 11 undefined on input line 48.
-
-<images/12genes_sim.png, id=109, 702.625pt x 1003.75pt>
+[11] <images/12genes_sim.png, id=290, 702.625pt x 1003.75pt>
 File: images/12genes_sim.png Graphic file (type png)
 
 <use images/12genes_sim.png>
@@ -1658,16 +1495,7 @@ Overfull \hbox (14.23384pt too wide) in paragraph at lines 64--66
  [][] 
  []
 
-
-LaTeX Warning: Reference `fig:knodes' on page 11 undefined on input line 77.
-
-
-LaTeX Warning: Citation `Kolly2005' on page 11 undefined on input line 81.
-
-
-LaTeX Warning: Citation `Tu2011' on page 11 undefined on input line 82.
-
-[11] <images/key_nodes1.png, id=120, 501.875pt x 451.6875pt>
+<images/key_nodes1.png, id=296, 501.875pt x 451.6875pt>
 File: images/key_nodes1.png Graphic file (type png)
 
 <use images/key_nodes1.png>
@@ -1686,43 +1514,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--1
 
  []
 
-) [13]
+) (./full_paper_fippoModif.bbl [13] [14]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 ...viour of biological regulatory networksâ€
+                                                  ”ii. immunity
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 ...iour of biological regulatory networksâ€”
+                                                  ii. immunity
+? 
+)
 \tf@thm=\write6
 \openout6 = `full_paper_fippoModif.thm'.
 
- [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 229.
- [15 <./images/12genes_sim.png>] [16 <./images/key_nodes1.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 229.
+ [15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
+ [16 <./images/12genes_sim.png>] [17 <./images/key_nodes1.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
 
 (./full_paper_fippoModif.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 229.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 229.
-
-
-Package rerunfilecheck Warning: File `full_paper_fippoModif.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `full_paper_fippoModif.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  13826CDD02689A087730D1A1EADF610B;1889.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 229.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
+Package rerunfilecheck Info: File `full_paper_fippoModif.out' has not changed.
+(rerunfilecheck)             Checksum: 13826CDD02689A087730D1A1EADF610B;1889.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
  ) 
 Here is how much of TeX's memory you used:
- 20467 strings out of 493105
- 397314 string characters out of 6137072
- 530585 words of memory out of 5000000
- 23436 multiletter control sequences out of 15000+600000
- 35354 words of font info for 84 fonts, out of 8000000 for 9000
+ 20507 strings out of 493105
+ 397903 string characters out of 6137072
+ 548931 words of memory out of 5000000
+ 23462 multiletter control sequences out of 15000+600000
+ 35008 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,18n,73p,756b,1386s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,18n,73p,752b,1393s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1744,10 +1582,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippoModif.pdf (16 pages, 13354105 bytes).
+Output written on full_paper_fippoModif.pdf (17 pages, 13361712 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 653 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
