@@ -7,10 +7,11 @@ detail some of the workflow steps.
 
 % and comprises the following steps:
 
-\begin{figure}[!t]
+\begin{figure}[H]
  \centering
  \includegraphics[width=4.1in,height=2in]{images/workflow-2.png}
-\caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model.}} 
+\caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model. These parameters are rate (r) and the stochasticity absortion factor (sa) which 
+will be presented later in \ref{sssec:EPTSD}.}} 
  \label{fig:workflow}
 \end{figure}
 
@@ -41,16 +42,29 @@ A \emph{RSTC Network} $N$ is a couple $(V,E)$, where:
 \end{itemize}
 \end{definition}
 
-In this definition, terminal nodes can be genes, proteins, complexes, cellular states, biological processes and positive conditions. 
+In this definition, terminal nodes can be \modCG{mRNA expression}, proteins, complexes, cellular states, biological processes and positive conditions. 
 On the other side, transient nodes can be transcriptions, translocations, modifications and compounds. Edges are of different types:
 activation (agent), inhibition, output, input and protein-family-member.
+
+%\modCG{
+
+\begin{definition}[Pattern] \label{def:pattern}
+
+A pattern can be defined as an atomic set of biological components and thier interacting roles. 
+
+\end{definition}
+
+\modCG{
+First colonne of table \ref{table_patterns} shows us some examples of patterns that we can found in a RSTC Network.
+}
+%}
 
 \begin{figure}[!p]
  \centering
  \includegraphics[width=15cm, height=10cm]{images/net_cg_v3.png}
 \caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Blue nodes correspond to E-cadherin entities, red or green, to time-series genes, 
 and cyan nodes to cellular processes. The graph is composed of $293$ nodes and $375$ edges (interactions).
-The set of nodes are composed of terminal nodes (proteins, complexes, genes, cellular state, biological processes and positive conditions) and of transient
+The set of nodes are composed of terminal nodes (proteins, complexes, \modCG{ mRNA expression}, cellular state, biological processes and positive conditions) and of transient
 nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
 input and protein-family-member.} 
  \label{fig:network}
@@ -65,17 +79,17 @@ The expression levels were measured in $log_2$; the expression of a gene at an
 specific time point is compared with respect to a control condition (gene expression in a kerationocyte cell without Calcium stimulation).
 We selected genes, which mRNA expression $e$ was significantly ($log_2(e) \ge 1$) up-regulated  or 
 significantly ($log_2(e) \le -1.0$) down-regulated in at least one time point compared to control.
-From this procedure $200$ gene transcripts were selected. 
+From this procedure $200$ \modCG{mRNA expression} transcripts were selected. 
 We included in our model a subset of $12$ of the $200$ selected (see \pref{fig:tsd})
 because these 12 genes had upstream regulatory mechanisms when querying the 
 PID-NCI database and therefore were connected in the interaction graph to the E-cadherin node}.
 %The full dataset (data not shown) was produced by the German Cancer Research Center (DKFZ) and is currently in the process
 %of being published.  
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
 \includegraphics[width=3.5in, height=2.5in]{images/12genes.png}
-\caption{\bf 12 gene expressions upon Calcium stimulation.} The $X$ axis represents time duration of the experiment measured in hours. 
+\caption{\bf Relative expression of selected mRNA upon Calcium stimulation.} The $X$ axis represents time duration of the experiment measured in hours. 
 The $Y$ axis represents the $log_{2}$ expression level of genes with respect to control.
 \label{fig:tsd}
 \end{figure}
@@ -162,7 +176,7 @@ In this BRN, $ab$ inhibits $c$ at level $2$ through the cooperative sort $ab$ (e
 through the cooperative sort $ab$ (e.g. $\PHfrappe{ab_{11}}{c_0}{c_1}$ $\PHfrappe{ab_{11}}{c_1}{c_2}$ ). Indeed, the reachability of $c_2$ and $c_0$ 
 is conditioned by a cooperation of $a$ and $b$ as explained above.
 
-\begin{figure}[!h]
+\begin{figure}[H]
 %\centering
 \begin{minipage}{0.1\linewidth}
 \centering
@@ -315,7 +329,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 \node[es] (d) at (1,1.5) {Simple activation};
 
 \path
- (a) edge[act,green] (i)
+ (a) edge[act] (i)
  (i) edge[st]  (b);
 \end{tikzpicture}};
 \end{tikzpicture}
@@ -358,7 +372,7 @@ This pattern model the activation of the component b by the component a.\tabular
 \node[qgre] (b) at (2,1) {b};
 \node[es] (d) at (1,1.5) {Simple inhibition};
 \path
- (a) edge[inh,red] (i)
+ (a) edge[inh] (i)
  (i) edge[st]  (b);
  \end{tikzpicture}};
 \end{tikzpicture}
@@ -401,8 +415,8 @@ This pattern model the inhibition of the component b by the component a\tabularn
 \node[es] (d) at (1,3) {Activation or inhibition};
 
 \path
- (a) edge[act,green] (i)
- (b) edge[inh,red] (i)
+ (a) edge[act] (i)
+ (b) edge[inh] (i)
  (i) edge[st]  (c);
 \end{tikzpicture}};
 \end{tikzpicture}
@@ -446,7 +460,7 @@ component c by the component b \tabularnewline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Estimating the parameters for the PH-simulation from time-series gene expression data.}
-
+\label{sssec:EPTSD}
 %peut etre penser à faire un schéma
 
 Since the simulation of the execution of the PH actions is done stochastically, we need to relate each action with temporal 
@@ -455,7 +469,7 @@ To fire an action in the PH framework we need to provide two parameters: (1) the
 and (2) the stochasticity absorption factor $sa$, which is introduced to control the variance of firing an action.
 
 
-\begin{figure}[!t]
+\begin{figure}[H]
 \centering
 
 \begin{tikzpicture}[scale = 0.7]
@@ -491,8 +505,8 @@ and (2) the stochasticity absorption factor $sa$, which is introduced to control
            \end{tikzpicture}
 	    
 
-\caption{\bf Estimation of temporal parameters from time series data:} The mean firing time of an action that makes a
-component (gene) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a gene, while 
+\caption{{\bf Estimation of temporal parameters from time series data:} The mean firing time of an action that makes a
+component (\modCG{mRNA expression}) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a \modCG{ mRNA expression}, while 
  $MinLevel$, its minimum expression.
 The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 0,1,2) of a component according to its gene expression data.
 \label{fig:estimationParameter}}
@@ -504,7 +518,9 @@ The rest of the components will be
 assigned default parameters. In order to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
 in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time in which we assume that a component moves from one process to another. Therefore the action that leads this 
 change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
-
+\modCG{ studies \cite{AMSW2012,RAT2006} have proposed more elaborate methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
+the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus we can use a basic estimation algorithm for temporal and stochastic parameter estimation.}
+%TODO citer les méthodes d'estimation connues et dire pourquoi on en avait pas besoin même si elle sont bonnes 
 
 %discretisation des données
 \subsubsection{Discretization of time-series data}
@@ -512,7 +528,10 @@ change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa
 Because the output of a PH simulation are discrete traces of PH components, we discretized continuous experimental data to facilitate 
 the comparison with simulation outputs.
 When looking at the time-series data (see \pref{fig:tsd}) one can distinguish a high level of
-activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. We implemented a discretization method to capture these
+activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. \modCG{ Trend has been confirmed by using the SMA (Simple moving average) function of R package TTR which allows us
+to smooth time-series data. We use the SMA function whith paramter $n=2$ and we have more than $50\%$ of time-series data which presented these two levels of activities.}
+%TODO rajouter le test effectuer avec R ici et dire un mot sur ce que ça implique en terme de complexité et la référence 
+We implemented a discretization method to capture these
 two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}): 
 $\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. 
 In this way, the expression level in the range $[0-th1]$ is at level $0$, the one in the range $[th1-th2]$ is at level $1$, and the one in the last range is at
@@ -549,21 +568,24 @@ reachability constraints from the entry  node (E-cadherin) to the output nodes (
 for all TFs we introduced an auto-inhibition action that represents their degradation over time. 
 %The signal comes from signaling proteins for activation. But for the inhibition, in addition 
 % to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
- \item \textbf{Genes.} The genes are activited or inhibited according to the estimated values from time-series data.
+ \item \modCG{\textbf{mRNA expression.} The mRNA expression} are activited or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
 
-\begin{figure}[!t]
+\begin{figure}[H]
+ 
  \centering
- \scalebox{0.45}{
+ %\scalebox{0.45}{
+ \begin{comment}
   \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
-    \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+  
+    \tikzstyle{every pin edge}=[<-,shorten <=1pt];
     \tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
     \tikzstyle{input neuron}=[neuron, fill=green!50];
     \tikzstyle{output neuron}=[neuron, fill=red!50];
     \tikzstyle{hidden neuron}=[neuron, fill=blue!50];
     \tikzstyle{transfact neuron}=[neuron, fill=blue!20];
-    \tikzstyle{annot} = [text width=4em, text centered]
+    \tikzstyle{annot} = [text width=4em, text centered];
 
     % Draw the input layer nodes
     \foreach \name / \x in {1,...,5}
@@ -630,41 +652,41 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
 
    %add some feedbacks 
     
-    \path (I-5) edge[inh, red, bend right] (H-5);
-    \path (I-1) edge[inh, red, bend left] (H3-1);
-    \path (I-3) edge[inh, red] (H3-2);
+    \path (I-5) edge[inh, bend right] (H-5);
+    \path (I-1) edge[inh, bend left] (H3-1);
+    \path (I-3) edge[inh] (H3-2);
      
       %titre du graphe
-    \node[annot] (graphTitle) at (2.5-7,7) {\textcolor{blue}{\large \textbf{Graph Structure}}};
+    \node[annot] (graphTitle) at (2.5-7,7) {\textcolor{blue}{\large \textbf{Graph Structure}};
 
     % Annotate the layers
-    \node[annot] (layerTitle) at (-9,7) {\textcolor{blue}{\large \textbf{Layer}}};
+    \node[annot] (layerTitle) at (-9,7) {\textcolor{blue}{\large \textbf{Layer}};
     \node[annot, node distance=1cm] (couchesp) at (-9,1) {\large \textbf{Signaling Proteins} };
     \node[annot] (coucheFT) at (-9,-2) {\large \textbf{TF} };
     \node[annot] (coucheGene) at (-9,-4) {\large \textbf{Genes} Output };
     \node[annot] (noeudEntre) at (-9,5) {\large \textbf{Ecad} Input };
     
     %noeud pour ajouter le R S T C 
-    \node[annot] (R) at (-11,5) {\textcolor{black}{\textbf{\LARGE R}}};
-    \node[annot] (S) at (-11,1) {\textcolor{black}{\textbf{\LARGE S}}};
-    \node[annot] (T) at (-11,-2) {\textcolor{black}{\textbf{\LARGE T}}};
-    \node[annot] (C) at (-11,-4) {\textcolor{black}{\textbf{\LARGE C}}};
-    \node[annot] (test) at (5,-4) {\textcolor{black}{\textbf{}}};
+    \node[annot] (R) at (-11,5) {\textcolor{black}{\textbf{\LARGE R}};
+    \node[annot] (S) at (-11,1) {\textcolor{black}{\textbf{\LARGE S}};
+    \node[annot] (T) at (-11,-2) {\textcolor{black}{\textbf{\LARGE T}};
+    \node[annot] (C) at (-11,-4) {\textcolor{black}{\textbf{\LARGE C}};
+    \node[annot] (test) at (5,-4) {\textcolor{black}{\textbf{}};
     
     %noeud pour les règles de modélisation
-    \node[annot] (icTitle) at (0,7) {\textcolor{blue}{\textbf{\large Initial Conditions}}};
-    \node[annot] (RMi) at (0,4.5) {\textcolor{black}{\textbf{\LARGE 1}}};
-    \node[annot] (SMi) at (0,1) {\textcolor{black}{\textbf{\LARGE 0}}};
-    \node[annot] (TMi) at (0,-2) {\textcolor{black}{\textbf{\LARGE 0}}};
-    \node[annot] (CMi) at (0,-4) {\textcolor{black}{\textbf{\LARGE 0}}};
+    \node[annot] (icTitle) at (0,7) {\textcolor{blue}{\textbf{\large Initial Conditions}};
+    \node[annot] (RMi) at (0,4.5) {\textcolor{black}{\textbf{\LARGE 1}};
+    \node[annot] (SMi) at (0,1) {\textcolor{black}{\textbf{\LARGE 0}};
+    \node[annot] (TMi) at (0,-2) {\textcolor{black}{\textbf{\LARGE 0}};
+    \node[annot] (CMi) at (0,-4) {\textcolor{black}{\textbf{\LARGE 0}};
     %\node[annot] (P) at (5,-4) {\textcolor{black}{\huge \textbf{}}};
     
     %noeuds pour les hypothèses de modélisation 
-    \node[annot] (parameterTitle) at (3,7) {\textcolor{blue}{\textbf{\large Parameters}}};   %text width=3cm
-    \node[annot] (RH) at (3,5) {\textcolor{black}{\textbf{\LARGE -}}};
-    \node[annot] (SH) at (3,1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
-    \node[annot] (TH) at (3,-2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}}};
-    \node[annot] (CH) at (3,-4) {\textcolor{black}{\small \textbf{\large learned from TSD}}};
+    \node[annot] (parameterTitle) at (3,7) {\textcolor{blue}{\textbf{\large Parameters}};   %text width=3cm
+    \node[annot] (RH) at (3,5) {\textcolor{black}{\textbf{\LARGE -}};
+    \node[annot] (SH) at (3,1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}};
+    \node[annot] (TH) at (3,-2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}};
+    \node[annot] (CH) at (3,-4) {\textcolor{black}{\small \textbf{\large learned from TSD}};
     %\node[annot] (test) at (5,-4) {\textcolor{black}{\huge \textbf{}}};
     
     %noeuds de repères pour les sous-graphs
@@ -676,11 +698,27 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
     \node[annot] (R5) at (-6.5,\layersep) {};
     
    
-     
+
 \end{tikzpicture}
-}
- 
+\end{comment}
+%}
+
  \caption{\bf RSTC network structure and initial conditions assigned to each node in the layer}
  \label{fig:initialCondition}
-\end{figure}
 
+ 
+ \end{figure}
+
+ 
+ %model validation
+ \subsection{Automatic analysis of simulation traces}
+ \modCG{
+ Due to the stochastics and concurrents aspects of the system, each execution of the model can generate dynamic which is different of the other. 
+ Therefore, to validate the proposed model, we decide to analyse the traces generated by each component for a set of simulations of the model.
+ The idea is to calculate the percentage of traces that reproduce the expected dynamic of the system. To achieve this goal, we take each trace generated
+ at each simulation for a given component and passed it to an automata ($\mathcal{A}_{i}$) that recongnize the set of acceptance traces of that component. Thus we can count the 
+ number of accepted traces ($Trace_{accp}$). Therefore the percentage of accep traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assume that $Trace_{N}$ is the total 
+ number of simulation. 
+ }
+
+%fin de methods.

@@ -683,6 +683,42 @@ more about the subject, either in courses or through self-study.}},
   publisher={Oxford Univ Press}
 }
 
+@article{busch2008gene,
+  title={Gene network dynamics controlling keratinocyte migration},
+  author={Busch, Hauke and Camacho-Trullio, David and Rogon, Zbigniew and Breuhahn, Kai and Angel, Peter and Eils, Roland and Szabowski, Axel},
+  journal={Molecular systems biology},
+  volume={4},
+  number={1},
+  pages={199},
+  year={2008},
+  publisher={EMBO Press}
+}
+
+@article{Pinna2010,
+    author = {Pinna, Andrea AND Soranzo, Nicola AND de la Fuente, Alberto},
+    journal = {PLoS ONE},
+    publisher = {Public Library of Science},
+    title = {From Knockouts to Networks: Establishing Direct Cause-Effect Relationships through Graph Analysis},
+    year = {2010},
+    month = {10},
+    volume = {5},
+    url = {http://dx.doi.org/10.1371%2Fjournal.pone.0012912},
+    pages = {e12912},
+    abstract = {<sec>
+<title>Background</title>
+<p>Reverse-engineering gene networks from expression profiles is a difficult problem for which a multitude of techniques have been developed over the last decade. The yearly organized DREAM challenges allow for a fair evaluation and unbiased comparison of these methods.</p>
+</sec><sec>
+<title>Results</title>
+<p>We propose an inference algorithm that combines confidence matrices, computed as the standard scores from single-gene knockout data, with the down-ranking of feed-forward edges. Substantial improvements on the predictions can be obtained after the execution of this second step.</p>
+</sec><sec>
+<title>Conclusions</title>
+<p>Our algorithm was awarded the best overall performance at the DREAM4 In Silico 100-gene network sub-challenge, proving to be effective in inferring medium-size gene regulatory networks. This success demonstrates once again the decisive importance of gene expression data obtained after systematic gene perturbations and highlights the usefulness of graph analysis to increase the reliability of inference.</p>
+</sec>},
+    number = {10},
+    doi = {10.1371/journal.pone.0012912}
+}        
+
+
 
 
 

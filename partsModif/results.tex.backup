@@ -1,69 +1,266 @@
 
 \section{Results}
 
-\subsection{From PID to PH: An automatic generation of PH code of the network}
+\subsection{Automatic generation of PH model from the PID network}
 %give statistics
 
-To simulate of the model we generated a PINT code to be simulated by the PINT simulator \footnote{Available at \url{http://process.hitting.free.fr}}. 
-PINT implements static analyses for computing dynamical properties on very large-scale Automata Networks.
-For the PINT code generation we use two procedures as described in the method section. The first procedure that detects the patterns and its code; the second 
-procedure that generates the PINT code by taking in consideration the type of the pattern to better refine the dynamic of the system from a structural point of view.
-This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
-in the dynamics of the components of the system.
+PH models are written using the PINT\footnote{\url{http://process.hitting.free.fr}} format.  
+PINT implements stochastic simulations and static analyses for computing dynamical properties on very large-scale PH models.
+For the PINT code generation we used two procedures.
+The first procedure detects motifs (controller and controlled components) in graphs from the Pathway Interaction Database; the second, 
+generates the PINT code by choosing an adequate concurrency rule, based on synchronization sorts, to represent the motif dynamic in PH.
+With this method it is possible to convert the whole content of the PID-NCI database into a PH model, as well as individual pre-selected pathways, 
+as is the case for the system under study.  It is implemented in Java and available upon request.
+%taking in consideration the type of the pattern to better refine the dynamic of the system from a structural point of view.
+%This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
+%in the dynamics of the components of the system.
 
 
-%procedure take a in parameter a pattern with its code from the procedure of detection of patterns. Afater taking 
-%the pattern, the procedure will write the correct code associate to the current pattern. 
-%list all the selected patterns in the biological reaction into a file. In this file, each line contains the 
-%name of the nodes belonging to the current reaction and the reaction type number. The list was then parsed, line by line and, 
-%after renaming the nodes using numbers (for readability and in conformity with the PINT language syntax) the corresponding PINT code
-%for the PH process equivalent to each reaction was generated. This was implemented in a Java code.
 
 
-\subsection{Simulation}
-%present the simulation results
-%In this section we will present the results of the simulations of the model. It will be present in two 
-%main sub sections. In the first, we will present the result of simulation of model without the inclusion 
-%of the synchronization gate and in the second we will present result with synchronization gate. Both results
-%present common characteristics and show us the coherence of our approach of modelization. The common characteristics
-%are the following:
+\subsection{Simulation of Calcium stimulated biological system}
 
 We simulated the model with and without the inclusion of the synchronization sort. In the following, we present the results of 
 the simulation.
 
-\subsubsection{Without the introduction of synchronization sort}
-One can easily notice in \pref{fig:rwos} the occurence of oscillations. This is not the expected behavior from the biological system
-but it is coherent with the choice of the modelling and the way the simulator works as explained in \ref{sssec:synchronization}: cooperation
-sorts are used to model multiple regulators of a common target
-where this is clearly identifiable. In other cases we left the components act independently.
+\subsubsection{Without the introduction of the synchronization sort.}
+One can notice in \pref{fig:rwos} the occurence of oscillations. Whereas it is not the expected behavior from the biological system,
+ it is coherent with the choice of the modeling and the way the simulator works as explained in Section \ref{sssec:synchronization}.
+In this simulation cooperation sorts were used to model multiple controllers of a common controlled (target) component.
+%In other cases we left the components act independently.
 It is important to notice that the intensity of the oscillation is linked with 
-the size of the concurrence, i.e. the number of predecessors that a node in the network has.
+the size of the concurrence, i.e. the number of controllers a controlled component has.
 Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
-the dynamic of components, the signal transduction and takes into account the stochastic and time aspect of the model.
+the dynamics of components, the signal transduction and takes into account the stochastic and time aspect of the model.
 
-\begin{figure*}[!t]
+\begin{figure}[H]
 \centering
-\includegraphics[width=6.5in,height=3.5in]{images/resultWOS.pdf}
-\caption{\bf Results of simulations without introducing the synchronization sort. In black line the expect behaviours
-come from the discretization of time-series data. In Blue line the simulation behavior.}
+\includegraphics[width=5in,height=3in]{images/resultWOS.pdf}
+\caption{{\bf Results of system simulations without introducing the synchronization sort for 9 genes.} The 
+traces representing the discretized time-series data are shown as black lines.  The traces representing the simulated traces are shown as blue lines.}
 \label{fig:rwos}
-\end{figure*}
-\subsubsection{With the introduction of synchronization sort}
+\end{figure}
 
-From \pref{fig:rws} we can see that the introduction of the synchronization sort significatively reduces the 
-impact of concurrence by the introduction of the synchronization. The result shows  a 
-clear elimination of the previously observed oscillation in \pref{fig:rwos}. One can see that \emph{uPAR}, \emph{MKP1},
-\emph{IL1 beta} are weel reproduced. \emph{Hes5} and \emph{IL8} are not activated. This result can be observed when the activation
-signal has not been able to propagate through the network due to the random and concurrency.
+\subsubsection{With the introduction of the synchronization sort.}
+
+In \pref{fig:rws} we can see that the introduction of the synchronization sort significantly reduces the 
+impact of concurrency. The result shows  a 
+clear elimination of the previously observed oscillation (\pref{fig:rwos}). 
+Comparing the simulated results with the ones observed experimentally we found four different cases.
+We found one simulation trace (IL8) that matches the sequence of all the component expression levels perfectly.  In this case delays exist among simulation and experiment but 
+these delays are not comparable since experimental time-points are measured in hours and simulation-units for the simulated PH model.
+We found 4 simulation traces (uPAR, ET1, TfR, SM22) that matched the sequence of experimental discrete expression levels missing one expression-level.
+We found 6 components (MKP3, MKP1, Hes5, IL1-beta, TNF-alpha, DKK1) in which at least 2 expression levels are missed.
+Finally we found 1 component (A20) for which we did not reproduce its experimentally observed dynamics.
 
 
-\begin{figure*}[!t]
+%The expression levels of genes \emph{uPAR}, \emph{MKP1},
+%\emph{IL1-beta} are well reproduced, while \emph{Hes5} and \emph{IL8} are not activated. This result can be observed when the activation
+%signal has not been able to propagate through the network due to the non determinism  and concurrency.
+
+
+\begin{figure}[H]
 \centering
-\includegraphics[width=6.5in,height=3.5in]{images/resultWS.pdf}
-\caption{\bf Results of simulations by introducing the synchronization sort. In black line the expect behaviours
-come from the discretization of time-series data. In Blue line the simulation behavior.}
+\includegraphics[width=5in,height=7in]{images/12genes_sim.png}
+\caption{{\bf Results of simulations by introducing the synchronization sort.} The gray traces represent the experimental expected behaviors
+from the discretization of the time-series data. The blue traces show the simulated behavior.}
 \label{fig:rws}
-\end{figure*}
+\end{figure}
+
+
+%%%%%images des noeuds clés
+
+\subsubsection{Simulating biological processes.}
+
+To validate our model we studied the prediction of non-observed components of such a system and we focused on biological processes linked 
+to Calcium stimulation, such as keratinocyte-differentiation, cell-adhesion and cell-cycle arrest.
+Our results are shown in \pref{fig:knodes} and confirmed literature experimental evidence on these processes.
+In the case of keratinocyte-differentiation, this was a functional behavior measured on the cultured cells upon Calcium stimulation,
+ so there was experimental evidence of this effect before measuring the gene expression.  
+In the case of cell-cycle arrest, the switch-on of this component represents the fact that the E-cadherin stimulated model predicts the stop 
+of growth, as confirmed by literature in human and mouse keratinocytes~\cite{Kolly2005}.
+Finally, the cell-adhesion component is predicted to switch-on, also in according to published evidence~\cite{Tu2011} in human and mouse keratinocytes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=3.5in]{images/key_nodes1.png}
+\caption{{\bf Results of the prediction of biological processes.} The gray traces represent the experimental and literature-based evidence.
+The blue traces show the simulated behavior of E-cadherin and three biological processes.}
+\label{fig:knodes}
+\end{figure}
+
+%to answer the question of confidence in the result of simulation
+\subsection{Model validation: traces analysis}
+
+To trust the results of simulation, we have decided to automatic analyse  traces generated by a set of $100$ simulations. The  table give us the results 
+
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Percentage of acceptance traces}
+\label{traceAnalysis}
+\centering
+%table of result
+\begin{tabular}{|c|c||c|}
+\hline
+
+\textbf{Automate}
+
+&
+
+\textbf{components}
+
+&
+
+\textbf{of acceptance}
+
+\\ \hline
+
+$\mathcal{A}_{2}(01210)$
+
+&
+
+A20
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{2}(01210)$
+
+&
+
+IL1$\_$beta
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{2}(01210)$
+
+&
+
+IL8
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{2}(01210)$
+
+&
+
+TNF$\_$alpha
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{3}(01211)$
+
+&
+
+uPar
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{3}(01211)$
+
+&
+
+ET1
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{4}(0121210)$
+
+&
+
+DKK1
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{5}(0121211)$
+
+&
+
+Hes5
+
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{5}(0121211)$
+
+&
+
+MKP1
+
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{6}(0212)$
+
+&
+
+SM22
+
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{7}(02010)$
+
+&
+
+MKP3
+
+
+&
+
+
+\\ \hline
+
+$\mathcal{A}_{8}(02121)$
+
+&
+
+Tfr
+
+
+&
+
+
+\\ \hline
+
+ 
+\end{tabular}
+\end{table}
+
+
+
+
+
 
 
 

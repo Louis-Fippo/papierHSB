@@ -159,10 +159,15 @@
 \newcommand{\RRGgi}{\mathcal{G}}
 \newcommand{\RRGreg}[1]{\RRGgi_{#1}}
 
+\colorlet{colorinh}{red}
+\colorlet{coloract}{green}
+
 \tikzstyle{grn}=[every node/.style={circle,draw=black,outer sep=2pt,minimum
                 size=15pt,text=black}, node distance=1.5cm]
-\tikzstyle{act}=[->,draw=black,thick,color=green]
-\tikzstyle{inh}=[>=|,-|,draw=black,thick,color=red, text=black,label]
+%\tikzstyle{act}=[->,draw=black,thick,color=green]
+\tikzstyle{act}=[->,>=triangle 60,draw=coloract,thick,color=coloract]
+\tikzstyle{inh}=[>=|,-|,draw=colorinh]
+%\tikzstyle{inh}=[>=|,-|,draw=black,thick,color=red, text=black,label]
 \tikzstyle{inf}=[->,draw=colorinf,thick,color=colorinf]
 \tikzstyle{elabel}=[fill=none,text=black, above=-2pt,%sloped,
 minimum size=10pt, outer sep=0, font=\scriptsize, draw=none]

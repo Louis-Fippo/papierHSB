@@ -12,12 +12,14 @@
 \BOOKMARK [3][-]{section*.7}{Estimating the parameters for the PH-simulation from time-series gene expression data.}{subsection.1.2.3}% 12
 \BOOKMARK [3][-]{section*.8}{Discretization of time-series data}{subsection.1.2.3}% 13
 \BOOKMARK [2][-]{subsection.1.2.4}{Simulation}{section.1.2}% 14
-\BOOKMARK [1][-]{section.1.3}{Results}{chapter.1}% 15
-\BOOKMARK [2][-]{subsection.1.3.1}{Automatic generation of PH model from the PID network}{section.1.3}% 16
-\BOOKMARK [2][-]{subsection.1.3.2}{Simulation of Calcium stimulated biological system}{section.1.3}% 17
-\BOOKMARK [3][-]{section*.9}{Without the introduction of the synchronization sort.}{subsection.1.3.2}% 18
-\BOOKMARK [3][-]{section*.10}{With the introduction of the synchronization sort.}{subsection.1.3.2}% 19
-\BOOKMARK [3][-]{section*.11}{Simulating biological processes.}{subsection.1.3.2}% 20
-\BOOKMARK [1][-]{section.1.4}{Conclusion}{chapter.1}% 21
-\BOOKMARK [1][-]{section.1.5}{Acknowledgements}{chapter.1}% 22
-\BOOKMARK [1][-]{section.1.6}{Questions and Answers}{chapter.1}% 23
+\BOOKMARK [2][-]{subsection.1.2.5}{Automatic analysis of simulation traces}{section.1.2}% 15
+\BOOKMARK [1][-]{section.1.3}{Results}{chapter.1}% 16
+\BOOKMARK [2][-]{subsection.1.3.1}{Automatic generation of PH model from the PID network}{section.1.3}% 17
+\BOOKMARK [2][-]{subsection.1.3.2}{Simulation of Calcium stimulated biological system}{section.1.3}% 18
+\BOOKMARK [3][-]{section*.9}{Without the introduction of the synchronization sort.}{subsection.1.3.2}% 19
+\BOOKMARK [3][-]{section*.10}{With the introduction of the synchronization sort.}{subsection.1.3.2}% 20
+\BOOKMARK [3][-]{section*.11}{Simulating biological processes.}{subsection.1.3.2}% 21
+\BOOKMARK [2][-]{subsection.1.3.3}{Model validation: traces analysis}{section.1.3}% 22
+\BOOKMARK [1][-]{section.1.4}{Conclusion}{chapter.1}% 23
+\BOOKMARK [1][-]{section.1.5}{Acknowledgements}{chapter.1}% 24
+\BOOKMARK [1][-]{section.A.1}{Algorithme of patterns detection}{chapter.1}% 25

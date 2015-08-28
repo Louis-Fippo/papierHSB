@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  21 AUG 2015 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  28 AUG 2015 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**full_paper_fippoModif
+**full_paper_fippoModif.tex
 (./full_paper_fippoModif.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
@@ -172,18 +172,26 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count117
+\float@exts=\toks20
+\float@box=\box54
+\@float@everytoks=\toks21
+\@floatcapt=\box55
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen127
 \extrarowheight=\dimen128
-\NC@list=\toks20
+\NC@list=\toks22
 \extratabsurround=\skip45
 \backup@length=\skip46
 ) (./epig-macros.tex
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2014/04/30 v1.2b Input encoding file
@@ -198,14 +206,6 @@ Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS)
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count117
-\float@exts=\toks23
-\float@box=\box54
-\@float@everytoks=\toks24
-\@floatcapt=\box55
-)
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
@@ -806,21 +806,21 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
 ) (./full_paper_fippoModif.aux)
 \openout1 = `full_paper_fippoModif.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -854,7 +854,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 47.
+Package hyperref Info: Link coloring OFF on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -864,9 +864,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+LaTeX Info: Redefining \nameref on input line 49.
 
 (./full_paper_fippoModif.out) (./full_paper_fippoModif.out)
 \@outlinefile=\write5
@@ -875,27 +875,27 @@ LaTeX Info: Redefining \nameref on input line 47.
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
-LaTeX Font Info:    Try loading font information for U+msa on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 92.
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 92.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 92.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
 
 (./partsModif/intro.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -908,47 +908,51 @@ Underfull \vbox (badness 5105) has occurred while \output is active []
 
  [2])
 (./partsModif/methods.tex
-<images/workflow-2.png, id=186, 806.01125pt x 326.21875pt>
+<images/workflow-2.png, id=194, 806.01125pt x 326.21875pt>
 File: images/workflow-2.png Graphic file (type png)
 
 <use images/workflow-2.png>
 Package pdftex.def Info: images/workflow-2.png used on input line 12.
 (pdftex.def)             Requested size: 296.30089pt x 144.54218pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 
-Overfull \hbox (8.23203pt too wide) in paragraph at lines 23--30
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
+
+Overfull \hbox (8.23203pt too wide) in paragraph at lines 24--31
 \OT1/ptm/m/n/10 sented in an RSTC net-work, which stands for multi-layer recept
 or-signaling-transcription-
  []
 
-[3] <images/net_cg_v3.png, id=201, 8551.95pt x 5018.75pt>
+<images/net_cg_v3.png, id=211, 8551.95pt x 5018.75pt>
 File: images/net_cg_v3.png Graphic file (type png)
 
 <use images/net_cg_v3.png>
-Package pdftex.def Info: images/net_cg_v3.png used on input line 50.
+Package pdftex.def Info: images/net_cg_v3.png used on input line 64.
 (pdftex.def)             Requested size: 426.7091pt x 284.49419pt.
 
-Overfull \hbox (79.58557pt too wide) in paragraph at lines 50--55
+Overfull \hbox (79.58557pt too wide) in paragraph at lines 64--69
  [][] 
  []
 
-<images/12genes.png, id=203, 703.12688pt x 545.03625pt>
+[4 <./images/workflow-2.png>] [5 <./images/net_cg_v3.png>]
+<images/12genes.png, id=234, 879.285pt x 681.54625pt>
 File: images/12genes.png Graphic file (type png)
+ <use images/12genes.png>
+Package pdftex.def Info: images/12genes.png used on input line 91.
+(pdftex.def)             Requested size: 252.93335pt x 180.6713pt.
 
-<use images/12genes.png>
-Package pdftex.def Info: images/12genes.png used on input line 77.
-(pdftex.def)             Requested size: 252.94308pt x 180.66922pt.
- [4 <./images/workflow-2.png>] [5 <./images/net_cg_v3.png>] [6 <./images/12gene
-s.png>]
-Overfull \hbox (64.08241pt too wide) in paragraph at lines 180--181
+[6 <./images/12genes.png>]
+Underfull \vbox (badness 1975) has occurred while \output is active []
+
+ [7]
+Overfull \hbox (64.08241pt too wide) in paragraph at lines 194--195
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7]
+[8]
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -957,9 +961,13 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.312 \node[qgre]
+l.326 \node[qgre]
                   (a) at (0,1) {a};
-? 
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/triangle' and I am going 
 to ignore it. Perhaps you misspelled it.
@@ -968,9 +976,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.313 \node[mod]
+l.327 \node[mod]
                  (i) at (1,1) {i};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -979,9 +988,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.314 \node[qgre]
+l.328 \node[qgre]
                   (b) at (2,1) {b};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/es' and I am going to ign
 ore it. Perhaps you misspelled it.
@@ -990,9 +1000,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.315 \node[es]
+l.329 \node[es]
                 (d) at (1,1.5) {Simple activation};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -1001,9 +1012,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.356 \node[qgre]
+l.370 \node[qgre]
                   (a) at (0,1) {a};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/triangle' and I am going 
 to ignore it. Perhaps you misspelled it.
@@ -1012,9 +1024,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.357 \node[mod]
+l.371 \node[mod]
                  (i) at (1,1) {i};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -1023,9 +1036,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.358 \node[qgre]
+l.372 \node[qgre]
                   (b) at (2,1) {b};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/es' and I am going to ign
 ore it. Perhaps you misspelled it.
@@ -1034,69 +1048,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.359 \node[es]
+l.373 \node[es]
                 (d) at (1,1.5) {Simple inhibition};
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.361  (a) edge[inh,red] (i)
-                            
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.361  (a) edge[inh,red] (i)
-                            
-? 
+(That was another \errmessage.)
 
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.361  (a) edge[inh,red] (i)
-                            
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.361  (a) edge[inh,red] (i)
-                            
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.361  (a) edge[inh,red] (i)
-                            
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.361  (a) edge[inh,red] (i)
-                            
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.361  (a) edge[inh,red] (i)
-                            
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.361  (a) edge[inh,red] (i)
-                            
-? 
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -1105,9 +1060,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.397 \node[qgre]
+l.411 \node[qgre]
                   (a) at (0,2) {a};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/triangle' and I am going 
 to ignore it. Perhaps you misspelled it.
@@ -1116,9 +1072,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.398 \node[mod]
+l.412 \node[mod]
                  (i) at (1,1) {i};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -1127,9 +1084,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.399 \node[qgre]
+l.413 \node[qgre]
                   (b) at (0,0) {b};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/size', to which you passe
 d '15pts', and I am going to ignore it. Perhaps you misspelled it.
@@ -1138,9 +1096,10 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.400 \node[qgre]
+l.414 \node[qgre]
                   (c) at (2,1) {c};
-? 
+(That was another \errmessage.)
+
 
 ! Package pgfkeys Error: I do not know the key '/tikz/es' and I am going to ign
 ore it. Perhaps you misspelled it.
@@ -1149,332 +1108,22 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.401 \node[es]
+l.415 \node[es]
                 (d) at (1,3) {Activation or inhibition};
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.405  (b) edge[inh,red] (i)
-                            
-? 
-! Extra }, or forgotten \endgroup.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.499 \end{figure}
-                  
-? 
-[8] [9]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-! Undefined control sequence.
-<argument> \x -7 , \layersep 
-                             
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> \x -7 , \layersep 
-                             
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> \x -7 , \layersep 
-                             
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> \x -7 , \layersep 
-                             
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> \x -7 , \layersep 
-                             
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.681 }
-       
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.681 }
-       
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.681 }
-       
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.681 }
-       
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.681 }
-       
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.681 }
-       
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.681 }
-       
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.681 }
-       
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.681 }
-       
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.681 }
-       
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> pgf@sh@ns@\tikzlastnode 
-                                   
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> ... positionedPGFINTERNAL\tikzlastnode 
-                                                  
-l.681 }
-       
-? 
-
-! Undefined control sequence.
- ...ckage pgf Error: No shape named \tikzlastnode 
-                                                   is known.
-
-See the pgf pa...
-l.681 }
-       
-? 
-! Package pgf Error: No shape named  is known.
-
-See the pgf package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.681 }
-       
-? 
-
-Overfull \hbox (12.02339pt too wide) in paragraph at lines 681--681
- [][][][]\OT1/ptm/b/n/12 Signaling 
- []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 681.
-
-Overfull \hbox (23.1835pt too wide) in paragraph at lines 681--681
- [][][][][]\OT1/ptm/b/n/12 Parameters[] 
- []
+(That was another \errmessage.)
 
 
-Overfull \hbox (5.06107pt too wide) in paragraph at lines 681--681
- \OT1/ptm/b/n/17.28 sa=$\OT1/cmr/m/n/17.28 50$[] 
- []
+Underfull \vbox (badness 5475) has occurred while \output is active []
 
+ [9]
+Underfull \vbox (badness 4913) has occurred while \output is active []
 
-Overfull \hbox (5.06107pt too wide) in paragraph at lines 681--681
- \OT1/ptm/b/n/17.28 sa=$\OT1/cmr/m/n/17.28 50$[] 
- []
+ [10]
+Excluding 'comment' comment.) (./partsModif/results.tex
+Underfull \vbox (badness 1540) has occurred while \output is active []
 
-
-Overfull \hbox (2.48361pt too wide) in paragraph at lines 681--681
- [][][][][]\OT1/ptm/b/n/12 learned 
- []
-
-! Undefined control sequence.
-<argument> -4.7,\layersep 
-                          
-l.681 }
-       
-? 
-! Undefined control sequence.
-<argument> -6.5,\layersep 
-                          
-l.681 }
-       
-? 
-) (./partsModif/results.tex [10]
-<images/resultWOS.pdf, id=280, 505.89pt x 505.89pt>
+ [11]
+<images/resultWOS.pdf, id=302, 505.89pt x 505.89pt>
 File: images/resultWOS.pdf Graphic file (type pdf)
  <use images/resultWOS.pdf>
 Package pdftex.def Info: images/resultWOS.pdf used on input line 38.
@@ -1484,7 +1133,11 @@ Overfull \hbox (14.22998pt too wide) in paragraph at lines 38--40
  [][] 
  []
 
-[11] <images/12genes_sim.png, id=290, 702.625pt x 1003.75pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+<images/12genes_sim.png, id=311, 702.625pt x 1003.75pt>
 File: images/12genes_sim.png Graphic file (type png)
 
 <use images/12genes_sim.png>
@@ -1495,15 +1148,21 @@ Overfull \hbox (14.23384pt too wide) in paragraph at lines 64--66
  [][] 
  []
 
-<images/key_nodes1.png, id=296, 501.875pt x 451.6875pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./images/resultWOS.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./images/12genes_sim.png>] <images/key_nodes1.png, id=565, 501.875pt x 45
+1.6875pt>
 File: images/key_nodes1.png Graphic file (type png)
 
 <use images/key_nodes1.png>
 Package pdftex.def Info: images/key_nodes1.png used on input line 86.
 (pdftex.def)             Requested size: 289.09662pt x 252.95016pt.
-) (./partsModif/conclusion.tex [12 <./images/resultWOS.pdf>]) (./partsModif/ack
-nowledgements.tex)
-(./partsModif/Answer_questions.tex
+) (./partsModif/conclusion.tex [15 <./images/key_nodes1.png>] [16]) (./partsMod
+if/acknowledgements.tex) (./partsModif/annexes.tex
 Overfull \hbox (1.79378pt too wide) in paragraph at lines 3--1
 \OT1/ptm/m/n/10 fund-ing pro-gram MedSys (grant num-ber FKZ0315401A) and AGENET
  (FKZ0315898).
@@ -1514,53 +1173,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--1
 
  []
 
-) (./full_paper_fippoModif.bbl [13] [14]
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.139 ...viour of biological regulatory networksâ€
-                                                  ”ii. immunity
-? 
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.139 ...iour of biological regulatory networksâ€”
-                                                  ii. immunity
-? 
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 10.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
 )
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 19.
+)
+(./full_paper_fippoModif.bbl [17] [18] [19]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...viour of biological regulatory networksâ€
+                                                  ”ii. immunity
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...iour of biological regulatory networksâ€”
+                                                  ii. immunity
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[20])
 \tf@thm=\write6
 \openout6 = `full_paper_fippoModif.thm'.
 
- [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
- [16 <./images/12genes_sim.png>] [17 <./images/key_nodes1.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
-
-(./full_paper_fippoModif.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
+ [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+ (./full_paper_fippoModif.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `full_paper_fippoModif.out' has not changed.
-(rerunfilecheck)             Checksum: 13826CDD02689A087730D1A1EADF610B;1889.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
+(rerunfilecheck)             Checksum: 8FA7D4999E2FF55218502594604FB6E3;2080.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 20507 strings out of 493105
- 397903 string characters out of 6137072
- 548931 words of memory out of 5000000
- 23462 multiletter control sequences out of 15000+600000
- 35008 words of font info for 83 fonts, out of 8000000 for 9000
+ 20238 strings out of 493105
+ 393563 string characters out of 6137072
+ 525691 words of memory out of 5000000
+ 23121 multiletter control sequences out of 15000+600000
+ 28805 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,18n,73p,752b,1393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,18n,73p,794b,1379s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1569,23 +1239,23 @@ type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippoModif.pdf (17 pages, 13361712 bytes).
+Output written on full_paper_fippoModif.pdf (21 pages, 13463814 bytes).
 PDF statistics:
- 653 PDF objects out of 1000 (max. 8388607)
- 492 compressed objects within 5 object streams
- 84 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 772 PDF objects out of 1000 (max. 8388607)
+ 601 compressed objects within 7 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

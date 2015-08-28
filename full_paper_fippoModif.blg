@@ -3,44 +3,61 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: full_paper_fippoModif.aux
 The style file: plain.bst
 Database file #1: biblio.bib.bib
-You've used 27 entries,
+Warning--I'm ignoring RAT2006's extra "title" field
+--line 1447 of file biblio.bib.bib
+I was expecting a `,' or a `}'---line 1461 of file biblio.bib.bib
+ : 
+ : author = "Aleksandr Andreychenko, Linar Mikeev, David Spieler and Verena Wolf",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in AMSW2012
+Name 1 in "S. Reinker, R. Altman, and J. Timmer" has a comma at the end for entry RAT2006
+while executing---line 1049 of file plain.bst
+Warning--empty author in AMSW2012
+Warning--empty title in AMSW2012
+Warning--empty journal in AMSW2012
+Warning--empty year in AMSW2012
+Name 1 in "S. Reinker, R. Altman, and J. Timmer" has a comma at the end for entry RAT2006
+while executing---line 1090 of file plain.bst
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            687 strings with 9776 characters,
-and the built_in function-call counts, 10953 in all, are:
-= -- 1085
-> -- 566
+            696 strings with 9953 characters,
+and the built_in function-call counts, 11352 in all, are:
+= -- 1119
+> -- 580
 < -- 6
-+ -- 223
-- -- 196
-* -- 893
-:= -- 1802
-add.period$ -- 86
-call.type$ -- 27
-change.case$ -- 178
++ -- 229
+- -- 200
+* -- 923
+:= -- 1863
+add.period$ -- 90
+call.type$ -- 29
+change.case$ -- 185
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 364
-empty$ -- 804
-format.name$ -- 196
-if$ -- 2259
+cite$ -- 34
+duplicate$ -- 384
+empty$ -- 839
+format.name$ -- 200
+if$ -- 2338
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 28
-newline$ -- 138
-num.names$ -- 54
-pop$ -- 155
+int.to.str$ -- 29
+missing$ -- 30
+newline$ -- 146
+num.names$ -- 56
+pop$ -- 168
 preamble$ -- 1
-purify$ -- 152
+purify$ -- 158
 quote$ -- 0
-skip$ -- 244
+skip$ -- 260
 stack$ -- 0
-substring$ -- 819
-swap$ -- 74
+substring$ -- 829
+swap$ -- 75
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 0
-while$ -- 104
-width$ -- 29
-write$ -- 304
+type$ -- 114
+warning$ -- 5
+while$ -- 106
+width$ -- 31
+write$ -- 319
+(There were 3 error messages)
