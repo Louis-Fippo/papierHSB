@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  28 AUG 2015 19:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  30 AUG 2015 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -806,21 +806,21 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
 ) (./full_paper_fippoModif.aux)
 \openout1 = `full_paper_fippoModif.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -854,7 +854,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 49.
+Package hyperref Info: Link coloring OFF on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -864,9 +864,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
 
 (./full_paper_fippoModif.out) (./full_paper_fippoModif.out)
 \@outlinefile=\write5
@@ -875,27 +875,27 @@ LaTeX Info: Redefining \nameref on input line 49.
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
-LaTeX Font Info:    Try loading font information for U+msa on input line 94.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
+LaTeX Font Info:    Try loading font information for U+msa on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 94.
+LaTeX Font Info:    Try loading font information for U+msb on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 94.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 94.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
 
 (./partsModif/intro.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -912,16 +912,16 @@ Underfull \vbox (badness 5105) has occurred while \output is active []
 File: images/workflow-2.png Graphic file (type png)
 
 <use images/workflow-2.png>
-Package pdftex.def Info: images/workflow-2.png used on input line 12.
+Package pdftex.def Info: images/workflow-2.png used on input line 10.
 (pdftex.def)             Requested size: 296.30089pt x 144.54218pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
 
-Overfull \hbox (8.23203pt too wide) in paragraph at lines 24--31
+Overfull \hbox (8.23203pt too wide) in paragraph at lines 22--29
 \OT1/ptm/m/n/10 sented in an RSTC net-work, which stands for multi-layer recept
 or-signaling-transcription-
  []
@@ -930,25 +930,20 @@ or-signaling-transcription-
 File: images/net_cg_v3.png Graphic file (type png)
 
 <use images/net_cg_v3.png>
-Package pdftex.def Info: images/net_cg_v3.png used on input line 64.
-(pdftex.def)             Requested size: 426.7091pt x 284.49419pt.
-
-Overfull \hbox (79.58557pt too wide) in paragraph at lines 64--69
- [][] 
- []
-
-[4 <./images/workflow-2.png>] [5 <./images/net_cg_v3.png>]
-<images/12genes.png, id=234, 879.285pt x 681.54625pt>
+Package pdftex.def Info: images/net_cg_v3.png used on input line 62.
+(pdftex.def)             Requested size: 341.36728pt x 284.49419pt.
+ [4 <./images/workflow-2.png>] [5 <./images/net_cg_v3.png>] <images/12genes.png
+, id=234, 879.285pt x 681.54625pt>
 File: images/12genes.png Graphic file (type png)
- <use images/12genes.png>
-Package pdftex.def Info: images/12genes.png used on input line 91.
-(pdftex.def)             Requested size: 252.93335pt x 180.6713pt.
 
-[6 <./images/12genes.png>]
+<use images/12genes.png>
+Package pdftex.def Info: images/12genes.png used on input line 89.
+(pdftex.def)             Requested size: 252.93335pt x 180.6713pt.
+ [6 <./images/12genes.png>]
 Underfull \vbox (badness 1975) has occurred while \output is active []
 
  [7]
-Overfull \hbox (64.08241pt too wide) in paragraph at lines 194--195
+Overfull \hbox (64.08241pt too wide) in paragraph at lines 192--193
  [][] 
  []
 
@@ -961,7 +956,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.326 \node[qgre]
+l.324 \node[qgre]
                   (a) at (0,1) {a};
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -976,7 +971,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.327 \node[mod]
+l.325 \node[mod]
                  (i) at (1,1) {i};
 (That was another \errmessage.)
 
@@ -988,7 +983,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.328 \node[qgre]
+l.326 \node[qgre]
                   (b) at (2,1) {b};
 (That was another \errmessage.)
 
@@ -1000,7 +995,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.329 \node[es]
+l.327 \node[es]
                 (d) at (1,1.5) {Simple activation};
 (That was another \errmessage.)
 
@@ -1012,7 +1007,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.370 \node[qgre]
+l.368 \node[qgre]
                   (a) at (0,1) {a};
 (That was another \errmessage.)
 
@@ -1024,7 +1019,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.371 \node[mod]
+l.369 \node[mod]
                  (i) at (1,1) {i};
 (That was another \errmessage.)
 
@@ -1036,7 +1031,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.372 \node[qgre]
+l.370 \node[qgre]
                   (b) at (2,1) {b};
 (That was another \errmessage.)
 
@@ -1048,7 +1043,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.373 \node[es]
+l.371 \node[es]
                 (d) at (1,1.5) {Simple inhibition};
 (That was another \errmessage.)
 
@@ -1060,7 +1055,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.411 \node[qgre]
+l.409 \node[qgre]
                   (a) at (0,2) {a};
 (That was another \errmessage.)
 
@@ -1072,7 +1067,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.412 \node[mod]
+l.410 \node[mod]
                  (i) at (1,1) {i};
 (That was another \errmessage.)
 
@@ -1084,7 +1079,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.413 \node[qgre]
+l.411 \node[qgre]
                   (b) at (0,0) {b};
 (That was another \errmessage.)
 
@@ -1096,7 +1091,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.414 \node[qgre]
+l.412 \node[qgre]
                   (c) at (2,1) {c};
 (That was another \errmessage.)
 
@@ -1108,7 +1103,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.415 \node[es]
+l.413 \node[es]
                 (d) at (1,3) {Activation or inhibition};
 (That was another \errmessage.)
 
@@ -1119,32 +1114,43 @@ Underfull \vbox (badness 5475) has occurred while \output is active []
 Underfull \vbox (badness 4913) has occurred while \output is active []
 
  [10]
-Excluding 'comment' comment.) (./partsModif/results.tex
-Underfull \vbox (badness 1540) has occurred while \output is active []
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
- [11]
+Overfull \hbox (12.02339pt too wide) in paragraph at lines 702--702
+ [][][][]\OT1/ptm/b/n/12 Signaling 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 702.
+
+Overfull \hbox (3.85143pt too wide) in paragraph at lines 702--702
+ [][][][][]\OT1/ptm/m/n/9 Parameters[] 
+ []
+
+[11]) (./partsModif/results.tex
 <images/resultWOS.pdf, id=302, 505.89pt x 505.89pt>
 File: images/resultWOS.pdf Graphic file (type pdf)
  <use images/resultWOS.pdf>
-Package pdftex.def Info: images/resultWOS.pdf used on input line 38.
-(pdftex.def)             Requested size: 361.35352pt x 216.81056pt.
+Package pdftex.def Info: images/resultWOS.pdf used on input line 31.
+(pdftex.def)             Requested size: 361.35352pt x 289.08589pt.
 
-Overfull \hbox (14.22998pt too wide) in paragraph at lines 38--40
+Overfull \hbox (14.22998pt too wide) in paragraph at lines 31--33
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-<images/12genes_sim.png, id=311, 702.625pt x 1003.75pt>
+[12] <images/12genes_sim.png, id=311, 702.625pt x 1003.75pt>
 File: images/12genes_sim.png Graphic file (type png)
 
 <use images/12genes_sim.png>
-Package pdftex.def Info: images/12genes_sim.png used on input line 64.
+Package pdftex.def Info: images/12genes_sim.png used on input line 56.
 (pdftex.def)             Requested size: 361.35738pt x 505.90187pt.
 
-Overfull \hbox (14.23384pt too wide) in paragraph at lines 64--66
+Overfull \hbox (14.23384pt too wide) in paragraph at lines 56--58
  [][] 
  []
 
@@ -1159,7 +1165,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/key_nodes1.png Graphic file (type png)
 
 <use images/key_nodes1.png>
-Package pdftex.def Info: images/key_nodes1.png used on input line 86.
+Package pdftex.def Info: images/key_nodes1.png used on input line 77.
 (pdftex.def)             Requested size: 289.09662pt x 252.95016pt.
 ) (./partsModif/conclusion.tex [15 <./images/key_nodes1.png>] [16]) (./partsMod
 if/acknowledgements.tex) (./partsModif/annexes.tex
@@ -1173,16 +1179,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--1
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 22.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 19.
+put line 31.
 )
-(./full_paper_fippoModif.bbl [17] [18] [19]
+(./full_paper_fippoModif.bbl [17] [18] [19] [20]
 
 ! Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `latin1'.
@@ -1209,26 +1215,26 @@ l.147 ...iour of biological regulatory networks—
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-[20])
+)
 \tf@thm=\write6
 \openout6 = `full_paper_fippoModif.thm'.
 
  [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
  (./full_paper_fippoModif.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
 Package rerunfilecheck Info: File `full_paper_fippoModif.out' has not changed.
 (rerunfilecheck)             Checksum: 8FA7D4999E2FF55218502594604FB6E3;2080.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 20238 strings out of 493105
- 393563 string characters out of 6137072
- 525866 words of memory out of 5000000
- 23121 multiletter control sequences out of 15000+600000
- 28805 words of font info for 66 fonts, out of 8000000 for 9000
+ 20640 strings out of 493105
+ 399563 string characters out of 6137072
+ 533639 words of memory out of 5000000
+ 23521 multiletter control sequences out of 15000+600000
+ 30402 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,18n,73p,794b,1379s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1252,10 +1258,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippoModif.pdf (21 pages, 13464252 bytes).
+Output written on full_paper_fippoModif.pdf (21 pages, 13471403 bytes).
 PDF statistics:
- 772 PDF objects out of 1000 (max. 8388607)
- 601 compressed objects within 7 object streams
- 158 named destinations out of 1000 (max. 500000)
+ 775 PDF objects out of 1000 (max. 8388607)
+ 604 compressed objects within 7 object streams
+ 159 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

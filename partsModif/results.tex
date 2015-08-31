@@ -1,9 +1,6 @@
-
 \section{Results}
-
 \subsection{Automatic generation of PH model from the PID network}
 %give statistics
-
 PH models are written using the PINT\footnote{\url{http://process.hitting.free.fr}} format.  
 PINT implements stochastic simulations and static analyses for computing dynamical properties on very large-scale PH models.
 For the PINT code generation we used two procedures.
@@ -15,11 +12,7 @@ as is the case for the system under study.  It is implemented in Java and availa
 %This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
 %in the dynamics of the components of the system.
 
-
-
-
 \subsection{Simulation of Calcium stimulated biological system}
-
 We simulated the model with and without the inclusion of the synchronization sort. In the following, we present the results of 
 the simulation.
 
@@ -35,14 +28,13 @@ the dynamics of components, the signal transduction and takes into account the s
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=5in,height=3in]{images/resultWOS.pdf}
+\includegraphics[width=5in,height=4in]{images/resultWOS.pdf}
 \caption{{\bf Results of system simulations without introducing the synchronization sort for 9 genes.} The 
 traces representing the discretized time-series data are shown as black lines.  The traces representing the simulated traces are shown as blue lines.}
 \label{fig:rwos}
 \end{figure}
 
 \subsubsection{With the introduction of the synchronization sort.}
-
 In \pref{fig:rws} we can see that the introduction of the synchronization sort significantly reduces the 
 impact of concurrency. The result shows  a 
 clear elimination of the previously observed oscillation (\pref{fig:rwos}). 
@@ -71,7 +63,6 @@ from the discretization of the time-series data. The blue traces show the simula
 %%%%%images des noeuds clés
 
 \subsubsection{Simulating biological processes.}
-
 To validate our model we studied the prediction of non-observed components of such a system and we focused on biological processes linked 
 to Calcium stimulation, such as keratinocyte-differentiation, cell-adhesion and cell-cycle arrest.
 Our results are shown in \pref{fig:knodes} and confirmed literature experimental evidence on these processes.
@@ -115,7 +106,7 @@ column. One can observed that many components can be recongnised by the same Aut
 
 &
 
-\textbf{of acceptance}
+\textbf{$\%$ of acceptance}
 
 \\ \hline
 

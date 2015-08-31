@@ -4,14 +4,6 @@
  Here are the algorithms that allow to detect and contruct a process hitting model from an RSTC network.
  These algorithms have a polynomial time running that correspond to the running time of the procedure \ref{PatternDetection}.
  
- \begin{proposition}
-  Algorithm \ref{PatternDetection} has a time complexity of $\mathcal{O}(|V|\log{}(h))$. 
-  Where $h$ is the average height of the patterns in the RSTC network. In the worse case 
-  $h = |E|$.
- \end{proposition}
-
- 
- 
  
  %%%%algorithm of patterns detection in all the network
 
