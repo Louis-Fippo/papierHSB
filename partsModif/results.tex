@@ -39,11 +39,11 @@ In \pref{fig:rws} we can see that the introduction of the synchronization sort s
 impact of concurrency. The result shows  a 
 clear elimination of the previously observed oscillation (\pref{fig:rwos}). 
 Comparing the simulated results with the ones observed experimentally we found four different cases.
-We found one simulation trace (IL8) that matches the sequence of all the component expression levels perfectly.  In this case delays exist among simulation and experiment but 
+We found $5$ simulation traces (IL8, uPAR, IL1\_beta, ET1, A20) that matched the sequence of all the component expression levels perfectly.  In this case delays exist among simulation and experiment but 
 these delays are not comparable since experimental time-points are measured in hours and simulation-units for the simulated PH model.
-We found 4 simulation traces (uPAR, ET1, TfR, SM22) that matched the sequence of experimental discrete expression levels missing one expression-level.
-We found 6 components (MKP3, MKP1, Hes5, IL1-beta, TNF-alpha, DKK1) in which at least 2 expression levels are missed.
-Finally we found 1 component (A20) for which we did not reproduce its experimentally observed dynamics.
+We found $6$ simulation traces (MKP1, MKP3, Hes5, SM22, TfR, DKK1) that matched the sequence of experimental discrete expression levels missing one expression-level.
+We found $1$ components (TNF-alpha) in which at least 2 expression levels are missed.
+%Finally we found 1 component (A20) for which we did not reproduce its experimentally observed dynamics.
 
 
 %The expression levels of genes \emph{uPAR}, \emph{MKP1},
@@ -91,7 +91,8 @@ of percentage of acceptance traces of each the $12$ mRNA expression.
 \renewcommand{\arraystretch}{1.3}
 \caption{Percentage of acceptance traces. First column represente the Automata ($\mathcal{A}_{i}(w)$, where $\mathcal{A}_{i}$ is the Automata and $w$ is the word recongnised by $\mathcal{A}_{i}$) 
 that is used to check if a given trace is acceptance for a component in the second 
-column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces.}
+column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces. Finally in the fourth column
+are the percentage of acceptance with a tolerence of one level ($T_{1}$)}
 \label{traceAnalysis}
 \centering
 %table of result
@@ -171,7 +172,7 @@ TNF$\_$alpha
 
 &
 
-11
+0
 
 \\ \hline
 

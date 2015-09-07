@@ -516,7 +516,7 @@ The rest of the components will be
 assigned default parameters. In order to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
 in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time in which we assume that a component moves from one process to another. Therefore the action that leads this 
 change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
-\modCG{ studies \cite{AMSW2012,RAT2006} have proposed more elaborate methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
+\modCG{ Studies \cite{AMSW2012,Batt15092010,RAT2006} have proposed more elaborate methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
 the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus we can use a basic estimation algorithm for temporal and stochastic parameter estimation.}
 %TODO citer les méthodes d'estimation connues et dire pourquoi on en avait pas besoin même si elle sont bonnes 
 
@@ -560,7 +560,7 @@ These constraints can be seen as
 %The choice of inhibition parameters must ensure that the time interval in which the inhibition action 
 % is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
 % can be seen as 
-reachability constraints from the entry  node (E-cadherin) to the output nodes (genes). The values of these parameters are selected by considering the delay of signal transduction from the entry
+reachability constraints from the entry  node (E-cadherin) to the output nodes (mRNA expression). The values of these parameters are selected by considering the delay of signal transduction from the entry
  node to the output nodes.
  \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
 for all TFs we introduced an auto-inhibition action that represents their degradation over time. 

@@ -1,13 +1,23 @@
 \begin{thebibliography}{10}
 
-\bibitem{AMSW2012}
-
-
 \bibitem{Ahmad08}
 Jamil Ahmad, Olivier Roux, Gilles Bernot, Jean-Paul Comet, and Adrien Richard.
 \newblock Analysing formal models of genetic regulatory networks with delays.
 \newblock {\em International Journal of Bioinformatics Research and
   Applications (IJBRA)}, 4(3):240--262, 2008.
+
+\bibitem{AMSW2012}
+David~Spieler Aleksandr~Andreychenko, Linar~Mikeev and Verena Wolf.
+\newblock Approximate maximum likelihood estimation for stochastic chemical
+  kinetics.
+\newblock {\em EURASIP Journal on Bioinformatics and Systems Biology}.
+
+\bibitem{Batt15092010}
+Gregory Batt, Michel Page, Irene Cantone, Gregor Goessler, Pedro Monteiro, and
+  Hidde de~Jong.
+\newblock Efficient parameter search for qualitative models of regulatory
+  networks using symbolic model checking.
+\newblock {\em Bioinformatics}, 26(18):i603--i610, 2010.
 
 \bibitem{batt2007timed}
 Gr{\'e}gory Batt, Ramzi~Ben Salah, and Oded Maler.

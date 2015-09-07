@@ -68,7 +68,7 @@
 \newlabel{table_patterns}{{1}{9}{Examples of patterns}{table.1.1}{}}
 \newlabel{sssec:EPTSD}{{2.3}{9}{Estimating the parameters for the PH-simulation from time-series gene expression data}{section*.7}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Estimating the parameters for the PH-simulation from time-series gene expression data.}{9}{section*.7}}
-\citation{AMSW2012,RAT2006}
+\citation{AMSW2012,Batt15092010,RAT2006}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\bf  Estimation of temporal parameters from time series data:} The mean firing time of an action that makes a component (\leavevmode {\color  {red}mRNA expression}) change of sub-state is estimated as $r_{i}=\frac  {1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a \leavevmode {\color  {red} mRNA expression}, while $MinLevel$, its minimum expression. The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 0,1,2) of a component according to its gene expression data. }}{10}{figure.1.5}}
 \newlabel{fig:estimationParameter}{{5}{10}{{\bf Estimation of temporal parameters from time series data:} The mean firing time of an action that makes a component (\modCG {mRNA expression}) change of sub-state is estimated as $r_{i}=\frac {1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a \modCG { mRNA expression}, while $MinLevel$, its minimum expression. The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 0,1,2) of a component according to its gene expression data}{figure.1.5}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Discretization of time-series data}{10}{section*.8}}
@@ -91,17 +91,16 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Results of the prediction of biological processes.} The gray traces represent the experimental and literature-based evidence. The blue traces show the simulated behavior of E-cadherin and three biological processes.}}{15}{figure.1.9}}
 \newlabel{fig:knodes}{{9}{15}{{\bf Results of the prediction of biological processes.} The gray traces represent the experimental and literature-based evidence. The blue traces show the simulated behavior of E-cadherin and three biological processes}{figure.1.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Model validation: traces analysis}{15}{subsection.1.3.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Percentage of acceptance traces. First column represente the Automata ($\mathcal  {A}_{i}(w)$, where $\mathcal  {A}_{i}$ is the Automata and $w$ is the word recongnised by $\mathcal  {A}_{i}$) that is used to check if a given trace is acceptance for a component in the second column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces.}}{16}{table.1.2}}
-\newlabel{traceAnalysis}{{2}{16}{Percentage of acceptance traces. First column represente the Automata ($\mathcal {A}_{i}(w)$, where $\mathcal {A}_{i}$ is the Automata and $w$ is the word recongnised by $\mathcal {A}_{i}$) that is used to check if a given trace is acceptance for a component in the second column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces}{table.1.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Percentage of acceptance traces. First column represente the Automata ($\mathcal  {A}_{i}(w)$, where $\mathcal  {A}_{i}$ is the Automata and $w$ is the word recongnised by $\mathcal  {A}_{i}$) that is used to check if a given trace is acceptance for a component in the second column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces. Finally in the fourth column are the percentage of acceptance with a tolerence of one level ($T_{1}$)}}{16}{table.1.2}}
+\newlabel{traceAnalysis}{{2}{16}{Percentage of acceptance traces. First column represente the Automata ($\mathcal {A}_{i}(w)$, where $\mathcal {A}_{i}$ is the Automata and $w$ is the word recongnised by $\mathcal {A}_{i}$) that is used to check if a given trace is acceptance for a component in the second column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces. Finally in the fourth column are the percentage of acceptance with a tolerence of one level ($T_{1}$)}{table.1.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{16}{section.1.4}}
 \bibstyle{plain}
 \bibdata{biblio.bib}
-\bibcite{AMSW2012}{1}
-\bibcite{Ahmad08}{2}
-\bibcite{batt2007timed}{3}
-\bibcite{busch2008gene}{4}
-\bibcite{chaouiya2003qualitative}{5}
-\bibcite{de2003genetic}{6}
+\bibcite{Ahmad08}{1}
+\bibcite{AMSW2012}{2}
+\bibcite{Batt15092010}{3}
+\bibcite{batt2007timed}{4}
+\bibcite{busch2008gene}{5}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Acknowledgements}{17}{section.1.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Algorithme of patterns detection}{17}{section.A.1}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \bf  : Algorithm for Pattern detection in an RSTC Network in order to generate the equivalent model in the PH formalism}}{17}{algorithm.1}}
@@ -110,26 +109,28 @@
 \newlabel{PatternDetection}{{2}{18}{Algorithme of patterns detection}{algorithm.2}{}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces \bf  : Algorithm for writing a given pattern into a file, function patternInPHModel ($out$, $Pat$)}}{19}{algorithm.3}}
 \newlabel{PHModelGeneration}{{3}{19}{Algorithme of patterns detection}{algorithm.3}{}}
-\bibcite{gardner2003inferring}{7}
-\bibcite{guziolowski2012automatic}{8}
-\bibcite{guziolowski2013exhaustively}{9}
-\bibcite{heiner2008petri}{10}
-\bibcite{kauffman1969metabolic}{11}
-\bibcite{Kolly2005}{12}
-\bibcite{macnamara2012state}{13}
-\bibcite{maurin2009modeling}{14}
-\bibcite{mitsos2009identifying}{15}
-\bibcite{molloy1982performance}{16}
-\bibcite{PMR10-TCSB}{17}
-\bibcite{Pinna2010}{18}
-\bibcite{porreca2010identification}{19}
-\bibcite{priami1995stochastic}{20}
-\bibcite{RAT2006}{21}
-\bibcite{schaefer2009pid}{22}
-\bibcite{Siebert06}{23}
-\bibcite{snoussi1989qualitative}{24}
-\bibcite{thieffry1995dynamical}{25}
-\bibcite{Thomas73}{26}
-\bibcite{Tu2011}{27}
-\bibcite{van2013timed}{28}
-\bibcite{yu2012hipathdb}{29}
+\bibcite{chaouiya2003qualitative}{6}
+\bibcite{de2003genetic}{7}
+\bibcite{gardner2003inferring}{8}
+\bibcite{guziolowski2012automatic}{9}
+\bibcite{guziolowski2013exhaustively}{10}
+\bibcite{heiner2008petri}{11}
+\bibcite{kauffman1969metabolic}{12}
+\bibcite{Kolly2005}{13}
+\bibcite{macnamara2012state}{14}
+\bibcite{maurin2009modeling}{15}
+\bibcite{mitsos2009identifying}{16}
+\bibcite{molloy1982performance}{17}
+\bibcite{PMR10-TCSB}{18}
+\bibcite{Pinna2010}{19}
+\bibcite{porreca2010identification}{20}
+\bibcite{priami1995stochastic}{21}
+\bibcite{RAT2006}{22}
+\bibcite{schaefer2009pid}{23}
+\bibcite{Siebert06}{24}
+\bibcite{snoussi1989qualitative}{25}
+\bibcite{thieffry1995dynamical}{26}
+\bibcite{Thomas73}{27}
+\bibcite{Tu2011}{28}
+\bibcite{van2013timed}{29}
+\bibcite{yu2012hipathdb}{30}

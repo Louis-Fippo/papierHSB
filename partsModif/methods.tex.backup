@@ -4,9 +4,7 @@
 
 The general workflow for integrating time-series data in a PH model is depicted in \pref{fig:workflow}, in the following sections we 
 detail some of the workflow steps.
-
 % and comprises the following steps:
-
 \begin{figure}[H]
  \centering
  \includegraphics[width=4.1in,height=2in]{images/workflow-2.png}
@@ -59,16 +57,16 @@ First colonne of table \ref{table_patterns} shows us some examples of patterns t
 }
 %}
 
-\begin{figure}[!p]
+\begin{sidewaysfigure}[!p]
  \centering
- \includegraphics[width=15cm, height=10cm]{images/net_cg_v3.png}
+ \includegraphics[width=12cm, height=10cm]{images/net_cg_v3.png}
 \caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Blue nodes correspond to E-cadherin entities, red or green, to time-series genes, 
 and cyan nodes to cellular processes. The graph is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, \modCG{ mRNA expression}, cellular state, biological processes and positive conditions) and of transient
 nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
 input and protein-family-member.} 
  \label{fig:network}
-\end{figure}
+\end{sidewaysfigure}
 
 %description des données
 \subsubsection{Time-series microarray dataset.}
@@ -518,7 +516,7 @@ The rest of the components will be
 assigned default parameters. In order to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
 in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time in which we assume that a component moves from one process to another. Therefore the action that leads this 
 change must be played with rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$, the small the variance around $r$ is. 
-\modCG{ studies \cite{AMSW2012,RAT2006} have proposed more elaborate methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
+\modCG{ Studies \cite{AMSW2012,Batt15092010,RAT2006} have proposed more elaborate methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
 the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus we can use a basic estimation algorithm for temporal and stochastic parameter estimation.}
 %TODO citer les méthodes d'estimation connues et dire pourquoi on en avait pas besoin même si elle sont bonnes 
 
@@ -562,7 +560,7 @@ These constraints can be seen as
 %The choice of inhibition parameters must ensure that the time interval in which the inhibition action 
 % is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
 % can be seen as 
-reachability constraints from the entry  node (E-cadherin) to the output nodes (genes). The values of these parameters are selected by considering the delay of signal transduction from the entry
+reachability constraints from the entry  node (E-cadherin) to the output nodes (mRNA expression). The values of these parameters are selected by considering the delay of signal transduction from the entry
  node to the output nodes.
  \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
 for all TFs we introduced an auto-inhibition action that represents their degradation over time. 
@@ -575,8 +573,8 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
 \begin{figure}[H]
  
  \centering
- %\scalebox{0.45}{
- \begin{comment}
+ \scalebox{0.65}{
+% \begin{comment}
   \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
   
     \tikzstyle{every pin edge}=[<-,shorten <=1pt];
@@ -657,36 +655,36 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
     \path (I-3) edge[inh] (H3-2);
      
       %titre du graphe
-    \node[annot] (graphTitle) at (2.5-7,7) {\textcolor{blue}{\large \textbf{Graph Structure}};
+    \node[annot] (graphTitle) at (2.5-7,7) {\textcolor{blue}{\large \textbf Graph Structure}};
 
     % Annotate the layers
-    \node[annot] (layerTitle) at (-9,7) {\textcolor{blue}{\large \textbf{Layer}};
-    \node[annot, node distance=1cm] (couchesp) at (-9,1) {\large \textbf{Signaling Proteins} };
+    \node[annot] (layerTitle) at (-9,7) {\textcolor{blue}{\large \textbf Layer}};
+    \node[annot, node distance=1cm] (couchesp) at (-9,1) {\large \textbf{Signaling Proteins}};
     \node[annot] (coucheFT) at (-9,-2) {\large \textbf{TF} };
     \node[annot] (coucheGene) at (-9,-4) {\large \textbf{Genes} Output };
     \node[annot] (noeudEntre) at (-9,5) {\large \textbf{Ecad} Input };
     
     %noeud pour ajouter le R S T C 
-    \node[annot] (R) at (-11,5) {\textcolor{black}{\textbf{\LARGE R}};
-    \node[annot] (S) at (-11,1) {\textcolor{black}{\textbf{\LARGE S}};
-    \node[annot] (T) at (-11,-2) {\textcolor{black}{\textbf{\LARGE T}};
-    \node[annot] (C) at (-11,-4) {\textcolor{black}{\textbf{\LARGE C}};
-    \node[annot] (test) at (5,-4) {\textcolor{black}{\textbf{}};
+    \node[annot] (R) at (-11,5) {\textcolor{black}{\textbf \LARGE R}};
+    \node[annot] (S) at (-11,1) {\textcolor{black}{\textbf \LARGE S}};
+    \node[annot] (T) at (-11,-2) {\textcolor{black}{\textbf \LARGE T}};
+    \node[annot] (C) at (-11,-4) {\textcolor{black}{\textbf \LARGE C}};
+    \node[annot] (test) at (5,-4) {\textcolor{black}{\textbf -}};
     
     %noeud pour les règles de modélisation
-    \node[annot] (icTitle) at (0,7) {\textcolor{blue}{\textbf{\large Initial Conditions}};
-    \node[annot] (RMi) at (0,4.5) {\textcolor{black}{\textbf{\LARGE 1}};
-    \node[annot] (SMi) at (0,1) {\textcolor{black}{\textbf{\LARGE 0}};
-    \node[annot] (TMi) at (0,-2) {\textcolor{black}{\textbf{\LARGE 0}};
-    \node[annot] (CMi) at (0,-4) {\textcolor{black}{\textbf{\LARGE 0}};
+    \node[annot] (icTitle) at (0,7) {\textcolor{blue}{\textbf \large Initial Conditions}};
+    \node[annot] (RMi) at (0,4.5) {\textcolor{black}{\textbf \LARGE 1}};
+    \node[annot] (SMi) at (0,1) {\textcolor{black}{\textbf \LARGE 0}};
+    \node[annot] (TMi) at (0,-2) {\textcolor{black}{\textbf \LARGE 0}};
+    \node[annot] (CMi) at (0,-4) {\textcolor{black}{\textbf \LARGE 0}};
     %\node[annot] (P) at (5,-4) {\textcolor{black}{\huge \textbf{}}};
     
     %noeuds pour les hypothèses de modélisation 
-    \node[annot] (parameterTitle) at (3,7) {\textcolor{blue}{\textbf{\large Parameters}};   %text width=3cm
-    \node[annot] (RH) at (3,5) {\textcolor{black}{\textbf{\LARGE -}};
-    \node[annot] (SH) at (3,1) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}};
-    \node[annot] (TH) at (3,-2) {\textcolor{black}{\small \textbf{\LARGE r=$10$ - sa=$50$}};
-    \node[annot] (CH) at (3,-4) {\textcolor{black}{\small \textbf{\large learned from TSD}};
+    \node[annot] (parameterTitle) at (3,7) {\textcolor{blue}{\textbf \large Parameters}};   %text width=3cm
+    \node[annot] (RH) at (3,5) {\textcolor{black}{\textbf \LARGE -}};
+    \node[annot] (SH) at (3,1) {\textcolor{black}{\small \textbf \LARGE r=$10$ - sa=$50$}};
+    \node[annot] (TH) at (3,-2) {\textcolor{black}{\small \textbf \LARGE r=$10$ - sa=$50$}};
+    \node[annot] (CH) at (3,-4) {\textcolor{black}{\small \textbf \large learned from TSD}};
     %\node[annot] (test) at (5,-4) {\textcolor{black}{\huge \textbf{}}};
     
     %noeuds de repères pour les sous-graphs
@@ -700,8 +698,8 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
    
 
 \end{tikzpicture}
-\end{comment}
-%}
+%\end{comment}
+}
 
  \caption{\bf RSTC network structure and initial conditions assigned to each node in the layer}
  \label{fig:initialCondition}
@@ -711,13 +709,14 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
 
  
  %model validation
- \subsection{Model validation: traces analysis}
+ \subsection{Automatic analysis of simulation traces}
  \modCG{
  Due to the stochastics and concurrents aspects of the system, each execution of the model can generate dynamic which is different of the other. 
- Therefore, to validate the proposed model, we decide to analyse the trace generate by each component for a set of simulations of the model.
- The idea is to calculate the percentage of traces that reproduce the expected dynamic of the system. 
- 
- 
+ Therefore, to validate the proposed model, we decide to analyse the traces generated by each component for a set of simulations of the model.
+ The idea is to calculate the percentage of traces that reproduce the expected dynamic of the system. To achieve this goal, we take each trace generated
+ at each simulation for a given component and passed it to an automata ($\mathcal{A}_{i}$) that recongnize the set of acceptance traces of that component. Thus we can count the 
+ number of accepted traces ($Trace_{accp}$). Therefore the percentage of accep traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assume that $Trace_{N}$ is the total 
+ number of simulation. 
  }
 
 %fin de methods.
