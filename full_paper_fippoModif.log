@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  3 SEP 2015 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  7 SEP 2015 11:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1230,9 +1230,9 @@ Package rerunfilecheck Info: File `full_paper_fippoModif.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 20642 strings out of 493105
- 399594 string characters out of 6137072
- 533788 words of memory out of 5000000
+ 20643 strings out of 493105
+ 399603 string characters out of 6137072
+ 533751 words of memory out of 5000000
  23522 multiletter control sequences out of 15000+600000
  30402 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1258,10 +1258,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippoModif.pdf (21 pages, 13728605 bytes).
+Output written on full_paper_fippoModif.pdf (21 pages, 13729276 bytes).
 PDF statistics:
- 779 PDF objects out of 1000 (max. 8388607)
- 606 compressed objects within 7 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 607 compressed objects within 7 object streams
+ 161 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
