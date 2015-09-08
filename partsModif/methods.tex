@@ -717,6 +717,9 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
  at each simulation for a given component and passed it to an automata ($\mathcal{A}_{i}$) that recongnize the set of acceptance traces of that component. Thus we can count the 
  number of accepted traces ($Trace_{accp}$). Therefore the percentage of accepting traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assume that $Trace_{N}$ is the total 
  number of simulation. 
+ Following this we introduce the concept of tolerance in accepting traces. It's mean that an automaton can accepted a trace with a difference 
+ of one or more level (s) at each state. But in the case study we just use a tolerance $T_{1}$ that allow to accept a difference of one between the 
+ input trace and the expected trace at each state.
  }
 
 %fin de methods.
