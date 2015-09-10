@@ -3,8 +3,13 @@ This work describes the steps towards the integration of time-series data in lar
 We proposed an automatic method to build a timed and stochastic PH model from pathways of biochemical reactions present in 
 the Pathway Interaction Database (PID). 
 %
-As a case-study, we built a model combining signaling and transcription events relevant to keratinocyte differentiation induced by Calcium, which linked E-cadherin nodes and 12 genes, which 
-expression profiles was measured upon Calcium stimulation over time. The interaction graph represented by the model had 293 and 375 edges.
+%<<<<<<< HEAD
+%As a case-study, we built a model combining signaling and transcription events relevant to keratinocyte differentiation induced by Calcium, which linked E-cadherin nodes and $12$ genes, which 
+%expression profiles was measured upon Calcium stimulation over time. The interaction graph represented by the model had $293$ and $375$ edges.
+%=======
+As a case-study we built a model combining signaling and transcription events relevant to keratinocyte differentiation induced by Calcium, which linked E-cadherin nodes and $12$ genes, which 
+expression profiles was measured upon Calcium stimulation over time. The interaction graph represented by the model had $293$ nodes and $375$ edges.
+>>>>>>> 12c241a1d88dedd17eca66bd84aa7ba99f981d1c
 %
 We proposed a method to discretize time-series gene expression data, so they can be integrated to the PH simulations and logically explained by the PH stochastic analyses. 
 %
@@ -16,7 +21,7 @@ Our results show that  we can observe dynamic effects on $11$ out of $12$ genes,
 This error may be also a result from the incompleteness of the regulatory information in PID.
 Moreover, when observing the predicted behavior of biological processes linked to Calcium stimulation, our predictions agreed with experimental and literature-based evidences.
 %this reproduce accuretely $9$ out of $12$ of the genes, 
-Overall, with this work we show the feasability of modeling and simulating large-scale networks with very few parameter estimation 
+Overall, with this work we show the feasibility of modeling and simulating large-scale networks with very few parameter estimation 
 and having good quality predictions.
 %, (3) we can reproduce tendences of the dynamic of components
 %and take into accout the stochastic and time aspect of the behaviors of the biological system.
