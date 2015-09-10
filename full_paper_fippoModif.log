@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  10 SEP 2015 19:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  10 SEP 2015 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,11 +904,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5105) has occurred while \output is active []
 
  [2])
 (./partsModif/methods.tex
-<images/workflow-2.png, id=213, 806.01125pt x 326.21875pt>
+<images/workflow-2.png, id=194, 806.01125pt x 326.21875pt>
 File: images/workflow-2.png Graphic file (type png)
 
 <use images/workflow-2.png>
@@ -926,20 +926,20 @@ Overfull \hbox (16.22214pt too wide) in paragraph at lines 22--29
 or-Signaling-Transcription-
  []
 
-[4 <./images/workflow-2.png>]
+
 Overfull \hbox (106.29297pt too wide) in paragraph at lines 61--63
 \OT1/ptm/m/n/10 am-ples of pat-terns that we can found in a RSTC Net-work. >>>>
 >>> 12c241a1d88dedd17eca66bd84aa7ba99f981d1c
  []
 
-<images/net_cg_v3.png, id=247, 8551.95pt x 5018.75pt>
+<images/net_cg_v3.png, id=212, 8551.95pt x 5018.75pt>
 File: images/net_cg_v3.png Graphic file (type png)
 
 <use images/net_cg_v3.png>
 Package pdftex.def Info: images/net_cg_v3.png used on input line 66.
 (pdftex.def)             Requested size: 341.36728pt x 284.49419pt.
-
-<images/12genes.png, id=249, 879.285pt x 681.54625pt>
+ [4 <./images/workflow-2.png>]
+<images/12genes.png, id=229, 879.285pt x 681.54625pt>
 File: images/12genes.png Graphic file (type png)
  <use images/12genes.png>
 Package pdftex.def Info: images/12genes.png used on input line 93.
@@ -1110,7 +1110,11 @@ l.418 \node[es]
                 (d) at (1,3) {Activation or inhibition};
 (That was another \errmessage.)
 
-[9] [10]
+
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+ [9]
+[10]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1134,7 +1138,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
 Excluding 'comment' comment. [12]) (./partsModif/results.tex
-<images/resultWOS.pdf, id=332, 505.89pt x 505.89pt>
+<images/resultWOS.pdf, id=312, 505.89pt x 505.89pt>
 File: images/resultWOS.pdf Graphic file (type pdf)
  <use images/resultWOS.pdf>
 Package pdftex.def Info: images/resultWOS.pdf used on input line 31.
@@ -1148,7 +1152,7 @@ Overfull \hbox (14.22998pt too wide) in paragraph at lines 31--33
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
  [13]
-<images/12genes_sim.png, id=342, 1098.1025pt x 1568.86125pt>
+<images/12genes_sim.png, id=322, 1098.1025pt x 1568.86125pt>
 File: images/12genes_sim.png Graphic file (type png)
 
 <use images/12genes_sim.png>
@@ -1165,7 +1169,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [14 <./images/resultWOS.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./images/12genes_sim.png>] <images/key_nodes1.png, id=596, 501.875pt x 45
+ [15 <./images/12genes_sim.png>] <images/key_nodes1.png, id=576, 501.875pt x 45
 1.6875pt>
 File: images/key_nodes1.png Graphic file (type png)
 
@@ -1241,7 +1245,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
 Here is how much of TeX's memory you used:
  20644 strings out of 493105
  399610 string characters out of 6137072
- 531829 words of memory out of 5000000
+ 531687 words of memory out of 5000000
  23522 multiletter control sequences out of 15000+600000
  30402 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1267,10 +1271,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippoModif.pdf (22 pages, 13734098 bytes).
+Output written on full_paper_fippoModif.pdf (22 pages, 13732981 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 623 compressed objects within 7 object streams
+ 788 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
  162 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
