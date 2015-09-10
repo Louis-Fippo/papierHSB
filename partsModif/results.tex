@@ -3,10 +3,10 @@
 %give statistics
 PH models are written using the PINT\footnote{\url{http://process.hitting.free.fr}} format.  
 PINT implements stochastic simulations and static analyses for computing dynamical properties on very large-scale PH models.
-For the PINT code generation we used two procedures.
+For the PINT code generation two procedures were used.
 The first procedure detects motifs (controller and controlled components) in graphs from the Pathway Interaction Database; the second, 
 generates the PINT code by choosing an adequate concurrency rule, based on synchronization sorts, to represent the motif dynamic in PH.
-With this method it is possible to convert the whole content of the PID-NCI database into a PH model, as well as individual pre-selected pathways, 
+With this method it is possible to convert the whole content of the PID database into a PH model, as well as individual pre-selected pathways, 
 as is the case for the system under study.  It is implemented in Java and available upon request.
 %taking in consideration the type of the pattern to better refine the dynamic of the system from a structural point of view.
 %This refinement is done by introducing the synchronization sort  which is a generalization of the cooperation sort. This allows  to avoid artificial oscillations
@@ -17,13 +17,13 @@ We simulated the model with and without the inclusion of the synchronization sor
 the simulation.
 
 \subsubsection{Without the introduction of the synchronization sort.}
-One can notice in \pref{fig:rwos} the occurence of oscillations. Whereas it is not the expected behavior from the biological system,
+One can notice in \pref{fig:rwos} the occurrence of oscillations. Whereas it is not the expected behavior from the biological system,
  it is coherent with the choice of the modeling and the way the simulator works as explained in Section \ref{sssec:synchronization}.
-In this simulation cooperation sorts were used to model multiple controllers of a common controlled (target) component.
+In this simulation, cooperation sorts were used to model multiple controllers of a common controlled (target) component.
 %In other cases we left the components act independently.
 It is important to notice that the intensity of the oscillation is linked with 
 the size of the concurrence, i.e. the number of controllers a controlled component has.
-Despite the presence of the oscillations, the model reproduces expected dynamical behavoirs  namely
+Despite the presence of the oscillations, the model reproduces expected dynamical behaviors  namely
 the dynamics of components, the signal transduction and takes into account the stochastic and time aspect of the model.
 
 \begin{figure}[H]
@@ -37,9 +37,9 @@ traces representing the discretized time-series data are shown as black lines.  
 \subsubsection{With the introduction of the synchronization sort.}
 In \pref{fig:rws} we can see that the introduction of the synchronization sort significantly reduces the 
 impact of concurrency. The result shows  a 
-clear elimination of the previously observed oscillation (\pref{fig:rwos}). 
-Comparing the simulated results with the ones observed experimentally we found four different cases.
-We found $5$ simulation traces (IL8, uPAR, IL1\_beta, ET1, A20) that matched the sequence of all the component expression levels perfectly.  In this case delays exist among simulation and experiment but 
+clear elimination of the previously observed oscillations (\pref{fig:rwos}). 
+Comparing the simulated results with the ones observed experimentally, we found four different cases.
+We found $5$ simulation traces (IL8, uPAR, IL1\_beta, ET1, A20) that matched the sequence of all the component expression levels perfectly.  In this case, delays exist among simulation and experiment but 
 these delays are not comparable since experimental time-points are measured in hours and simulation-units for the simulated PH model.
 We found $6$ simulation traces (MKP1, MKP3, Hes5, SM22, TfR, DKK1) that matched the sequence of experimental discrete expression levels missing one expression-level.
 We found $1$ components (TNF-alpha) in which at least 2 expression levels are missed.
@@ -63,11 +63,11 @@ from the discretization of the time-series data. The blue traces show the simula
 %%%%%images des noeuds clés
 
 \subsubsection{Simulating biological processes.}
-To validate our model we studied the prediction of non-observed components of such a system and we focused on biological processes linked 
+To validate our model, we studied the prediction of non-observed components of such a system and we focused on biological processes linked 
 to Calcium stimulation, such as keratinocyte-differentiation, cell-adhesion and cell-cycle arrest.
-Our results are shown in \pref{fig:knodes} and confirmed literature experimental evidence on these processes.
+Our results are shown in \pref{fig:knodes} and confirm literature experimental evidences on these processes.
 In the case of keratinocyte-differentiation, this was a functional behavior measured on the cultured cells upon Calcium stimulation,
- so there was experimental evidence of this effect before measuring the gene expression.  
+ so there was experimental evidences of this effect before measuring the gene expression.  
 In the case of cell-cycle arrest, the switch-on of this component represents the fact that the E-cadherin stimulated model predicts the stop 
 of growth, as confirmed by literature in human and mouse keratinocytes~\cite{Kolly2005}.
 Finally, the cell-adhesion component is predicted to switch-on, also in according to published evidence~\cite{Tu2011} in human and mouse keratinocytes.
@@ -85,7 +85,7 @@ The blue traces show the simulated behavior of E-cadherin and three biological p
 \modCG{
 To validate the results of the simulations, we automatically analyzed the traces generated by a set of $100$ simulations. Table \ref{traceAnalysis} shows the results
 of the percentage of acceptance for the traces of each of the $12$ mRNA expression. One can observed that, there are components with a good 
-rate of acceptance (A20, IL1$\_$beta, IL8, uPar). The reason is probabily that they have traces that are more simple to reproduce. Anothers observation is that they 
+rate of acceptance (A20, IL1$\_$beta, IL8, uPar). The reason is probably that they have traces that are more simple to reproduce. Another observation is that they 
 are others components which have low rate of acceptance (ET1, DKK1, MKP1, MKP3). We think that their traces are more complicate to reproduce.
 But in all the case the rate of acceptance increase with tolerance in  automatic verification.  
 }
@@ -93,10 +93,10 @@ But in all the case the rate of acceptance increase with tolerance in  automatic
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 
-\caption{Percentage of acceptance traces. First column represente the Automata ($\mathcal{A}_{i}(w)$, where $\mathcal{A}_{i}$ is the Automata and $w$ is the word recongnised by $\mathcal{A}_{i}$) 
+\caption{Percentage of acceptance traces. First column represents the Automaton ($\mathcal{A}_{i}(w)$, where $\mathcal{A}_{i}$ is the Automaton and $w$ is the word recognized by $\mathcal{A}_{i}$) 
 that is used to check if a given trace is acceptance for a component in the second 
-column. One can observed that many components can be recongnised by the same Automata. In the third column we have the percentage of acceptance traces. Finally in the fourth column
-are the percentage of acceptance with a tolerence of one level ($T_{1}$)}
+column. One can observed that many components can be recognized by the same Automaton. In the third column we have the percentage of acceptance traces. Finally in the fourth column
+are the percentage of acceptance with a tolerance of one level ($T_{1}$)}
 
 \label{traceAnalysis}
 \centering
