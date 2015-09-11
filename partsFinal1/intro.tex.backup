@@ -1,0 +1,148 @@
+
+\section{Introduction}
+
+%The study and comprehension of biological systems relies on our ability to build models of such systems and
+%study their properties. The way a molecular system behaves can be represented as large interaction graphs 
+%composed of genes, proteins and complexes which interact to produce different dynamics in the system. 
+%Thanks to the availability of gene time-series expression data, we can now observe and characterize the 
+%dynamics of such components in the context of biological regulatory networks.
+
+
+%These refinements were: \emph{(i)} modeling the expression of the E-cadherin signal as a discrete pulse,
+%\emph{(ii)} imposing a weak synchronization of multiple regulators of a molecule, and \emph{(iii)} modeling 
+%the decay of the strength of a transcription factor over the regulated gene.
+
+
+
+% no \IEEEPARstart
+Unraveling and describing the mechanisms involved in the regulation of a cell-based biological system is a fundamental 
+issue. These mechanisms can be modeled as biological regulatory networks, whose analysis requires to preliminary build a 
+mathematical or computational model. 
+By just considering qualitative regulatory effects between components, biological regulatory networks
+depict fairly well biological systems, and can be built upon public repositories such as the Pathways 
+Interaction Database \cite{schaefer2009pid} and  
+hiPathDB \cite{yu2012hipathdb} for human regulatory knowledge.
+%the aims of the work (1first sentence & the background)
+In this work we built a hybrid model of signaling and transcriptional events, gathered in large-scale regulatory networks, 
+for which stochastic simulation parameters were inferred from 
+gene expression time-series data.  
+
+
+%NEW TEXT ============================
+\modCG{
+High-throughput experimental data has been used since more than one decade ago to infer 
+biological regulatory models. 
+A variety of methods were proposed to infer dynamic or static models of protein signaling or gene regulations
+depending on the nature of the experimental data.
+We can cite methods that infer static gene regulatory models from steady-state gene expression datasets of over-expression or knock-down perturbations  
+using statistical models generating small-scale (ten species) models \cite{gardner2003inferring} or middle-scale (maximum 100 species) 
+models \cite{Pinna2010}.
+Additionally, we can cite methods that 
+recovered gene regulatory dynamic models from time-series data using kinetic modeling \cite{busch2008gene,porreca2010identification} 
+generating small-scale models.
+Recently, static boolean models for middle and large-scale (over 100 species) 
+signaling protein networks have been derived from a \emph{prior} network and 
+fitted to steady-state multiple perturbation 
+phosphoproteomics data \cite{guziolowski2013exhaustively,mitsos2009identifying} using combinatorial optimization through  
+logic and integer linear programing to explore the vast search space of candidate boolean models.
+When using time-series multi-perturbation phosphoproteomics data, results can be extended to reconstruct middle-scale dynamic signaling models  
+via the use of stochastic search approaches \cite{macnamara2012state} that do not guarantee an exhaustive exploration of 
+the search space of candidate models.
+The approach presented in this work confronts a prior signaling and gene regulatory large-scale network, obtained from publicly curated databases, to 
+time-series gene expression data, by using discrete automata models and stochastic simulations.
+Our built model verifies the agreement of expression traces over time given
+a signed (activations/inhibitions), directed and cyclic prior graph. 
+}
+
+
+%This to come later =========================
+\modCG{
+The advantages and complementariness of our method with respect to the aforecited approaches are that 
+it allows us to define a logic that integrates signaling and transcription events (imposing different regulatory rules on these events), 
+it also integrates multi-valued states of the system components, and importantly it deals with the complexity of large-scale dynamic models.
+}
+
+%The integration of time-series data in dynamical models have been
+%addressed separately by approaches that either: (a) focus first on
+%modeling at small-scale the system and then on refining or improving it through the fitting with
+%some data points, such as methods based on differential equations \cite{tyson2003sniffers,batt2005validation,mobashir2012simulated}, 
+%(b) integrate in an efficient and complete fashion large-scale models
+%and high-throughput data regardless from the system dynamics \cite{guziolowski2013exhaustively,mitsos2009identifying}, or 
+%(c) fit dynamical data to middle-scale networks using an stochastic sampling of the space of behaviors and
+%therefore without guarantee on finding global optima \cite{macnamara2012state}. 
+%With this work we aim to fill the gaps between the aforecited methodologies.
+
+%proposer une petite discussion sur les autres approches formelles de modélisation
+
+
+%le choix que nous avons fais. Il faudra  détailler les avantages. Dire pourquoi nous choisissons le PH et pas un aute formalisme
+%les grandes lignes de cette justification sont les suivantes: formalisme très expressif pour les BRN, simulation concurente 
+% provenant de l'algèbre des processus, abstraction permettant de faire de analyse statiques de certaines propriétés. 
+\modCG{
+Several conceptually different approaches are available for modeling Biological Regulatory Network (BRN) dynamics. The most common approach is ordinary differential equations (ODE) 
+that describe deterministic (population average) behavior in a continuous maner. Even for simple model including a simple interaction between two components, 
+the analytical solution is impossible. Thus we must refer to simulation as the only practical method. Futhermore, continuous models require quantitative knowledge 
+in terms of kinetic coefficients, which are unknown and very difficult to measure. Thereby, various abstraction approches have been developed to make BRN models 
+more convenient for analysis. Synchronous Boolean model was first proposed by Kauffman \cite{kauffman1969metabolic} and an alternative asynchronous model 
+was proposed by Thomas \cite{Thomas73}. Folowing these two papers, many other models have been proposed \cite{snoussi1989qualitative,thieffry1995dynamical,de2003genetic,chaouiya2003qualitative} 
+for modeling dynamic of BRN. All of these models are purely qualitative and discrete, thus do not incorporate  quatitative time or other quantities. 
+As well, discrete models have been extended to integrate quantitative aspects.  Time aspect have been introduced by \cite{Siebert06,batt2007timed,Ahmad08,van2013timed}. 
+It relies on timed automata implemented. Anyways, this models do not take into acount the stochastic aspects of the influences  of BRN.
+}
+
+
+
+In the context of modeling and analyzing stochastic and concurrent biological systems various formalisms have been introduced such as 
+Stochastic Petri Nets which is suitable for the representation of parallel systems \cite{molloy1982performance}. 
+They have been successfully applied in many areas; in particular, the specification of Petri Nets
+allows an accurate modeling of a wide range of systems including biological systems \cite{heiner2008petri}. The major 
+problem of Stochastic Petri Nets is that, generally, they do not lead to compact models. In addition,
+they do not provide results to deal with the state space explosion and are thus computationally
+expensive when modeling large-scale biological networks. 
+%TODO
+The Stochastic pi-calculus formalism was introduced by \cite{priami1995stochastic} and used in 
+\cite{maurin2009modeling} for the modeling of biological systems. Stochastic pi-calculus has a rich
+expressiveness and is well adapted for the use of compositional approach.
+In this work we rely on this formalism through the Process Hitting (PH) framework \cite{PMR10-TCSB}, 
+since it is especially useful for studying systems composed of biochemical interactions, and provides
+stochastic simulation as well as efficient algorithms, \modCG{based on the verification of state reachability}, to study dynamical properties of the system.
+The PH framework uses qualitative and discrete information of the system without requiring enormous parameter estimation tasks
+ for its stochastic simulation. 
+This framework has been previously used to verify dynamical properties on biological systems without integrating high-throughput experimental data.
+
+In this work we provide a method to build a time-series data integrated PH model and we evaluate 
+the prediction power of this model concerning the simultaneously predicted traces of 12 gene components of the system upon system stimulation.
+%So far, this method has been successfully demonstrated only on very well-known systems and without exploiting 
+%high-throughput measures. We believe, however, that the use of high-throughput data has become unavoidable with 
+%the advent of massive, publicly available data sets in the form of well-standardized DNA microarray data and, 
+%more recently, in the form of phospho-proteomics data.  
+% les contributions du travail que nous présentons: Génération automatique des modèles en PH(avec et 
+% sans synchronisation), Estiamtion des paramètres des times series data Et intégration des paramètres 
+% dans le modèle.
+%TODO revoir le temps et les liaisons
+The main  results of this work are: (1) automatic generation of PH models integrating gene transcription and signaling events, 
+with and without synchronization of concurrent events, from the Pathways Interaction Database, 
+(2) parameter estimation from time-series data and parameter integration in the PH model, and
+(3) comparison of the PH model predictions and experimental results.
+To illustrate our approach, we used a time-series dataset of human keratinocytes cells, which shows
+ the fluctuations of \modCG{mRNA expression} across time upon Calcium stimulation.
+This dataset was built to study keratinocytes differentiation, a time-dependent
+ process in which the sequence of activation of signaling proteins is not yet completely understood.
+The method proposed in this paper remains general and can be applied to other case-studies.
+
+%first, we built an interaction graph linking a signaling molecule, 
+%E-cadherin (Calcium sensitive protein), to genes present in our time-series data and to key cellular processes for our case study, such as 
+%keratinocyte-differentiation and cellular-proliferation.  This graph was automatically extracted from PID. Second, we propose an automatic                                     %ici il manque une reference.
+%transformation of selected known biological patterns present in  PID in order to generate PH modules;
+% adding necessary constraints to the PH model to avoid oscillations.  
+%Third, we propose a way of estimating temporal and stochastic parameters from time-series expression data to 
+%model the measured genes.  These parameters are used for the stochastic simulation of the model.  Finally, 
+%we discretized the experimental data to allow the comparison with simulation results for the above mentioned case 
+%study analysis. 
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+
+%\hfill mds
+ 
+%\hfill March 20, 2015

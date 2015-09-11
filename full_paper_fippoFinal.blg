@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: full_paper_fippoFinal.aux
+The style file: plain.bst
+Database file #1: biblio.bib.bib
+Warning--I'm ignoring RAT2006's extra "title" field
+--line 1447 of file biblio.bib.bib
+I was expecting a `,' or a `}'---line 1467 of file biblio.bib.bib
+ : 
+ : year = 2012,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Name 1 in "S. Reinker, R. Altman, and J. Timmer" has a comma at the end for entry RAT2006
+while executing---line 1049 of file plain.bst
+Warning--empty year in AMSW2012
+Name 1 in "S. Reinker, R. Altman, and J. Timmer" has a comma at the end for entry RAT2006
+while executing---line 1090 of file plain.bst
+You've used 30 entries,
+            2118 wiz_defined-function locations,
+            704 strings with 10391 characters,
+and the built_in function-call counts, 11903 in all, are:
+= -- 1173
+> -- 625
+< -- 6
++ -- 246
+- -- 216
+* -- 964
+:= -- 1972
+add.period$ -- 95
+call.type$ -- 30
+change.case$ -- 197
+chr.to.int$ -- 0
+cite$ -- 31
+duplicate$ -- 395
+empty$ -- 867
+format.name$ -- 216
+if$ -- 2447
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 31
+newline$ -- 153
+num.names$ -- 60
+pop$ -- 172
+preamble$ -- 1
+purify$ -- 168
+quote$ -- 0
+skip$ -- 267
+stack$ -- 0
+substring$ -- 861
+swap$ -- 77
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 118
+warning$ -- 1
+while$ -- 111
+width$ -- 32
+write$ -- 335
+(There were 3 error messages)

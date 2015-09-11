@@ -61,10 +61,8 @@ A pattern can be defined as an atomic set of biological components and their int
 
 \end{definition}
 
-\modCG{
+
 The first column of table \ref{table_patterns} shows  some examples of patterns that can be found in a RSTC Network.
-}
-%}
 
 \begin{figure}[!p]
  \centering
@@ -80,7 +78,7 @@ input and protein-family-member.}
 %description des données
 \subsubsection{Time-series microarray dataset.}
 \label{SECTSD}
-\modCG{We use the time-series microarray data from Calcium stimulated human keratinocyte cells 
+We use the time-series microarray data from Calcium stimulated human keratinocyte cells 
  measured at $10$ time-points (1h, 2h, 3h, 4h, 5h, 6h, 8h, 12h, 18h, 24h). 
 The expression levels were measured in $log_2$; the expression of a gene at an 
 specific time point is compared with respect to a control condition (gene expression in a kerationocyte cell without Calcium stimulation).
@@ -89,9 +87,7 @@ significantly ($log_2(e) \le -1.0$) down-regulated in at least one time point co
 From this procedure $200$ \modCG{mRNA expression} transcripts were selected. 
 We included in our model a subset of $12$ of the $200$ selected (see \pref{fig:tsd})
 because these 12 genes had upstream regulatory mechanisms when querying the 
-PID database and therefore were connected in the interaction graph to the E-cadherin node}.
-%The full dataset (data not shown) was produced by the German Cancer Research Center (DKFZ) and is currently in the process
-%of being published.  
+PID database and therefore were connected in the interaction graph to the E-cadherin node.
 
 \begin{figure}[H]
 \centering
@@ -504,7 +500,7 @@ and (2) the stochasticity absorption factor $sa$, which is introduced to control
 	    
 
 \caption{{\bf Estimating temporal parameters from time series data:} The mean firing time of an action that makes a
-component (\modCG{mRNA expression}) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a \modCG{ mRNA expression}, while 
+component (mRNA expression) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a \modCG{ mRNA expression}, while 
  $MinLevel$, its minimum expression.
 The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 0,1,2) of a component according to its gene expression data.
 \label{fig:estimationParameter}}
@@ -516,8 +512,8 @@ The other components are
 assigned default parameters. In order to estimate $r_{i}$ and $sa_{i}$ for each action $h_{i} \in \PHa$, we need to know the different times $t_{i}$  when the action could be fired as illustrated 
 in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time at which we assume that a component moves from one process to another. Therefore the action that leads this 
 change must be played at the rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$ is, the smaller the variance around $r$ is. 
-\modCG{ Studies \cite{AMSW2012,Batt15092010,RAT2006} have proposed more elaborated methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
-the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus a basic estimation algorithm can be used for temporal and stochastic parameter estimation.}
+Studies \cite{AMSW2012,Batt15092010,RAT2006} have proposed more elaborated methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
+the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus a basic estimation algorithm can be used for temporal and stochastic parameter estimation.
 
 %discretisation des données
 \subsubsection{Discretization of time-series data.}
@@ -552,7 +548,7 @@ reachability constraints from the entry  node (E-cadherin) to the output nodes (
  node to the output nodes.
  \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
 for all TFs we introduced an auto-inhibition action that represents their degradation over time. 
- \item \modCG{\textbf{mRNA expression.} The mRNA expression} are activated or inhibited according to the estimated values from time-series data.
+ \item \textbf{mRNA expression.} The mRNA expression are activated or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
 
@@ -807,7 +803,7 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
  
  %model validation
  \subsection{Automatic analysis of simulation traces}
- \modCG{
+ 
  Due to the stochastic and concurrent aspects of the system, each execution of the model can generate a different dynamic trace.
  Therefore, to validate the proposed model, we analyzed the traces generated by each component for a set of simulations of the model.
  The idea was to calculate the percentage of traces that reproduced the expected dynamic of the system. 
@@ -820,6 +816,6 @@ the percentage of accepted traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assu
  Following this we introduce the concept of tolerance in accepting traces. It means that an automaton can accept a trace with a difference 
  of one or more levels at each state. In our case study we used a tolerance $T_{1}$ that allows accepting a difference of one between the 
 simulated trace and the expected trace at each state.
- }
+ 
 
 %fin de methods.
