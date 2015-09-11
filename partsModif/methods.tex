@@ -276,16 +276,9 @@ Actions targeting processes of $c$ are drawn as thick lines.
 
 \subsubsection{Modeling the RSTC network as a PH model.}
 
-
-%\paragraph{Modeling biological patterns to PH model}
-
-%Here is the first and the most important part of this work. 
 In order to model the RSTC network as a PH model we select known biological regulatory patterns (atomic set of biological components and their interacting roles), represented 
 as biochemical reactions in the RSTC network and we propose their PH representation. Table \ref{table_patterns} shows some examples of this transformation. 
-
-%les ajouts pour les patterns 
 The automatic pattern selection and PH model generation algorithms use two procedures. 
-%
 The first one takes the graph as parameter argument and automatically browses it node by node and detects all the patterns in the graph. 
 For each node (output node of the pattern) we  call a recursive procedure,
 that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. 
@@ -293,9 +286,6 @@ This set of nodes plus the output node and the way  input and output are linked 
 The type of a pattern is determined by the type of the output node, the type of regulations that come to that node and the type of input nodes of the pattern. 
 Consequently, the algorithm of patterns detection returns the pattern 
 and its type to another procedure  which  translates the pattern into the PH formalism. This transformation  takes care of different cases (cooperation, synchronization, simple activation, simple inhibition, etc.)
-
-
-% les détails sur comment les patterns sont choisis 
 For example a molecule $a$ cooperating with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears at recurrent times.  
 We model this pattern by four sorts (\pref{fig:runningPH}, right) $a$, $b$, $c$ and $ab$. Sorts $a$, $b$ and $c$
 stand for components $a$, $b$ and $c$. The cooperative sort $ab$ is introduced in order to characterize constraints on the components $a$ and $b$.
@@ -519,7 +509,6 @@ in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time at which we
 change must be played at the rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$ is, the smaller the variance around $r$ is. 
 \modCG{ Studies \cite{AMSW2012,Batt15092010,RAT2006} have proposed more elaborated methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
 the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus a basic estimation algorithm can be used for temporal and stochastic parameter estimation.}
-%TODO citer les méthodes d'estimation connues et dire pourquoi on en avait pas besoin même si elle sont bonnes 
 
 %discretisation des données
 \subsubsection{Discretization of time-series data.}
@@ -527,14 +516,8 @@ the concept of threshold is implicit. In the proposed case we assume an explicit
 Because the outputs of a PH simulation are discrete traces of PH components, we discretized continuous experimental data to facilitate 
 the comparison with simulation outputs.
 When looking at the time-series data (see \pref{fig:tsd}) one can distinguish a high level of
-<<<<<<< HEAD
-activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. \modCG{ Trend has been confirmed by using the SMA (Simple Moving Average) function of R package TTR which allows
-to smooth time-series data. We use the SMA function with parameter $n=2$ and we have more than $50\%$ of time-series data which present these two levels of activities.}
-=======
 activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. \modCG{This trend was confirmed by the SMA (Simple moving average) function of the R package TTR which allows us
-to smooth time-series data. We used the SMA function with paramter $n=2$ and we observed that more than $50\%$ of the time-series data presented these two levels of activities.}
->>>>>>> 12c241a1d88dedd17eca66bd84aa7ba99f981d1c
-%TODO rajouter le test effectuer avec R ici et dire un mot sur ce que ça implique en terme de complexité et la référence 
+to smooth time-series data. We used the SMA function with parameter $n=2$ and we observed that more than $50\%$ of the time-series data presented these two levels of activities.}
 We implemented a discretization method to capture these
 two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}) were introduced: 
 $\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. 
@@ -543,35 +526,24 @@ level $2$.
 
 
 \subsection{Simulation}
-%we give the initial condition for the simulation
 
 We set the same initial conditions to PH components belonging to the same network layer, chosen from the RSTC structure.
 These initial conditions are detailed below and summarized in \pref{fig:initialCondition}.
-% where we can clearly see the initial values chosen at each layer for our model.
-%To run the simulation we need to set initial conditions for the components of our network. Because the components of the network are grouped into 
-%layers, the initial conditions will be the same in the different layers. In the following we will present the initial conditions that we have chosen for the different 
-%components.
 
 \begin{itemize}
  \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin to be active for a duration of $5$ time units in average. This 
  choice was made in orders to take into account the average time of the Calcium stimuli effect.
  \item \textbf{Signaling layer: signaling proteins.} The components in this layer are activated and inhibited with the same rate and the same stochasticity absorption factor. 
-% Nevertheless, 
 The actions between a controller component $A$ and a controlled component $B$ are constrained so that 
 $B$ is first activated by $A$ and then inhibited.  That is, 
 the time interval in which an inhibition action from $A$ to $B$ fires is greater than 
 the time interval in which an activation action from $A$ to $B$ fires.
 Additionally, these two time intervals must not overlap.
 These constraints can be seen as 
-%The choice of inhibition parameters must ensure that the time interval in which the inhibition action 
-% is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
-% can be seen as 
 reachability constraints from the entry  node (E-cadherin) to the output nodes (mRNA expression). The values of these parameters are selected by considering the delay of signal transduction from the entry
  node to the output nodes.
  \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
 for all TFs we introduced an auto-inhibition action that represents their degradation over time. 
-%The signal comes from signaling proteins for activation. But for the inhibition, in addition 
-% to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
  \item \modCG{\textbf{mRNA expression.} The mRNA expression} are activated or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
@@ -828,30 +800,18 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
  %model validation
  \subsection{Automatic analysis of simulation traces}
  \modCG{
-<<<<<<< HEAD
- Due to the stochastic and concurrent aspects of the system, each execution of the model can generate dynamics which are different, one of the others. 
- Therefore, to validate the proposed model, it was decided  to analyze the traces generated by each component for a set of simulations of the model.
- The idea is to compute the percentage of traces that reproduce the expected dynamic of the system. To achieve this goal, we take each trace generated
- at each simulation for a given component and forward it to an automaton ($\mathcal{A}_{i}$) recognizing the set of acceptance traces of that component. Thus,  the 
- number of accepted traces ($Trace_{accp}$) can be counted. Therefore the percentage of accept traces is $\frac{Trace_{accp}}{Trace_{N}}$ if $Trace_{N}$ is the total 
- number of simulation. 
- Following this we introduce the concept of tolerance in accepting traces. It's mean that an automaton can accepted a trace with a difference 
- of one or more level (s) at each state. But in the case study we just use a tolerance $T_{1}$ that allow to accept a difference of one between the 
- input trace and the expected trace at each state.
-=======
  Due to the stochastic and concurrent aspects of the system, each execution of the model can generate a different dynamic trace.
- Therefore, to validate the proposed model, we analysed the traces generated by each component for a set of simulations of the model.
+ Therefore, to validate the proposed model, we analyzed the traces generated by each component for a set of simulations of the model.
  The idea was to calculate the percentage of traces that reproduced the expected dynamic of the system. 
 To achieve this goal, we take each trace generated
- at each simulation for a given component and passed it to an automata ($\mathcal{A}_{i}$) that recongnize the 
+ at each simulation for a given component and passed it to an automaton ($\mathcal{A}_{i}$) that recognize the 
 experimental trace of that component. Thus we can count the 
  number of accepted traces ($Trace_{accp}$);
 the percentage of accepted traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assume that $Trace_{N}$ is the total 
  number of simulations. 
- Following this we introduce the concept of tolerance in accepting traces. It means that an automata can accept a trace with a difference 
+ Following this we introduce the concept of tolerance in accepting traces. It means that an automaton can accept a trace with a difference 
  of one or more levels at each state. In our case study we used a tolerance $T_{1}$ that allows accepting a difference of one between the 
 simulated trace and the expected trace at each state.
->>>>>>> 12c241a1d88dedd17eca66bd84aa7ba99f981d1c
  }
 
 %fin de methods.
