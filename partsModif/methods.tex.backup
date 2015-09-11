@@ -2,13 +2,13 @@
 
 \section{Data and Methods}
 
-The general workflow for integrating time-series data in a PH model is depicted in \pref{fig:workflow}, in the following sections we 
-detail some of the workflow steps.
+The general work-flow for integrating time-series data in a PH model is depicted in \pref{fig:workflow}, in the following sections we 
+detail some of the work-flow steps.
 % and comprises the following steps:
 \begin{figure}[H]
  \centering
  \includegraphics[width=4.1in,height=2in]{images/workflow-2.png}
-\caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model. These parameters are rate (r) and the stochasticity absortion factor (sa) which 
+\caption{{\bf Integrating stochastic and temporal information in a large-scale discrete biological model. These parameters are rate (r) and the stochasticity absorption factor (sa) which 
 will be presented later in \ref{sssec:EPTSD}.}} 
  \label{fig:workflow}
 \end{figure}
@@ -19,17 +19,10 @@ will be presented later in \ref{sssec:EPTSD}.}}
 \subsubsection{Interaction graph.}
 % \paragraph{The RSTC Network}
 \label{ssec:RSTC}
-The interactions of the biological system under study were represented in
- an RSTC network, which stands for  multi-layer Receptor-Signaling-Transcription-Cell state network and that was generated from the Pathway Interaction Database (PID).
-In order to build this network one needs to select a set of seed nodes related to the biological process studied.
-For our case study, the seed nodes were:  (1) \emph{E-cadherin}, which is a protein having Calcium binding domains and which plays an important role in cell adhesion;
-(2) the $12$ significantly differentially expressed genes accross the $10$ time-points; and (3) the cell states of keratinocytes-differentiation and cell-cycle-arrest. 
-The network was extracted automatically from the whole content of the PID database by using a subgraph algorithm to link the seed nodes \cite{guziolowski2012automatic}. 
-In \pref{fig:network} we show the RSTC network obtained. 
 
 
-\begin{definition}[RSTC Network] \label{def:RSTCDef}
-A \emph{RSTC Network} $N$ is a couple $(V,E)$, where:
+\begin{definition}[Terminal Transient Interaction Graph (TTIG)] \label{def:RSTCDef}
+A \emph{TTIG} $N$ is a couple $(V,E)$, where:
 \begin{itemize}
 \item $V =V_{T} \bigcup V_{I} $ is the finite set of \emph{nodes};
  with 
@@ -44,11 +37,26 @@ In this definition, terminal nodes can be either \modCG{mRNA expression} or prot
 On the other side, transient nodes can be either transcriptions or translocations or modifications or compounds. Edges are of different types:
 activation (agent), inhibition, output, input and protein-family-member.
 
+\begin{definition}[RSTC 
+ 
+\end{definition}
+
+
+
+The interactions of the biological system under study were represented in
+ an RSTC network, which stands for  multi-layer Receptor-Signaling-Transcription-Cell state network and that was generated from the Pathway Interaction Database (PID).
+In order to build this network one needs to select a set of seed nodes related to the biological process studied.
+For our case study, the seed nodes were:  (1) \emph{E-cadherin}, which is a protein having Calcium binding domains and which plays an important role in cell adhesion;
+(2) the $12$ significantly differentially expressed genes accross the $10$ time-points; and (3) the cell states of keratinocytes-differentiation and cell-cycle-arrest. 
+The network was extracted automatically from the whole content of the PID database by using a subgraph algorithm to link the seed nodes \cite{guziolowski2012automatic}. 
+In \pref{fig:network} we show the RSTC network obtained. 
+
+
 %\modCG{
 
 \begin{definition}[Pattern] \label{def:pattern}
 
-A pattern can be defined as an atomic set of biological components and thier interacting roles. 
+A pattern can be defined as an atomic set of biological components and their interacting roles. 
 
 \end{definition}
 
@@ -276,16 +284,9 @@ Actions targeting processes of $c$ are drawn as thick lines.
 
 \subsubsection{Modeling the RSTC network as a PH model.}
 
-
-%\paragraph{Modeling biological patterns to PH model}
-
-%Here is the first and the most important part of this work. 
 In order to model the RSTC network as a PH model we select known biological regulatory patterns (atomic set of biological components and their interacting roles), represented 
 as biochemical reactions in the RSTC network and we propose their PH representation. Table \ref{table_patterns} shows some examples of this transformation. 
-
-%les ajouts pour les patterns 
 The automatic pattern selection and PH model generation algorithms use two procedures. 
-%
 The first one takes the graph as parameter argument and automatically browses it node by node and detects all the patterns in the graph. 
 For each node (output node of the pattern) we  call a recursive procedure,
 that  allows  to detect a minimal set of nodes (input node of the pattern) that has a direct influence over that node. 
@@ -293,9 +294,6 @@ This set of nodes plus the output node and the way  input and output are linked 
 The type of a pattern is determined by the type of the output node, the type of regulations that come to that node and the type of input nodes of the pattern. 
 Consequently, the algorithm of patterns detection returns the pattern 
 and its type to another procedure  which  translates the pattern into the PH formalism. This transformation  takes care of different cases (cooperation, synchronization, simple activation, simple inhibition, etc.)
-
-
-% les détails sur comment les patterns sont choisis 
 For example a molecule $a$ cooperating with a molecule $b$ to activate a molecule $c$ (\pref{fig:runningPH}, left), is a regulatory pattern because it is a protein-complex biochemical reaction that appears at recurrent times.  
 We model this pattern by four sorts (\pref{fig:runningPH}, right) $a$, $b$, $c$ and $ab$. Sorts $a$, $b$ and $c$
 stand for components $a$, $b$ and $c$. The cooperative sort $ab$ is introduced in order to characterize constraints on the components $a$ and $b$.
@@ -519,7 +517,6 @@ in \pref{fig:estimationParameter}. Each  $t_{i}$ represents the time at which we
 change must be played at the rate $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. The integer $sa$ represents the window of firing the action at rate $r$ : the larger the $sa$ is, the smaller the variance around $r$ is. 
 \modCG{ Studies \cite{AMSW2012,Batt15092010,RAT2006} have proposed more elaborated methods for parameters estimation from gene expression data. These methods are well adapted in the case of biochemical reactions where 
 the concept of threshold is implicit. In the proposed case we assume an explicit threshold. Thus a basic estimation algorithm can be used for temporal and stochastic parameter estimation.}
-%TODO citer les méthodes d'estimation connues et dire pourquoi on en avait pas besoin même si elle sont bonnes 
 
 %discretisation des données
 \subsubsection{Discretization of time-series data.}
@@ -527,9 +524,8 @@ the concept of threshold is implicit. In the proposed case we assume an explicit
 Because the outputs of a PH simulation are discrete traces of PH components, we discretized continuous experimental data to facilitate 
 the comparison with simulation outputs.
 When looking at the time-series data (see \pref{fig:tsd}) one can distinguish a high level of
-activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. \modCG{ Trend has been confirmed by using the SMA (Simple Moving Average) function of R package TTR which allows
-to smooth time-series data. We use the SMA function whith paramter $n=2$ and we have more than $50\%$ of time-series data which present these two levels of activities.}
-%TODO rajouter le test effectuer avec R ici et dire un mot sur ce que ça implique en terme de complexité et la référence 
+activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. \modCG{This trend was confirmed by the SMA (Simple moving average) function of the R package TTR which allows us
+to smooth time-series data. We used the SMA function with parameter $n=2$ and we observed that more than $50\%$ of the time-series data presented these two levels of activities.}
 We implemented a discretization method to capture these
 two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}) were introduced: 
 $\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. 
@@ -538,36 +534,25 @@ level $2$.
 
 
 \subsection{Simulation}
-%we give the initial condition for the simulation
 
 We set the same initial conditions to PH components belonging to the same network layer, chosen from the RSTC structure.
 These initial conditions are detailed below and summarized in \pref{fig:initialCondition}.
-% where we can clearly see the initial values chosen at each layer for our model.
-%To run the simulation we need to set initial conditions for the components of our network. Because the components of the network are grouped into 
-%layers, the initial conditions will be the same in the different layers. In the following we will present the initial conditions that we have chosen for the different 
-%components.
 
 \begin{itemize}
  \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin to be active for a duration of $5$ time units in average. This 
  choice was made in orders to take into account the average time of the Calcium stimuli effect.
  \item \textbf{Signaling layer: signaling proteins.} The components in this layer are activated and inhibited with the same rate and the same stochasticity absorption factor. 
-% Nevertheless, 
 The actions between a controller component $A$ and a controlled component $B$ are constrained so that 
 $B$ is first activated by $A$ and then inhibited.  That is, 
 the time interval in which an inhibition action from $A$ to $B$ fires is greater than 
 the time interval in which an activation action from $A$ to $B$ fires.
 Additionally, these two time intervals must not overlap.
 These constraints can be seen as 
-%The choice of inhibition parameters must ensure that the time interval in which the inhibition action 
-% is firing is greater than the time interval of firing activation action on the same component. Moreover, it should not be any overlap between the two time intervals. These two conditions
-% can be seen as 
 reachability constraints from the entry  node (E-cadherin) to the output nodes (mRNA expression). The values of these parameters are selected by considering the delay of signal transduction from the entry
  node to the output nodes.
  \item \textbf{Transcription layer: transcription factors.} In this layer, the activation/inhibition over a transcription factor (TF) comes from signaling proteins; however, 
 for all TFs we introduced an auto-inhibition action that represents their degradation over time. 
-%The signal comes from signaling proteins for activation. But for the inhibition, in addition 
-% to the signal come from signaling proteins, we introduce an auto-inhibition which representes the degradation of the transcription factor.
- \item \modCG{\textbf{mRNA expression.} The mRNA expression} are activited or inhibited according to the estimated values from time-series data.
+ \item \modCG{\textbf{mRNA expression.} The mRNA expression} are activated or inhibited according to the estimated values from time-series data.
 \end{itemize}
 
 
@@ -823,15 +808,18 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
  %model validation
  \subsection{Automatic analysis of simulation traces}
  \modCG{
- Due to the stochastic and concurrent aspects of the system, each execution of the model can generate dynamics which are different, one of the others. 
- Therefore, to validate the proposed model, it was decided  to analyse the traces generated by each component for a set of simulations of the model.
- The idea is to compute the percentage of traces that reproduce the expected dynamic of the system. To achieve this goal, we take each trace generated
- at each simulation for a given component and foward it to an automata ($\mathcal{A}_{i}$) recognizing the set of acceptance traces of that component. Thus we can count the 
- number of accepted traces ($Trace_{accp}$). Therefore the percentage of accepting traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assume that $Trace_{N}$ is the total 
- number of simulation. 
- Following this we introduce the concept of tolerance in accepting traces. It's mean that an automaton can accepted a trace with a difference 
- of one or more level (s) at each state. But in the case study we just use a tolerance $T_{1}$ that allow to accept a difference of one between the 
- input trace and the expected trace at each state.
+ Due to the stochastic and concurrent aspects of the system, each execution of the model can generate a different dynamic trace.
+ Therefore, to validate the proposed model, we analyzed the traces generated by each component for a set of simulations of the model.
+ The idea was to calculate the percentage of traces that reproduced the expected dynamic of the system. 
+To achieve this goal, we take each trace generated
+ at each simulation for a given component and passed it to an automaton ($\mathcal{A}_{i}$) that recognize the 
+experimental trace of that component. Thus we can count the 
+ number of accepted traces ($Trace_{accp}$);
+the percentage of accepted traces is $\frac{Trace_{accp}}{Trace_{N}}$ if we assume that $Trace_{N}$ is the total 
+ number of simulations. 
+ Following this we introduce the concept of tolerance in accepting traces. It means that an automaton can accept a trace with a difference 
+ of one or more levels at each state. In our case study we used a tolerance $T_{1}$ that allows accepting a difference of one between the 
+simulated trace and the expected trace at each state.
  }
 
 %fin de methods.

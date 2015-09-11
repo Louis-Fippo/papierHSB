@@ -19,17 +19,10 @@ will be presented later in \ref{sssec:EPTSD}.}}
 \subsubsection{Interaction graph.}
 % \paragraph{The RSTC Network}
 \label{ssec:RSTC}
-The interactions of the biological system under study were represented in
- an RSTC network, which stands for  multi-layer Receptor-Signaling-Transcription-Cell state network and that was generated from the Pathway Interaction Database (PID).
-In order to build this network one needs to select a set of seed nodes related to the biological process studied.
-For our case study, the seed nodes were:  (1) \emph{E-cadherin}, which is a protein having Calcium binding domains and which plays an important role in cell adhesion;
-(2) the $12$ significantly differentially expressed genes accross the $10$ time-points; and (3) the cell states of keratinocytes-differentiation and cell-cycle-arrest. 
-The network was extracted automatically from the whole content of the PID database by using a subgraph algorithm to link the seed nodes \cite{guziolowski2012automatic}. 
-In \pref{fig:network} we show the RSTC network obtained. 
 
 
-\begin{definition}[RSTC Network] \label{def:RSTCDef}
-A \emph{RSTC Network} $N$ is a couple $(V,E)$, where:
+\begin{definition}[Terminal Transient Interaction Graph (TTIG)] \label{def:RSTCDef}
+A \emph{TTIG} $N$ is a couple $(V,E)$, where:
 \begin{itemize}
 \item $V =V_{T} \bigcup V_{I} $ is the finite set of \emph{nodes};
  with 
@@ -44,11 +37,27 @@ In this definition, terminal nodes can be either \modCG{mRNA expression} or prot
 On the other side, transient nodes can be either transcriptions or translocations or modifications or compounds. Edges are of different types:
 activation (agent), inhibition, output, input and protein-family-member.
 
+\begin{definition}[multi-layer Receptor-Signaling-Transcription-Cell state (RSTC)] 
+ A RSTC network is a TTIG were nodes are rallied in layer (Receptor, Signaling, Transcription, Cell state) according to their position in the cell. The position in cell 
+ usually induce specific behavior that have to be take into account for modeling. 
+\end{definition}
+
+
+
+The interactions of the biological system under study were represented in
+ a RSTC network, which stands for  multi-layer Receptor-Signaling-Transcription-Cell state network and that was generated from the Pathway Interaction Database (PID).
+In order to build this network one needs to select a set of seed nodes related to the biological process studied.
+For our case study, the seed nodes were:  (1) \emph{E-cadherin}, which is a protein having Calcium binding domains and which plays an important role in cell adhesion;
+(2) the $12$ significantly differentially expressed genes across the $10$ time-points; and (3) the cell states of keratinocytes-differentiation and cell-cycle-arrest. 
+The network was extracted automatically from the whole content of the PID database by using a subgraph algorithm to link the seed nodes \cite{guziolowski2012automatic}. 
+In \pref{fig:network} we show the RSTC network obtained. 
+
+
 %\modCG{
 
 \begin{definition}[Pattern] \label{def:pattern}
 
-A pattern can be defined as an atomic set of biological components and thier interacting roles. 
+A pattern can be defined as an atomic set of biological components and their interacting roles. 
 
 \end{definition}
 
@@ -529,7 +538,6 @@ level $2$.
 
 We set the same initial conditions to PH components belonging to the same network layer, chosen from the RSTC structure.
 These initial conditions are detailed below and summarized in \pref{fig:initialCondition}.
-
 \begin{itemize}
  \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin to be active for a duration of $5$ time units in average. This 
  choice was made in orders to take into account the average time of the Calcium stimuli effect.
