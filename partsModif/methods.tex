@@ -20,7 +20,7 @@ will be presented later in \ref{sssec:EPTSD}.}}
 % \paragraph{The RSTC Network}
 \label{ssec:RSTC}
 
-
+\modCG{
 \begin{definition}[Terminal Transient Interaction Graph (TTIG)] \label{def:RSTCDef}
 A \emph{TTIG} $N$ is a couple $(V,E)$, where:
 \begin{itemize}
@@ -41,7 +41,7 @@ activation (agent), inhibition, output, input and protein-family-member.
  A RSTC network is a TTIG where nodes are linked to a layer (Receptor, Signaling, Transcription, Cell state) according to their position in the cell. 
 The position in the cell  usually induces specific behavior that has to be modeled differently. 
 \end{definition}
-
+}
 
 
 The interactions of the biological system under study were represented in
@@ -53,8 +53,7 @@ The network was extracted automatically from the whole content of the PID databa
 In \pref{fig:network} we show the RSTC network obtained. 
 
 
-%\modCG{
-
+\modCG{
 \begin{definition}[Pattern] \label{def:pattern}
 
 A pattern can be defined as an atomic set of biological components and their interacting roles. 
@@ -63,7 +62,7 @@ A pattern can be defined as an atomic set of biological components and their int
 
 
 The first column of table \ref{table_patterns} shows  some examples of patterns that can be found in a RSTC Network.
-
+}
 \begin{figure}[!p]
  \centering
  \includegraphics[width=12cm, height=10cm]{images/net_cg_v3.png}

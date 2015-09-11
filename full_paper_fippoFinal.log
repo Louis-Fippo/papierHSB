@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  11 SEP 2015 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.22)  11 SEP 2015 15:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1201,16 +1201,16 @@ l.157 ...iour of biological regulatory networks—
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-[19]) (./partsFinal1/annexes.tex
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 22.
+[19]) (./partsFinal1/annexes.tex Excluding 'comment' comment.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 31.
+put line 109.
 )
 \tf@thm=\write6
 \openout6 = `full_paper_fippoFinal.thm'.
@@ -1227,10 +1227,10 @@ Package rerunfilecheck Info: File `full_paper_fippoFinal.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 20644 strings out of 493105
- 399632 string characters out of 6137072
- 530386 words of memory out of 5000000
- 23522 multiletter control sequences out of 15000+600000
+ 20638 strings out of 493105
+ 399539 string characters out of 6137072
+ 530329 words of memory out of 5000000
+ 23521 multiletter control sequences out of 15000+600000
  30402 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,18n,73p,766b,1379s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1255,10 +1255,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on full_paper_fippoFinal.pdf (22 pages, 13730593 bytes).
+Output written on full_paper_fippoFinal.pdf (22 pages, 13730267 bytes).
 PDF statistics:
- 786 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 162 named destinations out of 1000 (max. 500000)
+ 781 PDF objects out of 1000 (max. 8388607)
+ 606 compressed objects within 7 object streams
+ 157 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

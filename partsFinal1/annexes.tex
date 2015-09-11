@@ -14,7 +14,7 @@
  
  
  %%%%algorithm of patterns detection in all the network
-
+\begin{comment}
 %\begin{figure}[!t]
 \begin{algorithm}
 \begin{algorithmic}[1]
@@ -32,6 +32,7 @@
 \label{automaticGenerationOfPHModel}
 \end{algorithm}
 %\end{figure}
+\end{comment}
 
 
 %%%%%algorithm for detect the pattern of a given node
@@ -69,14 +70,12 @@
      \CASE {2}
      \STATE
      \ENDCASE
-  % \DEFAULT
-  %  \STATE \RETURN ERROR CODE \COMMENT{We can't treat this case}
-  % \ENDDEFAULT
+ 
    \ENDSWITCH
 \ENDCASE
    
    \CASE{TransientNode} %\COMMENT{We compact many sub case of all terminal nodes}
-   %\STATE added node to the pattern
+   
    \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
    \SWITCH{numberPredecessor}
    
@@ -100,30 +99,22 @@
    \CASE {2}
    \STATE
    \ENDCASE
-  % \DEFAULT
-  %  \STATE \RETURN ERROR CODE \COMMENT{We can't treat this case}
-  % \ENDDEFAULT
+  
    \ENDSWITCH
  \ENDCASE
-%\CASELINE {2}
-%  \STATE Good-bye
-%\DEFAULT
-%  \STATE Again ?
-%\ENDDEFAULT
+
 \ENDSWITCH
-%\ENDWHILE\label{euclidendwhile}
+
 \end{algorithmic}
 \caption{\bf: Algorithm for pattern detection, function detectPattern ($Net$, $n$)} \label{PatternDetection}
 \end{algorithm}
 %\end{figure}
 
-
-
 %%%%%algorithm for write the pattern in PH model
 
 %\begin{figure}[!t]
 \begin{algorithm}
-\begin{algorithmic}[H]
+\begin{algorithmic}[1]
 
 \REQUIRE $out$, $Pat$ \COMMENT{Pat is The pattern to be translated into the PH Model, out is the output file}
 \ENSURE The correspondent PH Model of the given pattern Pat will write into the file $out$
@@ -165,5 +156,10 @@
 \end{algorithmic}
 \caption{\bf: Algorithm for writing a given pattern into a file, function patternInPHModel ($out$, $Pat$)} \label{PHModelGeneration}
 \end{algorithm}
+
+
+
+
+
 
 
