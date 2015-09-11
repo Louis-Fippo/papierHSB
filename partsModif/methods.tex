@@ -70,7 +70,7 @@ The first column of table \ref{table_patterns} shows  some examples of patterns 
 \caption{{\bf  Interaction graph linking E-cadherin with 12 genes of the time-series dataset.} Blue nodes correspond to E-cadherin entities, red or green, to time-series genes, 
 and cyan nodes to cellular processes. The graph is composed of $293$ nodes and $375$ edges (interactions).
 The set of nodes are composed of terminal nodes (proteins, complexes, \modCG{ mRNA expression}, cellular state, biological processes and positive conditions) and of transient
-nodes (transcriptions, translocations, modifications and compounds). The set of edges are composed of interactions of type activation, inhibition, output, 
+nodes (transcriptions, translocations, modifications and compounds). The set of edges is composed of interactions of type activation, inhibition, output, 
 input and protein-family-member.} 
  \label{fig:network}
 \end{figure}
@@ -354,7 +354,7 @@ In the RSTC network, we find  $25$ regulatory patterns. We show some examples in
 
 &
 
-This pattern model the activation of the component b by the component a.\tabularnewline
+This pattern models the activation of the component b by the component a.\tabularnewline
 \hline
 
 \begin{tikzpicture}
@@ -396,7 +396,7 @@ This pattern model the activation of the component b by the component a.\tabular
 
 &
 
-This pattern model the inhibition of the component b by the component a\tabularnewline
+This pattern models the inhibition of the component b by the component a\tabularnewline
 \hline
 
 \begin{tikzpicture}
@@ -444,7 +444,7 @@ This pattern model the inhibition of the component b by the component a\tabularn
 
 &
 
-This pattern model either the activation of the component c by the component a or the inhibition of the 
+This pattern models either the activation of the component c by the component a or the inhibition of the 
 component c by the component b \tabularnewline
 \hline
 \end{tabular}
@@ -500,7 +500,7 @@ and (2) the stochasticity absorption factor $sa$, which is introduced to control
 	    
 
 \caption{{\bf Estimating temporal parameters from time series data:} The mean firing time of an action that makes a
-component (mRNA expression) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum expression of a \modCG{ mRNA expression}, while 
+component (mRNA expression) change of sub-state is estimated as $r_{i}=\frac{1}{t_{i}-t_{i-1}}$. $MaxLevel$ represents the maximum level of a \modCG{ mRNA expression}, while 
  $MinLevel$, its minimum expression.
 The thresholds $th1$ and $th2$ define the PH discrete sub-states (e.g. 0,1,2) of a component according to its gene expression data.
 \label{fig:estimationParameter}}
@@ -524,9 +524,9 @@ When looking at the time-series data (see \pref{fig:tsd}) one can distinguish a 
 activity in early hours [$0h$-$5h$] and a low level in late hours [$5h$-$10h$]. \modCG{This trend was confirmed by the SMA (Simple moving average) function of the R package TTR which allows us
 to smooth time-series data. We used the SMA function with parameter $n=2$ and we observed that more than $50\%$ of the time-series data presented these two levels of activities.}
 We implemented a discretization method to capture these
-two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}) were introduced: 
+two activation times. For each time-series, we introduced two thresholds \emph{th1} and \emph{th2} (see \pref{fig:estimationParameter}): 
 $\emph{th1}=\frac{1}{3}(MaxLevel-MinLevel)$ and $\emph{th2}=\frac{2}{3}(MaxLevel-MinLevel)$. 
-In this way, the expression level in the range $[0-th1]$ is at level $0$, the one in the range $[th1-th2]$ is at level $1$, and the one in the last range is at
+In this way the expression level in the range $[0-th1]$ is at level $0$, the one in the range $[th1-th2]$ is at level $1$, and the one in the last range is at
 level $2$. 
 
 
@@ -536,7 +536,7 @@ We set the same initial conditions to PH components belonging to the same networ
 These initial conditions are detailed below and summarized in \pref{fig:initialCondition}.
 \begin{itemize}
  \item \textbf{Receptor layer: E-cadherin.} We choose the  pulse signal for the input node E-cadherin to be active for a duration of $5$ time units in average. This 
- choice was made in orders to take into account the average time of the Calcium stimuli effect.
+ choice was made in order to take into account the average time of the Calcium stimuli effect.
  \item \textbf{Signaling layer: signaling proteins.} The components in this layer are activated and inhibited with the same rate and the same stochasticity absorption factor. 
 The actions between a controller component $A$ and a controlled component $B$ are constrained so that 
 $B$ is first activated by $A$ and then inhibited.  That is, 
@@ -805,7 +805,7 @@ for all TFs we introduced an auto-inhibition action that represents their degrad
  \subsection{Automatic analysis of simulation traces}
  
  Due to the stochastic and concurrent aspects of the system, each execution of the model can generate a different dynamic trace.
- Therefore, to validate the proposed model, we analyzed the traces generated by each component for a set of simulations of the model.
+ Therefore, to validate the proposed model we analyzed the traces generated by each component for a set of simulations of the model.
  The idea was to calculate the percentage of traces that reproduced the expected dynamic of the system. 
 To achieve this goal, we take each trace generated
  at each simulation for a given component and passed it to an automaton ($\mathcal{A}_{i}$) that recognize the 
