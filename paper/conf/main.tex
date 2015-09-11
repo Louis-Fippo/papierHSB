@@ -1,0 +1,323 @@
+
+%%%%%%%%%%%%%%%%%%%%%%% file typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage{float}
+
+\def\COM#1{{\color{red}[#1]}}
+
+\usepackage{array}  %pour l'allignement dans les tableaux 
+
+
+\input{epig-macros}
+\def\layersep{1cm}
+
+\def\modCG#1{\textcolor{red}{#1}}
+
+
+%pour le texte dans le tableau
+
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+
+\usepackage{url}
+\urldef{\mailsa}\path|{alfred.hofmann, ursula.barth, ingrid.haas, frank.holzwarth,|
+\urldef{\mailsb}\path|anna.kramer, leonie.kunz, christine.reiss, nicole.sator,|
+\urldef{\mailsc}\path|louis.fippo-fitime@irccyn.ec-nantes.fr|
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Integrating time-series data in large-scale discrete cell-based models}
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{Integrating time-series data in cell-based discrete models}
+
+% the name(s) of the author(s) follow(s) next
+%
+% NB: Chinese authors should write their first names(s) in front of
+% their surnames. This ensures that the names appear correctly in
+% the running heads and the author index.
+%
+\author{Louis Fippo Fitime\inst{1}%
+\and Christian Schuster\inst{2} \and Peter Angel\inst{2}
+\and Olivier Roux\inst{1}\and Carito Guziolowski\inst{1}}
+%
+\authorrunning{Louis Fippo Fitime et al.}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+
+\institute{LUNAM Universit\'e, \'Ecole Centrale de Nantes, IRCCyN UMR CNRS 6597\\
+(Institut de Recherche en Communications et Cybern\'etique de Nantes)\\
+1 rue de la No\"e -- B.P. 92101 -- 44321 Nantes Cedex 3, France.\\
+\mailsc\\
+\url{http://www.irccyn.ec-nantes.fr/en/}
+\and
+Division of Signal Transduction and Growth Control (A100), DKFZ-ZMBH Alliance, Deutsches Krebsforschungszentrum, Heidelberg, Germany
+}
+
+%
+% NB: a more complex sample for affiliations and the mapping to the
+% corresponding authors can be found in the file "llncs.dem"
+% (search for the string "\mainmatter" where a contribution starts).
+% "llncs.dem" accompanies the document class "llncs.cls".
+%
+
+%\toctitle{Lecture Notes in Computer Science}
+%\tocauthor{Authors' Instructions}
+\maketitle
+
+
+\begin{abstract}
+In this work we propose an automatic way of generating and verifying 
+formal hybrid models of signaling and transcriptional
+events, gathered in large-scale regulatory networks.This is done by 
+integrating temporal and stochastic aspects of
+the expression of some biological components. The hybrid approach lies 
+in the fact that measurements take into account both times of 
+lengthening phases and discrete switches between them. The model 
+proposed is based on a real case study of keratinocytes differentiation, 
+in which gene time-series data was generated upon Calcium stimulation.
+
+To achieve this we rely on the Process Hitting (PH) formalism that was 
+designed to consider large-scale system analysis.  We first propose an 
+automatic way of detecting and translating biological motifs from  the 
+Pathway Interaction Database to the PH formalism. Then, we propose a way of estimating 
+temporal and stochastic parameters from time-series expression data of 
+action on the PH. Simulations emphasize the interest of synchronizing 
+concurrent events.
+\keywords{time-series data, large-scale network, hybrid models, compositional approach, stochastic simulation}
+\end{abstract}
+
+
+\input{partsFinal1/intro}
+\input{partsFinal1/methods}
+\input{partsFinal1/results}
+\input{partsFinal1/conclusion}
+\input{partsFinal1/acknowledgements}
+
+%\bibliographystyle{plain}
+%\bibliography{biblio.bib}
+\begin{thebibliography}{10}
+
+\bibitem{Ahmad08}
+Jamil Ahmad, Olivier Roux, Gilles Bernot, Jean-Paul Comet, and Adrien Richard.
+\newblock Analysing formal models of genetic regulatory networks with delays.
+\newblock {\em International Journal of Bioinformatics Research and
+  Applications (IJBRA)}, 4(3):240--262, 2008.
+
+\bibitem{AMSW2012}
+David~Spieler Aleksandr~Andreychenko, Linar~Mikeev and Verena Wolf.
+\newblock Approximate maximum likelihood estimation for stochastic chemical
+  kinetics.
+\newblock {\em EURASIP Journal on Bioinformatics and Systems Biology}.
+
+\bibitem{Batt15092010}
+Gregory Batt, Michel Page, Irene Cantone, Gregor Goessler, Pedro Monteiro, and
+  Hidde de~Jong.
+\newblock Efficient parameter search for qualitative models of regulatory
+  networks using symbolic model checking.
+\newblock {\em Bioinformatics}, 26(18):i603--i610, 2010.
+
+\bibitem{batt2007timed}
+Gr{\'e}gory Batt, Ramzi~Ben Salah, and Oded Maler.
+\newblock {\em On timed models of gene networks}.
+\newblock Springer, 2007.
+
+\bibitem{busch2008gene}
+Hauke Busch, David Camacho-Trullio, Zbigniew Rogon, Kai Breuhahn, Peter Angel,
+  Roland Eils, and Axel Szabowski.
+\newblock Gene network dynamics controlling keratinocyte migration.
+\newblock {\em Molecular systems biology}, 4(1):199, 2008.
+
+\bibitem{chaouiya2003qualitative}
+Claudine Chaouiya, Elisabeth Remy, Brigitte Moss{\'e}, and Denis Thieffry.
+\newblock Qualitative analysis of regulatory graphs: a computational tool based
+  on a discrete formal framework.
+\newblock In {\em Positive Systems}, pages 119--126. Springer, 2003.
+
+\bibitem{de2003genetic}
+Hidde De~Jong, Johannes Geiselmann, C{\'e}line Hernandez, and Michel Page.
+\newblock Genetic network analyzer: qualitative simulation of genetic
+  regulatory networks.
+\newblock {\em Bioinformatics}, 19(3):336--344, 2003.
+
+\bibitem{gardner2003inferring}
+Timothy~S Gardner, Diego Di~Bernardo, David Lorenz, and James~J Collins.
+\newblock Inferring genetic networks and identifying compound mode of action
+  via expression profiling.
+\newblock {\em Science}, 301(5629):102--105, 2003.
+
+\bibitem{guziolowski2012automatic}
+Carito Guziolowski, Aristotelis Kittas, Florian Dittmann, and Niels Grabe.
+\newblock Automatic generation of causal networks linking growth factor stimuli
+  to functional cell state changes.
+\newblock {\em FEBS Journal}, 279(18):3462--3474, 2012.
+
+\bibitem{guziolowski2013exhaustively}
+Carito Guziolowski, Santiago Videla, Federica Eduati, Sven Thiele, Thomas
+  Cokelaer, Anne Siegel, and Julio Saez-Rodriguez.
+\newblock Exhaustively characterizing feasible logic models of a signaling
+  network using answer set programming.
+\newblock {\em Bioinformatics}, 29(18):2320--2326, 2013.
+
+\bibitem{heiner2008petri}
+Monika Heiner, David Gilbert, and Robin Donaldson.
+\newblock Petri nets for systems and synthetic biology.
+\newblock In {\em Formal methods for computational systems biology}, pages
+  215--264. Springer, 2008.
+
+\bibitem{kauffman1969metabolic}
+Stuart~A Kauffman.
+\newblock Metabolic stability and epigenesis in randomly constructed genetic
+  nets.
+\newblock {\em Journal of theoretical biology}, 22(3):437--467, 1969.
+
+\bibitem{Kolly2005}
+C.~Kolly, M.~M. Suter, and E.~J. Muller.
+\newblock {{P}roliferation, cell cycle exit, and onset of terminal
+  differentiation in cultured keratinocytes: pre-programmed pathways in control
+  of {C}-{M}yc and {N}otch1 prevail over extracellular calcium signals}.
+\newblock {\em J. Invest. Dermatol.}, 124(5):1014--1025, May 2005.
+
+\bibitem{macnamara2012state}
+Aidan MacNamara, Camille Terfve, David Henriques, Beatriz~Pe{\~n}alver
+  Bernab{\'e}, and Julio Saez-Rodriguez.
+\newblock State--time spectrum of signal transduction logic models.
+\newblock {\em Physical Biology}, 9(4):045003, 2012.
+
+\bibitem{maurin2009modeling}
+Myl{\`e}ne Maurin, Morgan Magnin, and Olivier Roux.
+\newblock Modeling of genetic regulatory network in stochastic $\pi$-calculus.
+\newblock In {\em Bioinformatics and Computational Biology}, pages 282--294.
+  Springer, 2009.
+
+\bibitem{mitsos2009identifying}
+Alexander Mitsos, Ioannis~N Melas, Paraskeuas Siminelakis, Aikaterini~D
+  Chairakaki, Julio Saez-Rodriguez, and Leonidas~G Alexopoulos.
+\newblock Identifying drug effects via pathway alterations using an integer
+  linear programming optimization formulation on phosphoproteomic data.
+\newblock {\em PLoS computational biology}, 5(12):e1000591, 2009.
+
+\bibitem{molloy1982performance}
+Michael~K. Molloy.
+\newblock Performance analysis using stochastic petri nets.
+\newblock {\em Computers, IEEE Transactions on}, 100(9):913--917, 1982.
+
+\bibitem{PMR10-TCSB}
+{L}o{\"i}c {P}aulev{\'e}, {M}organ {M}agnin, and {O}livier {R}oux.
+\newblock Refining dynamics of gene regulatory networks in a stochastic
+  $\pi$-calculus framework.
+\newblock In {\em Transactions on Computational Systems Biology XIII}, pages
+  171--191. Springer, 2011.
+
+\bibitem{Pinna2010}
+Andrea Pinna, Nicola Soranzo, and Alberto de~la Fuente.
+\newblock From knockouts to networks: Establishing direct cause-effect
+  relationships through graph analysis.
+\newblock {\em PLoS ONE}, 5(10):e12912, 10 2010.
+
+\bibitem{porreca2010identification}
+Riccardo Porreca, Eugenio Cinquemani, John Lygeros, and Giancarlo
+  Ferrari-Trecate.
+\newblock Identification of genetic network dynamics with unate structure.
+\newblock {\em Bioinformatics}, 26(9):1239--1245, 2010.
+
+\bibitem{priami1995stochastic}
+Corrado Priami.
+\newblock Stochastic $\pi$-calculus.
+\newblock {\em The Computer Journal}, 38(7):578--589, 1995.
+
+\bibitem{RAT2006}
+R.~Altman S.~Reinker and J.~Timmer.
+\newblock Parameter estimation in stochastic biochemical reactions.
+\newblock {\em IEE Proceedings - Systems Biology}, 153, 2006.
+
+\bibitem{schaefer2009pid}
+Carl~F Schaefer, Kira Anthony, Shiva Krupa, Jeffrey Buchoff, Matthew Day, Timo
+  Hannay, and Kenneth~H Buetow.
+\newblock Pid: the pathway interaction database.
+\newblock {\em Nucleic acids research}, 37(suppl 1):D674--D679, 2009.
+
+\bibitem{Siebert06}
+Heike Siebert and Alexander Bockmayr.
+\newblock Incorporating time delays into the logical analysis of gene
+  regulatory networks.
+\newblock In {\em Computational Methods in Systems Biology}, volume 4210 of
+  {\em LNCS}, pages 169--183. Springer, 2006.
+
+\bibitem{snoussi1989qualitative}
+El~Houssine Snoussi.
+\newblock Qualitative dynamics of piecewise-linear differential equations: a
+  discrete mapping approach.
+\newblock {\em Dynamics and stability of Systems}, 4(3-4):565--583, 1989.
+
+\bibitem{thieffry1995dynamical}
+Denis Thieffry and Ren{\'e} Thomas.
+\newblock Dynamical behaviour of biological regulatory networks—ii. immunity
+  control in bacteriophage lambda.
+\newblock {\em Bulletin of Mathematical Biology}, 57(2):277--297, 1995.
+
+\bibitem{Thomas73}
+Ren{\'e} Thomas.
+\newblock Boolean formalization of genetic control circuits.
+\newblock {\em Journal of Theoretical Biology}, 42(3):563 -- 585, 1973.
+
+\bibitem{Tu2011}
+C.~L. Tu, W.~Chang, and D.~D. Bikle.
+\newblock {{T}he calcium-sensing receptor-dependent regulation of cell-cell
+  adhesion and keratinocyte differentiation requires {R}ho and filamin {A}}.
+\newblock {\em J. Invest. Dermatol.}, 131(5):1119--1128, May 2011.
+
+\bibitem{van2013timed}
+S~Van~Goethem, J-M Jacquet, Lubos Brim, and D~{\v{S}}afr{\'a}nek.
+\newblock Timed modelling of gene networks with arbitrarily precise expression
+  discretization.
+\newblock {\em Electronic Notes in Theoretical Computer Science}, 293:67--81,
+  2013.
+
+\bibitem{yu2012hipathdb}
+Namhee Yu, Jihae Seo, Kyoohyoung Rho, Yeongjun Jang, Jinah Park, Wan~Kyu Kim,
+  and Sanghyuk Lee.
+\newblock hipathdb: a human-integrated pathway database with facile
+  visualization.
+\newblock {\em Nucleic acids research}, 40(D1):D797--D802, 2012.
+
+\end{thebibliography}
+
+
+
+\input{partsFinal1/annexes}
+
+%\begin{thebibliography}{4}
+
+%\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,165 @@
+\appendix
+ \section{Algorithm of patterns detection}
+
+ Here are the algorithms that allow to detect and construct a process hitting model from an RSTC network.
+ These algorithms have a polynomial time running that correspond to the running time of the procedure \ref{PatternDetection}.
+ 
+ \begin{proposition}
+  Algorithm \ref{PatternDetection} has a time complexity of $\mathcal{O}(|V|\log{}(h))$. 
+  Where $h$ is the average height of the patterns in the RSTC network. In the worst case 
+  $h = \log_{V}(|V|)$.
+ \end{proposition}
+
+ 
+ 
+ %%%%algorithm of patterns detection in all the network
+
+%\begin{figure}[!t]
+\begin{algorithm}
+\begin{algorithmic}[1]
+%\Procedure{patternDetection}{$Net,n$}\Comment{Given a node n, detect a set of minimal nodes that has a direct regulatory effect on n}
+\REQUIRE $Net$ \COMMENT{The RSTC network}
+\ENSURE generate the PH Model associated to $Net$
+\FORALL{ Node $n$ in $Net$.getSetOfNodes() } 
+\STATE $Pat$ = detectPattern ($Net$, $n$)
+\STATE patternInPHModel ($out$, $Pat$)
+
+\ENDFOR
+%\STATE \textbf{return} $b$%\Comment{The gcd is b}
+\end{algorithmic}
+\caption{\bf: Algorithm for Pattern detection in an RSTC Network in order to generate the equivalent model in the PH formalism}
+\label{automaticGenerationOfPHModel}
+\end{algorithm}
+%\end{figure}
+
+
+
+%%%%%algorithm for detect the pattern of a given node
+
+%\begin{figure}[!t]
+\begin{algorithm}
+\begin{algorithmic}[1]
+%\Procedure{patternInPHModel}{$out,Pat$}\Comment{Write on the flux out the PH Model of a given pattern (Pat)}
+\REQUIRE $Net$, $n$ \COMMENT{$Net$ is the network and $n$ is the current node}
+\ENSURE Build a set of nodes associated to node $n$ that we call pattern.
+%\WHILE{$r\not=0$}  %\Comment{We have the answer if r is 0}
+\SWITCH {$n$}
+ \CASE{TerminalNode} %\COMMENT{We compact many sub case of all terminal nodes}
+   \STATE add node n to the pattern $Pat$
+   \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
+   \SWITCH{numberPredecessor}
+   
+   \CASE{1}
+    \FORALL {$p$ in setOfPredecessor (n)}
+     \SWITCH {$p$}
+    \CASE {TerminalNode}
+      \STATE add node n to the pattern $Pat$
+    \ENDCASE
+    
+    \CASE {TransientNode}
+      \STATE detectPattern ($Net$, $p$);
+    \ENDCASE
+    
+    \ENDSWITCH
+   \ENDFOR
+      \STATE Set the code of pattern $Pat$;
+      \STATE return $Pat$;
+   \ENDCASE
+   
+     \CASE {2}
+     \STATE
+     \ENDCASE
+ 
+   \ENDSWITCH
+\ENDCASE
+   
+   \CASE{TransientNode} %\COMMENT{We compact many sub case of all terminal nodes}
+   
+   \STATE numberPredecessor= $n$.getNumberOfPredecessor() %\COMMENT{To get the number of predecessor of node $n$}
+   \SWITCH{numberPredecessor}
+   
+   \CASE{1}
+    \FORALL {$p$ in setOfPredecessor (n)}
+    \SWITCH {$p$}
+    \CASE {TerminalNode}
+      \STATE added node to the pattern $Pat$;
+    \ENDCASE
+    
+    \CASE {TransientNode}
+      \STATE detectPattern ($Net$, $p$);
+    \ENDCASE
+    
+    \ENDSWITCH
+   \ENDFOR
+      \STATE Set the code of pattern $Pat$;
+      \STATE return $Pat$;
+   \ENDCASE
+   
+   \CASE {2}
+   \STATE
+   \ENDCASE
+  
+   \ENDSWITCH
+ \ENDCASE
+
+\ENDSWITCH
+
+\end{algorithmic}
+\caption{\bf: Algorithm for pattern detection, function detectPattern ($Net$, $n$)} \label{PatternDetection}
+\end{algorithm}
+%\end{figure}
+
+
+%%%%%algorithm for write the pattern in PH model
+
+%\begin{figure}[!t]
+\begin{algorithm}
+\begin{algorithmic}[H]
+
+\REQUIRE $out$, $Pat$ \COMMENT{Pat is The pattern to be translated into the PH Model, out is the output file}
+\ENSURE The correspondent PH Model of the given pattern Pat will write into the file $out$
+
+\STATE $nocp$ = $Pat$.getNumberOfComponents() \COMMENT{Number of the components of the pattern $Pat$}
+\STATE $tabPat$ = $Pat$.getTableOfPattern() \COMMENT{return the components of the pattern in $tabPat$}
+\SWITCH {$nocp$}
+ \CASE {2}
+  \SWITCH {$code$}
+ \CASE {A}
+  \STATE out.write ($tabPat[1]$ 1 $\rightarrow$ $tabPat[0]$ $0$ $1$ $r_{a}$ $sa_{a}$);  \COMMENT{Component $tabPat[1]$ activates component $tabPat[0]$ with $r = r_{a}$ and $sa = sa_{a}$ }     
+\ENDCASE
+\CASELINE {I}
+  \STATE out.write ($tabPat[1]$ 0 $\rightarrow$ $tabPat[0]$ $1$ $0$ $r_{i}$ $sa_{i}$);  \COMMENT{Component $tabPat[1]$ inhibits component $tabPat[0]$ with $r = r_{i}$ and $sa = sa_{i}$ }  
+
+\ENDSWITCH
+   
+   
+\ENDCASE
+
+\CASE {3}
+  \SWITCH {$code$}
+ \CASE {C}
+   \STATE out.write (coop ([$tabPat[2]$;$tabPat[1]$)] $\rightarrow$ $tabPat[0]$ $0$ $1$); \COMMENT{Cooperation between $tabPat[1]$ and $tabPat[2]$ to activate $tabPat[0]$}
+        
+\ENDCASE
+\CASELINE {S}
+  \STATE out.write (coop ([$tabPat[2]$;$tabPat[1]$)] $\rightarrow$ $tabPat[0]$ $0$ $1$); \COMMENT{Synchronization between $tabPat[1]$ and $tabPat[2]$ to activate $tabPat[0]$}
+\DEFAULT
+ \STATE out.write ((*unknow pattern*));
+ \ENDDEFAULT
+\ENDSWITCH
+   
+   
+\ENDCASE
+
+\ENDSWITCH
+
+\end{algorithmic}
+\caption{\bf: Algorithm for writing a given pattern into a file, function patternInPHModel ($out$, $Pat$)} \label{PHModelGeneration}
+\end{algorithm}
+
+
+
+
+
+
+
